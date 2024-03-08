@@ -7,15 +7,49 @@ using UnityEngine.UI;
 public class InteractableArea : MonoBehaviour
 {
     public int[] ButonIdAcepted;
+    public List<int> UsersVotes;
+    [SerializeField] int _votesCount;
+    public int VotesCount{
+        get=>_votesCount;
+        set
+        {
+            _votesCount = value;
+            MostrarJugadoresUI();
+        }
+    }
+    [SerializeField] ScriptableUserSprite UserIcons;
+
+    //ajustes visuales
     GridLayoutGroup _gridLayoutGroup;
-    public int votesCount;
+    float alto, ancho;
+
     private void Awake() {
         if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}
     }
     private void Start() {
+        UserIcons = Resources.Load<ScriptableUserSprite>("Scriptables/ScriptableUsersSprite");
+
+        ancho = GetComponent<RectTransform>().rect.width;
+        alto = GetComponent<RectTransform>().rect.height;
         
-        //_gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
-        //_gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
-        //_gridLayoutGroup.constraintCount = 2;
+        _gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
+        _gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
+        _gridLayoutGroup.constraintCount = 4;
+        _gridLayoutGroup.cellSize = new Vector2( ancho*0.2f, alto*0.2f );
+        _gridLayoutGroup.spacing = new Vector2( ancho*0.11f, alto*0.11f );
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if(UserIcons!=null){transform.GetChild(i).gameObject.GetComponent<Image>().sprite = UserIcons.UserSprites[i];}
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+    void MostrarJugadoresUI(){
+
+        for (int j = 0; j < transform.childCount; j++)
+         {
+            transform.GetChild(j).gameObject.SetActive(UsersVotes.Contains(j+1));
+        }
+        
     }
 }
