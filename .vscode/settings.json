@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "LaIslaDeLasMemorias.sln"
+    "dotnet.defaultSolution": "LaIslaDeLasMemorias.sln",
+    "dotnet.preferCSharpExtension": true
 }

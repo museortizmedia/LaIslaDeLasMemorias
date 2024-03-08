@@ -79,7 +79,7 @@ public class SerialReader : MonoBehaviour
         if (matchButton.Success)
         {
             Debug.Log("Secuencia detectada: " + receivedData);
-            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]) });
+            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[1]) });
             receivedData = ""; return;
         }
 

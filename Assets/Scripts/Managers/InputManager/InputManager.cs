@@ -11,7 +11,20 @@ public struct ButtonData
 public class InputManager : MonoBehaviour
 {
     [SerializeField] bool _isBrainConect;
-    public bool IsBrainConect{get=>_isBrainConect; set=>_isBrainConect=value; }
+    public bool IsBrainConect{
+        get=>_isBrainConect;
+        set
+        {
+            _isBrainConect=value;
+            if(value)
+            {
+                OnBrainConnect?.Invoke();
+                OnAnyButtonPress?.Invoke(new ButtonData{DeviceId=0, ButtonId=0}); //activar rol Mentor
+            }else{
+                OnBrainDisconnect?.Invoke();
+            }
+        }
+    }
 
     [SerializeField] SerialReader _serialReader;
     
@@ -19,8 +32,6 @@ public class InputManager : MonoBehaviour
     [SerializeField] UnityEvent OnBrainConnect;
     [SerializeField] UnityEvent  OnBrainDisconnect;
     Dictionary<KeyCode, UnityAction> _accionesTeclas = new Dictionary<KeyCode, UnityAction>();
-    [SerializeField] List<KeyCode> _teclasValidas
-    = new List<KeyCode>(){KeyCode.Alpha1,KeyCode.Alpha2,KeyCode.Alpha3,KeyCode.Q, KeyCode.W, KeyCode.E, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Z, KeyCode.X, KeyCode.C};
 
     [Header("Eventos Input")]
     public UnityEvent <ButtonData> OnAnyButtonPress;
@@ -34,11 +45,82 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public UnityEvent<ButtonData>
     OnCanalButton1Press, OnCanalButton2Press, OnCanalButton3Press;
 
-    
 
     private void Start() {
         if(_serialReader==null){_serialReader = GetComponentInChildren<SerialReader>();}
 
+        ConfigTeclasMentor();        
+    }
+    
+    private void Update() {
+        HanldeTeclasMentor();
+    }
+
+    #region TeclasDelMentor
+    void HanldeTeclasMentor(){
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("presionado "+"alpha1");
+            _accionesTeclas[KeyCode.Alpha1]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("presionado "+"alpha2");
+            _accionesTeclas[KeyCode.Alpha2]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log("presionado "+"alpha3");
+            _accionesTeclas[KeyCode.Alpha3]?.Invoke();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("presionado "+"q");
+            _accionesTeclas[KeyCode.Q]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log("presionado "+"w");
+            _accionesTeclas[KeyCode.W]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("presionado "+"e");
+            _accionesTeclas[KeyCode.E]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("presionado "+"a");
+            _accionesTeclas[KeyCode.A]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("presionado "+"s");
+            _accionesTeclas[KeyCode.S]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("presionado "+"d");
+            _accionesTeclas[KeyCode.D]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("presionado "+"z");
+            _accionesTeclas[KeyCode.Z]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("presionado "+"x");
+            _accionesTeclas[KeyCode.X]?.Invoke();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            Debug.Log("presionado "+"c");
+            _accionesTeclas[KeyCode.C]?.Invoke();
+        }
+    }
+    void ConfigTeclasMentor(){
         _accionesTeclas[KeyCode.Alpha1] = ()=>{
             OnAnyButtonPress?.Invoke(new ButtonData{DeviceId=0, ButtonId=1});
             OnButtonAPress?.Invoke(new ButtonData{DeviceId=0, ButtonId=1});
@@ -98,20 +180,16 @@ public class InputManager : MonoBehaviour
             OnButton9Press?.Invoke(new ButtonData{DeviceId=0, ButtonId=12});
         };
     }
+    #endregion
 
-    private void Update() {
-        foreach (KeyCode tecla in _teclasValidas)
-        {
-            if (Input.GetKeyDown(tecla))
-            {
-                _accionesTeclas[tecla]?.Invoke();
-            }
-        }
-    }
-
+    /// <summary>
+    /// Recibe información de una desicion de interacción tomada (enviada por el cerebro). Se puede leer usando el SerialReader.
+    /// </summary>
+    /// <param name="ButData">Estrucutra ButtonData con la info de la interacción</param>
     public void ReciveButtonInteraction(ButtonData ButData){    
         Dictionary<int, UnityAction<ButtonData>> accionesPorButtonId = new Dictionary<int, UnityAction<ButtonData>>
         {
+            { 0, (data) => {}},
             { 1, (data) => { OnButtonAPress?.Invoke(data); } },
             { 2, (data) => { OnButtonBPress?.Invoke(data); } },
             { 3, (data) => { OnButtonCPress?.Invoke(data); } },
@@ -140,14 +218,18 @@ public class InputManager : MonoBehaviour
     }
 
 /// <summary>
-/// Asigna las acciones de cada boton
+/// Asigna las acciones de cada boton. Uselo en sus experiencias
 /// </summary>
-/// <param name="ids"></param>
-/// <param name="callbacks"></param>
+/// <param name="ids">Arreglo de ID de botones que va a usar</param>
+/// <param name="callbacks">Arreglo de UnityAction de los metodos que desea asignar</param>
     public void SetButtonsActions(int[] ids, UnityAction[] callbacks){
-        if(ids.Length>0 && ids.Length<13){
-            //
+        if(ids.Length != callbacks.Length){
+            Debug.LogError("La cantidad de botones y sus acciones no corresponden, verifique el largo de sus arrelgos.");
         }
+    }
+
+    public void ClearButtonsActions(){
+        //
     }
 
 }
