@@ -72,14 +72,14 @@ public class SerialReader : MonoBehaviour
     }
     void DataActions(string receivedData){
         // Verifica si la cadena recibida contiene la secuencia deseada
-        Match matchButton = Regex.Match(receivedData, @"\[00-00\]");
+        Match matchButton = Regex.Match(receivedData, @"\[\d{2}-\d{2}\]");
         Match matchAPI = Regex.Match(receivedData, @"\[s:(.*?)\-r:(.*?)\]");
 
         //recibe una orden de interacción
         if (matchButton.Success)
         {
             Debug.Log("Secuencia detectada: " + receivedData);
-            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Split("-")[0]), ButtonId = short.Parse(receivedData.Split("-")[0]) });
+            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]) });
             receivedData = ""; return;
         }
 

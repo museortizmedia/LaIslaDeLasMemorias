@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int[] ButonIdAcepted;
+    GridLayoutGroup _gridLayoutGroup;
+    public int votesCount;
+    private void Awake() {
+        if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}
     }
-
-    // Update is called once per frame
-    void Update()
-    {
+    private void Start() {
         
+        //_gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
+        //_gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
+        //_gridLayoutGroup.constraintCount = 2;
     }
 }

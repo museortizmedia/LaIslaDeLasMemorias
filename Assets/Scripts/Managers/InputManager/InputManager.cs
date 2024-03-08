@@ -16,30 +16,23 @@ public class InputManager : MonoBehaviour
     [SerializeField] SerialReader _serialReader;
     
     [Header("Eventos de Entrada")]
-    [SerializeField] UnityEvent OnBrainConnect, OnBrainDisconnect;
+    [SerializeField] UnityEvent OnBrainConnect;
+    [SerializeField] UnityEvent  OnBrainDisconnect;
+    Dictionary<KeyCode, UnityAction> _accionesTeclas = new Dictionary<KeyCode, UnityAction>();
+    [SerializeField] List<KeyCode> _teclasValidas
+    = new List<KeyCode>(){KeyCode.Alpha1,KeyCode.Alpha2,KeyCode.Alpha3,KeyCode.Q, KeyCode.W, KeyCode.E, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Z, KeyCode.X, KeyCode.C};
 
     [Header("Eventos Input")]
-    Dictionary<KeyCode, UnityAction> _accionesTeclas = new Dictionary<KeyCode, UnityAction>();
-    public UnityEvent<ButtonData>
-    OnButtonAPress,
-    OnButtonBPress,
-    OnButtonCPress,
-    OnButton1Press,
-    OnButton2Press,
-    OnButton3Press,
-    OnButton4Press,
-    OnButton5Press,
-    OnButton6Press,
-    OnButton7Press,
-    OnButton8Press,
-    OnButton9Press,
-    //OnButton10Press,
-    //OnButton11Press,
-    //OnButton12Press,
-    OnCanalButton1Press,
-    OnCanalButton2Press,
-    OnCanalButton3Press,
-    OnAnyButtonPress;
+    public UnityEvent <ButtonData> OnAnyButtonPress;
+
+    [HideInInspector] public UnityEvent<ButtonData>
+    OnButtonAPress, OnButtonBPress, OnButtonCPress,
+    OnButton1Press, OnButton2Press, OnButton3Press,
+    OnButton4Press, OnButton5Press, OnButton6Press,
+    OnButton7Press, OnButton8Press, OnButton9Press;
+
+    [HideInInspector] public UnityEvent<ButtonData>
+    OnCanalButton1Press, OnCanalButton2Press, OnCanalButton3Press;
 
     
 
@@ -106,8 +99,17 @@ public class InputManager : MonoBehaviour
         };
     }
 
-    public void ReciveButtonInteraction(ButtonData ButData){
-    
+    private void Update() {
+        foreach (KeyCode tecla in _teclasValidas)
+        {
+            if (Input.GetKeyDown(tecla))
+            {
+                _accionesTeclas[tecla]?.Invoke();
+            }
+        }
+    }
+
+    public void ReciveButtonInteraction(ButtonData ButData){    
         Dictionary<int, UnityAction<ButtonData>> accionesPorButtonId = new Dictionary<int, UnityAction<ButtonData>>
         {
             { 1, (data) => { OnButtonAPress?.Invoke(data); } },
@@ -135,6 +137,17 @@ public class InputManager : MonoBehaviour
             Debug.LogWarning("ButtonId fuera de rango.");
         }
         
+    }
+
+/// <summary>
+/// Asigna las acciones de cada boton
+/// </summary>
+/// <param name="ids"></param>
+/// <param name="callbacks"></param>
+    public void SetButtonsActions(int[] ids, UnityAction[] callbacks){
+        if(ids.Length>0 && ids.Length<13){
+            //
+        }
     }
 
 }
