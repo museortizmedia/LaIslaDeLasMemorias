@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InteractableManager : MonoBehaviour
+public class InteractableManager : MonoBehaviour, IManager
 {
     [SerializeField] List<int> _users;
     public List<int> Users {get=>_users; set { _users=value; } }
@@ -17,6 +17,7 @@ public class InteractableManager : MonoBehaviour
     }
     void MostrarJugadoresUI(){
         Debug.Log("Se actualizó la lista de jugadores");
+        if(!transform.GetChild(0).gameObject.activeSelf){transform.GetChild(0).gameObject.SetActive(true);}
         for (int i = 1; i <= 10; i++)
         {
             _usersBar.GetChild(i-1).gameObject.SetActive(Users.Contains(i));

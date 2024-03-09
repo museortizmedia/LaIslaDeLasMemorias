@@ -8,7 +8,7 @@ public struct ButtonData
     public int DeviceId;
     public int ButtonId;
 }
-public class InputManager : MonoBehaviour
+public class InputManager : MonoBehaviour, IManager
 {
     [SerializeField] bool _isBrainConect;
     public bool IsBrainConect{

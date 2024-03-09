@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine.Events;
 using System.Text.RegularExpressions;
 
-public class SerialReader : MonoBehaviour
+public class SerialReader : MonoBehaviour, IManager
 {
     public bool _isSimulation;
     private SerialPort serialPort;
@@ -106,6 +106,8 @@ public class SerialReader : MonoBehaviour
             case "Connect":
                 OnBrainConnectState?.Invoke(response.ToString()=="true");
             break;
+            case "":
+            break;
             
             default:
             break;
@@ -120,6 +122,10 @@ public class SerialReader : MonoBehaviour
         /// Envia una solicitud Connect, en el caso de ser positiva el
         /// </summary>
         Connect,
+        /// <summary>
+        /// Envia una configuracion al Vibrador, agrege [value] para definir el poder.
+        /// </summary>
+        ConfigVibration,
     }
 
     /// <summary>
@@ -133,16 +139,31 @@ public class SerialReader : MonoBehaviour
             serialPort.Write(data.ToString());
         }
     }
+
     /// <summary>
     /// Envia comandos predefinidos en el enum CerebroComds de esta clase al cerebro.
     /// </summary>
     /// <param name="command">comando escogido del CerebroComds</param>
     public void SendSerialPortData(CerebroComds command)
     {
-        string[] letters = command.ToString().Split();
-        for (int i = 0; i < letters.Length; i++)
+        if (serialPort != null && serialPort.IsOpen)
         {
-            SendSerialPortData(char.Parse(letters[i]));
-        }        
+            string[] letters = command.ToString().Split();
+            for (int i = 0; i < letters.Length; i++)
+            {
+                SendSerialPortData(char.Parse(letters[i]));
+            }
+        }       
+    }
+    public void SendSerialPortData(string data)
+    {
+        if (serialPort != null && serialPort.IsOpen)
+        {
+            string[] letters = data.Split();
+            for (int i = 0; i < letters.Length; i++)
+            {
+                SendSerialPortData(char.Parse(letters[i]));
+            }
+        }
     }
 }

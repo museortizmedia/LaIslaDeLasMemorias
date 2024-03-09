@@ -20,6 +20,7 @@ public class InteractableArea : MonoBehaviour
     [SerializeField] ScriptableUserSprite UserIcons;
 
     //ajustes visuales
+    public float cellSize = 0.2f, cellSpace = 0.11f;
     GridLayoutGroup _gridLayoutGroup;
     float alto, ancho;
 
@@ -35,8 +36,8 @@ public class InteractableArea : MonoBehaviour
         _gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
         _gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
         _gridLayoutGroup.constraintCount = 4;
-        _gridLayoutGroup.cellSize = new Vector2( ancho*0.2f, alto*0.2f );
-        _gridLayoutGroup.spacing = new Vector2( ancho*0.11f, alto*0.11f );
+        _gridLayoutGroup.cellSize = new Vector2( ancho*cellSize, alto*cellSize );
+        _gridLayoutGroup.spacing = new Vector2( ancho*cellSpace, alto*cellSpace );
 
         for (int i = 0; i < transform.childCount; i++)
         {
