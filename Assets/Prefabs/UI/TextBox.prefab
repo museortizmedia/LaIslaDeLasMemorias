@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Juan el Jardinero
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89aba76a531816041b14f0109fac3e74, type: 2}
+  m_sharedMaterial: {fileID: -8949438544481834597, guid: 89aba76a531816041b14f0109fac3e74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.9
+  m_fontSize: 51.15
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -870,8 +870,8 @@ MonoBehaviour:
     en mis macetas m\xE1gicas para cubrir de flores el jard\xEDn, pero hoy no recuerdo
     c\xF3mo hacerlo. \xBFPuedes ayudarme a sembrar?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 89aba76a531816041b14f0109fac3e74, type: 2}
+  m_sharedMaterial: {fileID: -8949438544481834597, guid: 89aba76a531816041b14f0109fac3e74, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
