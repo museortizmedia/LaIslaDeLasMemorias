@@ -7,10 +7,14 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 [Serializable]
-public class TextBoxDialog{
+public class TextBoxDialog
+{
     public string Title;
     public string Content;
     public AudioClip Audio;
+    public Sprite Personaje;
+    public enum SpritePos {Izquierda,Centro,Derecha}
+    public SpritePos SpritePosition = SpritePos.Centro;
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -18,6 +22,7 @@ public class TextBoxController : MonoBehaviour
 {    
     public List<TextBoxDialog> Dialogs = new List<TextBoxDialog>();
     public TextMeshProUGUI TitleBox, ContentBox;
+    public Image PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer;
     public Button NextBTN, BackBTN;
     [SerializeField] int _currentI = 0;
     public int CurrentI
@@ -76,6 +81,14 @@ public class TextBoxController : MonoBehaviour
                 StartCoroutine(nameof(WaitDialog));
             }
         }
+        Image[] images = new Image[]{PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer};
+        foreach (var image in images)
+        {
+            image.gameObject.SetActive(false);
+        }
+        images[(int)Dialogs[CurrentI].SpritePosition].sprite = Dialogs[CurrentI].Personaje;
+        images[(int)Dialogs[CurrentI].SpritePosition].gameObject.SetActive(true);
+        
     }
 
     IEnumerator WaitDialog(){
