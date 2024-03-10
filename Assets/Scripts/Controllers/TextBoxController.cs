@@ -76,11 +76,12 @@ public class TextBoxController : MonoBehaviour
         _as.clip = Dialogs[CurrentI].Audio;
         if(_as.clip!=null){
             _as.Play();
-            if(_currentI==Dialogs.Count-1)
-            {
-                StartCoroutine(nameof(WaitDialog));
-            }
         }
+        if(_currentI==Dialogs.Count-1)
+        {
+            StartCoroutine(nameof(WaitDialog));
+        }
+
         Image[] images = new Image[]{PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer};
         foreach (var image in images)
         {
@@ -92,7 +93,11 @@ public class TextBoxController : MonoBehaviour
     }
 
     IEnumerator WaitDialog(){
-        yield return new WaitForSeconds(_as.clip.length+secondsAfterFinish);
+         if(_as.clip!=null){
+            yield return new WaitForSeconds( _as.clip.length + secondsAfterFinish );
+         }else{
+            yield return new WaitForSeconds( secondsAfterFinish );
+         }
         OnFinish?.Invoke();
     }
 }

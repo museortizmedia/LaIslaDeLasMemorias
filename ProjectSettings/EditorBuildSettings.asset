@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Ambientes/Teatro/1 ElGranLienzoDeSebastian.unity
     guid: 4886cc592e16ff04ab63b6e73b58847a
   - enabled: 1
-    path: Assets/Scenes/Ambientes/Huerto/1 SiembraSecuencial.unity
+    path: Assets/Scenes/Ambientes/Huerta/1 SiembraSecuencial.unity
     guid: a287eaa356f034d41a945b050115ca03
   - enabled: 1
-    path: Assets/Scenes/Ambientes/Huerto/2 RiegoProgramado.unity
+    path: Assets/Scenes/Ambientes/Huerta/2 RiegoProgramado.unity
     guid: 70a382ccf8a267a41831abedd3c28732
   - enabled: 1
     path: Assets/Scenes/Ambientes/Granja/1 ClasificacionAnimales.unity
