@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ExperienceController : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class ExperienceController : MonoBehaviour
         _canvasIntroPrefab = Resources.Load<GameObject>("Prefabs/CanvasIntro");
         _scriptableIntroMensajes = Resources.Load<ScriptableIntroMensajes>("Scriptables/IntroMensajesScriptable");
         
-        
     }
 
     private void Start() {
@@ -37,7 +37,7 @@ public class ExperienceController : MonoBehaviour
         _canvasIntro = Instantiate(_canvasIntroPrefab, transform);
         _canvasIntro.SetActive(false);
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).Dialogs =
-        _scriptableIntroMensajes.TodosLosDialogos[Manager._ambienteActual].DialogoActividades[Manager._actividadActual].Dialogo;
+        _scriptableIntroMensajes.TodosLosDialogos[Manager._ambienteActual-1].DialogoActividades[Manager._actividadActual-1].Dialogo;
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).OnFinish.AddListener( ()=>{OnStartExperience?.Invoke();} );
         
         _canvasIntro.SetActive(true);        

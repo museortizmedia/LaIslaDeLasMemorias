@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InteractableManager : MonoBehaviour, IManager
 {
+    //contar jugadores para definir una seleccion por participacion conjunta (verificar la cantidad de jugadores en sus areas)
     [SerializeField] List<int> _users;
     public List<int> Users {get=>_users; set { _users=value; } }
     public ScriptableUserSprite UserIcons;
