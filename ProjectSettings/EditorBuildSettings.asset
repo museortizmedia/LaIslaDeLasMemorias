@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Generals/Configuracion.unity
     guid: 61f8f1e693597a04980d097b38d876ba
   - enabled: 1
-    path: Assets/Scenes/ExampleMechanics/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Ambientes/Teatro/1 ElGranLienzoDeSebastian.unity
     guid: 4886cc592e16ff04ab63b6e73b58847a
   - enabled: 1

@@ -7,6 +7,7 @@ public class Managers : MonoBehaviour
 {
     public static Managers Instance;
     public List<Component> _managers = new List<Component>();
+    public ScriptableActivitiesInfo scriptableActivitiesInfo;
 
     public enum GameState { Splash, Configuration, Inicio, Experiencia, Victory, Fail }
     [SerializeField] GameState _gameState = GameState.Splash;
@@ -17,6 +18,9 @@ public class Managers : MonoBehaviour
             ChangeGameState();
         }
     }
+    public int _ambienteActual, _actividadActual;
+
+
     private void Awake()
     {
         if (Instance != null)
@@ -49,8 +53,10 @@ public class Managers : MonoBehaviour
         switch(gameState){
             case GameState.Configuration:
             Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
-            SceneManager.LoadScene(1);
-            
+            SceneManager.LoadScene("Configuracion");
+            break;
+            case GameState.Inicio:
+            SceneManager.LoadScene(scriptableActivitiesInfo.Ambientes[_ambienteActual]._activitiesNames[_actividadActual]._scene.name);
             break;
             default:
             break;

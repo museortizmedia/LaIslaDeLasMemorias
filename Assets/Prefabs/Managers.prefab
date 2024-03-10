@@ -758,7 +758,7 @@ Transform:
   - {fileID: 6666075830798127071}
   - {fileID: 2058630775486161896}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8185027393526532683
 MonoBehaviour:
@@ -773,7 +773,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _managers: []
+  scriptableActivitiesInfo: {fileID: 11400000, guid: 15d8f7cbbd7548b4b9283e0d3d37b991, type: 2}
   _gameState: 0
+  _ambienteActual: 0
+  _actividadActual: 0
 --- !u!1 &3490857955605029224
 GameObject:
   m_ObjectHideFlags: 0

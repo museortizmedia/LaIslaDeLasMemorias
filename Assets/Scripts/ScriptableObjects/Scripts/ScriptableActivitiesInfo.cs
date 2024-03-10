@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 // Define una clase para el ScriptableObject
@@ -13,6 +14,7 @@ public class ScriptableActivitiesInfo : ScriptableObject
         public struct Actividad{
             public string _name;
             public string _desc;
+            public SceneAsset _scene;
         }
         public string _name;
         public List<Actividad> _activitiesNames;
