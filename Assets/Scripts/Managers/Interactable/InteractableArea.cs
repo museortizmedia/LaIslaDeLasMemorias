@@ -53,4 +53,15 @@ public class InteractableArea : MonoBehaviour
         }
         
     }
+    private void OnEnable() {
+        Invoke(nameof(RegistrarArea), 0.5f);
+    }
+    private void OnDisable() {
+        InteractableManager interactableManager = (InteractableManager)Managers.Instance._managers[2];
+        interactableManager.AddInteractionRemove(this);
+    }
+    void RegistrarArea(){
+        InteractableManager interactableManager = (InteractableManager)Managers.Instance._managers[2];
+        interactableManager.AddInteractionArea(this);
+    }
 }

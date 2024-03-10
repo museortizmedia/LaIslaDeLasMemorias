@@ -21,15 +21,12 @@ public class Managers : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
         Instance = this;
         DontDestroyOnLoad(this);
-    }
 
-    private void Start()
-    {
         Component[] children = GetComponentsInChildren<Component>();
         foreach (Component child in children)
         {
@@ -38,6 +35,11 @@ public class Managers : MonoBehaviour
                 _managers.Add((Component)manager);
             }
         }
+    }
+
+    private void Start()
+    {
+        //
     }
     public void SetGameState(int newGameState){
         gameState = (GameState)newGameState;

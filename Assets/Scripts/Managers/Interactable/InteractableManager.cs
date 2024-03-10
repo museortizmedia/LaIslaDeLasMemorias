@@ -9,7 +9,7 @@ public class InteractableManager : MonoBehaviour, IManager
     public List<int> Users {get=>_users; set { _users=value; } }
     public ScriptableUserSprite UserIcons;
     [SerializeField] Transform _usersBar;
-    public InteractableArea[] InteractionAreas;
+    public List<InteractableArea> InteractionAreas = new List<InteractableArea>();
 
     private void Start()
     {
@@ -32,7 +32,7 @@ public class InteractableManager : MonoBehaviour, IManager
     }
     public void OnInteraction(ButtonData buttonData){
         Debug.Log("Usuario: "+buttonData.DeviceId+" interactuó con: "+buttonData.ButtonId);
-        if(InteractionAreas.Length!=0){
+        if(InteractionAreas.Count!=0){
             //verificar si es una accion valida para este contexto
             //bool isAcept = false;
             foreach (InteractableArea interactionArea in InteractionAreas)
@@ -67,5 +67,14 @@ public class InteractableManager : MonoBehaviour, IManager
     {
         area.UsersVotes.Add(playerId);
         area.VotesCount++;
+    }
+    public void AddInteractionArea(InteractableArea interArea){
+        InteractionAreas.Add(interArea);
+    }
+    public void AddInteractionRemove(InteractableArea interArea){
+        InteractionAreas.Remove(interArea);
+    }
+    public void ClearInteractionAreas(){
+        InteractionAreas.Clear();
     }
 }

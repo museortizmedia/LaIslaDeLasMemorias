@@ -18,8 +18,8 @@ public class InputManager : MonoBehaviour, IManager
             _isBrainConect=value;
             if(value)
             {
-                OnBrainConnect?.Invoke();
-                OnAnyButtonPress?.Invoke(new ButtonData{DeviceId=0, ButtonId=0}); //activar rol Mentor
+                OnCerebroDetected.Raise();
+                OnBrainConnect?.Invoke();                
             }else{
                 OnBrainDisconnect?.Invoke();
             }
@@ -29,6 +29,7 @@ public class InputManager : MonoBehaviour, IManager
     [SerializeField] SerialReader _serialReader;
     
     [Header("Eventos de Entrada")]
+    public GameEvent OnCerebroDetected;
     [SerializeField] UnityEvent OnBrainConnect;
     [SerializeField] UnityEvent  OnBrainDisconnect;
     Dictionary<KeyCode, UnityAction> _accionesTeclas = new Dictionary<KeyCode, UnityAction>();

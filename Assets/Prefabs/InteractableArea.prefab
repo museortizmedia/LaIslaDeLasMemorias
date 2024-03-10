@@ -515,10 +515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858e2e7a9e6e1cb498ccb6b4509605b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButonIdAcepted: 02000000
+  ButonIdAcepted: 
   UsersVotes: 
   _votesCount: 0
-  UserIcons: {fileID: 0}
+  UserIcons: {fileID: 11400000, guid: 167be22bd9cd99448b30521decdc4875, type: 2}
   cellSize: 0.2
   cellSpace: 0.11
 --- !u!1 &6717442605777193337

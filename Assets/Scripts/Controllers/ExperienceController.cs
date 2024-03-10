@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ExperienceController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Managers Manager;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Manager = Managers.Instance;
     }
 }

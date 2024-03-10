@@ -72,17 +72,10 @@ public class SerialReader : MonoBehaviour, IManager
     }
     void DataActions(string receivedData){
         // Verifica si la cadena recibida contiene la secuencia deseada
-        Match matchButton = Regex.Match(receivedData, @"\[\d{2}-\d{2}\]");
         Match matchAPI = Regex.Match(receivedData, @"\[s:(.*?)\-r:(.*?)\]");
+        Match matchButton = Regex.Match(receivedData, @"\[\d{2}-\d{2}\]");
 
-        //recibe una orden de interacción
-        if (matchButton.Success)
-        {
-            Debug.Log("Secuencia detectada: " + receivedData);
-            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[1]) });
-            receivedData = "";
-            return;
-        }
+
 
         //recibe una solicitud API
         if (matchAPI.Success)
@@ -93,6 +86,15 @@ public class SerialReader : MonoBehaviour, IManager
             Debug.Log("Secuencia [s: " + requestValue + " - r: " + responseValue + "] detectada");
             CerebroRequestResponse(requestValue, responseValue);
             receivedData = ""; return;
+        }
+
+                //recibe una orden de interacción
+        if (matchButton.Success)
+        {
+            Debug.Log("Secuencia detectada: " + receivedData);
+            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[1]) });
+            receivedData = "";
+            return;
         }
     }
     public void SimuleSerialData(string simuledData){
