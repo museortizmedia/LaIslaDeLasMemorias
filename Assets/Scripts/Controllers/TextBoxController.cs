@@ -19,7 +19,8 @@ public class TextBoxDialog
 
 [RequireComponent(typeof(AudioSource))]
 public class TextBoxController : MonoBehaviour
-{    
+{
+    //boton seguir con chulo al terminar omitir tiempo
     public List<TextBoxDialog> Dialogs = new List<TextBoxDialog>();
     public TextMeshProUGUI TitleBox, ContentBox;
     public Image PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer;

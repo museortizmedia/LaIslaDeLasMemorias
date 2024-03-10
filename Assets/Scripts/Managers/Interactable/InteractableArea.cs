@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
+    //definir evento cuando se escoge por esta area
     public int[] ButonIdAcepted;
     public List<int> UsersVotes;
     [SerializeField] int _votesCount;
