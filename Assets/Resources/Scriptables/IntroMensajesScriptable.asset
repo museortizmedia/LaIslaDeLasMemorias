@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0780c7b6f174446b8b96a6c4216981, type: 3}
+  m_Name: IntroMensajesScriptable
+  m_EditorClassIdentifier: 
+  TodosLosDialogos:
+  - _name: Teatro
+    DialogoActividades:
+    - _name: El Lienzo de Sebastian
+      Dialogo:
+      - Title: "Sebasti\xE1n el Artista"
+        Content: "\xA1Hola! Soy Sebasti\xE1n. En mi teatro todas las obras de arte
+          cobran vida \xBFQuieres pintar algo?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: -1860527514, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 0
+  - _name: Huerta
+    DialogoActividades:
+    - _name: Siembra Secuencial
+      Dialogo:
+      - Title: Juan el Jardinero
+        Content: "\xA1Hola! Soy Juan, el jardinero. Todas las ma\xF1anas planto semillas
+          en mis macetas m\xE1gicas para cubrir de flores el jard\xEDn, pero hoy
+          no recuerdo c\xF3mo hacerlo. \xBFPuedes ayudarme a sembrar?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+    - _name: Riego Programado
+      Dialogo:
+      - Title: Juan el Jardinero
+        Content: "\xA1Hola! Soy Juan, el jardinero. Tengo problemas para recordar
+          cu\xE1ndo regar las plantas de la huerta. \xBFMe ayudas a estar atento
+          y regarla?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+  - _name: Granja
+    DialogoActividades:
+    - _name: "Clasificaci\xF3n de Animales"
+      Dialogo:
+      - Title: Liliana la Granjera
+        Content: "\xA1Hola! Soy Liliana la granjera. Varios animales vienen del bosque
+          m\xE1gico y he olvidado a d\xF3nde enviarlos \xBFMe ayudas a separarlos?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: 1351081170, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+    - _name: "Ordenaci\xF3n de Herramientas"
+      Dialogo:
+      - Title: Liliana la Granjera
+        Content: "\xA1Hola! Soy Liliana la granjera. Hay un caos en el almac\xE9n
+          de herramientas porque he olvidado cu\xE1les son las herramientas que debo
+          acomodar. \xA1Ay\xFAdame a recordarlas!"
+        Audio: {fileID: 0}
+        Personaje: {fileID: 1351081170, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+  - _name: Cocina
+    DialogoActividades:
+    - _name: Lavado de manos
+      Dialogo:
+      - Title: Ana la chef
+        Content: "Soy Ana. \xA1Bienvenido al rinc\xF3n m\xE1s sabroso de la isla!
+          Antes de cocinar, hay algo importante que olvid\xE9 hacer. \xA1Necesito
+          lavarme las manos! \xBFPuedes ayudarme a recordar la secuencia adecuada
+          para garantizar la higiene en la cocina?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: 63081371, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+    - _name: "Clasificaci\xF3n de ingrediente"
+      Dialogo:
+      - Title: Ana la chef
+        Content: "Soy Ana. \xA1Parece que olvid\xE9 los ingredientes para cocinar
+          algo delicioso! \xBFPuedes ayudarme a encontrar las parejas de ingredientes
+          para que podamos preparar una deliciosa comida juntos?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: 63081371, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+  - _name: Almacen
+    DialogoActividades:
+    - _name: "Seleccionar Categor\xEDas"
+      Dialogo:
+      - Title: Pedro el Comerciante
+        Content: "Hola, soy Pedro. Necesito llenar la estanter\xEDa de ropa y no
+          recuerdo donde van ubicadas \xBFMe colaboras a acomodar estas prendas?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+    - _name: "Simulaci\xF3n de Ventas"
+      Dialogo:
+      - Title: Pedro el Comerciante
+        Content: "Aqu\xED Pedro, estoy realizando mis ventas matutinas y no recuerdo
+          dar el cambio correcto \xBFPodr\xEDas ayudarme a vender estas prendas?"
+        Audio: {fileID: 0}
+        Personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2

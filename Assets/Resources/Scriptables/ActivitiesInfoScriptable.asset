@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1407a05835eaa0479242828e7f64629, type: 3}
+  m_Name: ActivitiesInfoScriptable
+  m_EditorClassIdentifier: 
+  Ambientes:
+  - _name: Teatro
+    _activitiesNames:
+    - _name: "El gran lienzo de Sebasti\xE1n"
+      _desc: "Familiarizarse con las modalidades de interacci\xF3n."
+      _scene: {fileID: 102900000, guid: 4886cc592e16ff04ab63b6e73b58847a, type: 3}
+  - _name: Huerta
+    _activitiesNames:
+    - _name: Siembra Secuencial
+      _desc: "Ayuda a Juan a recordar c\xF3mo sembrar siguiendo patrones"
+      _scene: {fileID: 102900000, guid: a287eaa356f034d41a945b050115ca03, type: 3}
+    - _name: Riego Programado
+      _desc: "Ayuda a Juan a recordar c\xF3mo y cu\xE1ndo regar las plantas"
+      _scene: {fileID: 102900000, guid: 70a382ccf8a267a41831abedd3c28732, type: 3}
+  - _name: Granja
+    _activitiesNames:
+    - _name: "Clasificaci\xF3n de Animales"
+      _desc: "Clasificar diferentes tipos de animales en tres categor\xEDas espec\xEDficas:
+        dom\xE9sticos, salvajes y acu\xE1ticos."
+      _scene: {fileID: 102900000, guid: 162197b6176f18046b75c9af4c183e20, type: 3}
+    - _name: "Ordenaci\xF3n de Herramientas"
+      _desc: "El objetivo de esta actividad es desarrollar la memoria y la capacidad
+        de asociaci\xF3n al ordenar correctamente los nombres de las herramientas,
+        sus im\xE1genes y sus funciones relacionadas utilizando una palanca como
+        dispositivo de selecci\xF3n."
+      _scene: {fileID: 102900000, guid: 2677d5a032a199f4ea6f0c6da0c56998, type: 3}
+  - _name: Cocina
+    _activitiesNames:
+    - _name: Lavado de manos
+      _desc: Aprender la secuencia de lavado de manos y reconocer el orden
+      _scene: {fileID: 102900000, guid: f6d4b20145191c64cb24114ea34c4866, type: 3}
+    - _name: "Clasificaci\xF3n de ingredientes"
+      _desc: "El objetivo de esta actividad es agrupar los ingredientes de una receta
+        previamente escogida con su par. Preparaciones disponibles (salpic\xF3n:
+        papaya, banano, pi\xF1a, bebida roja), (sandwich: pan tajado, jam\xF3n, queso,
+        mantequilla), (panelada: lim\xF3n, agua, panela, az\xFAcar), (sopa de verduras:
+        agua, zanahoria, cebolla, papa)"
+      _scene: {fileID: 102900000, guid: fb56d05fb98827942b053c975e6ddc94, type: 3}
+  - _name: "Almac\xE9n"
+    _activitiesNames:
+    - _name: "Seleccionar Categor\xEDas"
+      _desc: "El objetivo de esta actividad es clasificar la ropa del almac\xE9n
+        seg\xFAn su tipo (camiseta, pantal\xF3n y zapatos) y su respectivo color
+        (azul y rojo)."
+      _scene: {fileID: 102900000, guid: 10d961d10904e1144910de5446a7703b, type: 3}
+    - _name: "Simulaci\xF3n de Ventas"
+      _desc: "El objetivo es realizar una simulaci\xF3n de venta simple de una prenda
+        y devolver el cambio correctamente."
+      _scene: {fileID: 102900000, guid: 5ba4298423d52014ba5fdd921dc77823, type: 3}
