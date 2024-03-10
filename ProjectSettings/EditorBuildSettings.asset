@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Generals/SplashImage.unity
     guid: b56dac11da4e38b4b8056e331a658d32
   - enabled: 1
-    path: Assets/Scenes/Generals/Inicio.unity
+    path: Assets/Scenes/Generals/Configuracion.unity
     guid: 61f8f1e693597a04980d097b38d876ba
   - enabled: 1
     path: Assets/Scenes/ExampleMechanics/SampleScene.unity
