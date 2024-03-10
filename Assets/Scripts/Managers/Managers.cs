@@ -43,7 +43,7 @@ public class Managers : MonoBehaviour
 
     private void Start()
     {
-        //
+        scriptableActivitiesInfo = Resources.Load<ScriptableActivitiesInfo>("Scriptables/ActivitiesInfoScriptable");
     }
     public void SetGameState(int newGameState){
         gameState = (GameState)newGameState;

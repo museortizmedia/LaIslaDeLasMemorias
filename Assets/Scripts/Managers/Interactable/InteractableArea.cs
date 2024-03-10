@@ -28,7 +28,7 @@ public class InteractableArea : MonoBehaviour
         if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}
     }
     private void Start() {
-        UserIcons = Resources.Load<ScriptableUserSprite>("Scriptables/ScriptableUsersSprite");
+        UserIcons = Resources.Load<ScriptableUserSprite>("Scriptables/UsersSpriteScriptable");
 
         ancho = GetComponent<RectTransform>().rect.width;
         alto = GetComponent<RectTransform>().rect.height;

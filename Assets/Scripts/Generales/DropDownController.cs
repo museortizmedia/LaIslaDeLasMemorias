@@ -8,6 +8,10 @@ public class DropDownController : MonoBehaviour
     public TMP_Dropdown DropAmbiente, DropActividad;
     public TextMeshProUGUI Description;
     public ScriptableActivitiesInfo GameInfo;
+
+    private void Start() {
+        GameInfo = Resources.Load<ScriptableActivitiesInfo>("Scriptables/ActivitiesInfoScriptable");
+    }
     
     public void SetAmbientsDrop(){
         List<TMP_Dropdown.OptionData> dropdownOptions = new List<TMP_Dropdown.OptionData>();
