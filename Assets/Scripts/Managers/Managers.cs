@@ -13,7 +13,6 @@ public class Managers : MonoBehaviour
     public GameState gameState {
         get=>_gameState;
         set{
-            Debug.Log(value);
             _gameState = value;
             ChangeGameState();
         }
@@ -44,10 +43,12 @@ public class Managers : MonoBehaviour
         gameState = (GameState)newGameState;
     }
     void ChangeGameState(){
-        Debug.Log("Cambio de estado de juego a: "+gameState);
+        Debug.Log("GAME: Se cambió el estado de juego a: "+gameState);
         switch(gameState){
             case GameState.Configuration:
+            Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
             SceneManager.LoadScene(1);
+            
             break;
             default:
             break;

@@ -80,7 +80,8 @@ public class SerialReader : MonoBehaviour, IManager
         {
             Debug.Log("Secuencia detectada: " + receivedData);
             OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[1]) });
-            receivedData = ""; return;
+            receivedData = "";
+            return;
         }
 
         //recibe una solicitud API

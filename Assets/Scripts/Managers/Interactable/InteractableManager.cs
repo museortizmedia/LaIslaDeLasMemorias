@@ -35,15 +35,26 @@ public class InteractableManager : MonoBehaviour, IManager
         if(InteractionAreas.Length!=0){
             //verificar si es una accion valida para este contexto
             //bool isAcept = false;
-            for (int i = 0; i < InteractionAreas.Length; i++)
+            foreach (InteractableArea interactionArea in InteractionAreas)
             {
-                InteractableArea interactionArea = InteractionAreas[i];
-                if(interactionArea.ButonIdAcepted.Length==0){Debug.LogWarning("Su interactable area no tiene botones compatibles, asigne alguno", interactionArea.transform);return;}
-
-                for (int j = 0; j < interactionArea.ButonIdAcepted.Length; j++)
+                if (interactionArea == null)
                 {
-                    int butonID = interactionArea.ButonIdAcepted[j];
-                    if(butonID==buttonData.ButtonId){/*isAcept=true;*/MoveIcon(interactionArea, buttonData.DeviceId);}
+                    Debug.LogWarning("Su interactable area no existe", transform);
+                    continue;
+                }
+
+                if (interactionArea.ButonIdAcepted.Length == 0)
+                {
+                    Debug.LogWarning("Su interactable area es nula o no tiene botones compatibles, asigne alguno", interactionArea.transform);
+                    continue;
+                }
+
+                foreach (int buttonID in interactionArea.ButonIdAcepted)
+                {
+                    if (buttonID == buttonData.ButtonId)
+                    {
+                        MoveIcon(interactionArea, buttonData.DeviceId);
+                    }
                 }
             }
             //Debug.Log("La acción seleccionada "+(isAcept==true?"Es valida":"no es valida"));

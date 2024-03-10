@@ -454,10 +454,7 @@ MonoBehaviour:
   _users: 
   UserIcons: {fileID: 11400000, guid: 167be22bd9cd99448b30521decdc4875, type: 2}
   _usersBar: {fileID: 0}
-  InteractionAreas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  InteractionAreas: []
 --- !u!1 &2717333727413673963
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +527,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3194461485391017021}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8534266, y: -0.3408103, z: -0.042209625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -540,7 +537,7 @@ Transform:
   - {fileID: 6666075830798127071}
   - {fileID: 2058630775486161896}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8185027393526532683
 MonoBehaviour:
