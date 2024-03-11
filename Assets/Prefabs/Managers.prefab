@@ -758,7 +758,7 @@ Transform:
   - {fileID: 6666075830798127071}
   - {fileID: 2058630775486161896}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8185027393526532683
 MonoBehaviour:
@@ -896,6 +896,7 @@ MonoBehaviour:
   _isBrainConect: 0
   _serialReader: {fileID: 0}
   OnCerebroDetected: {fileID: 11400000, guid: 445edcdbb822de54089afd448ab7562a, type: 2}
+  OnCerebroUndetect: {fileID: 11400000, guid: 82fbd6bba5960e446a840a3a057862de, type: 2}
   OnBrainConnect:
     m_PersistentCalls:
       m_Calls: []
