@@ -25,20 +25,30 @@ public class TextBoxController : MonoBehaviour
     public TextMeshProUGUI TitleBox, ContentBox;
     public Image PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer;
     public Button NextBTN, BackBTN;
+    public Sprite ArrowSprite, DoneSprite;
     [SerializeField] int _currentI = 0;
     public int CurrentI
     {
         get { return _currentI; }
         set
         {
-            StopAllCoroutines();
+            //StopAllCoroutines();
             _currentI = value>=Dialogs.Count?0:value<0?Dialogs.Count:value;
-            NextBTN.gameObject.SetActive(_currentI < Dialogs.Count - 1);
+            NextBTN.gameObject.SetActive(_currentI < Dialogs.Count);
+            if(_currentI == Dialogs.Count-1){IsLastSlide=true;}else{IsLastSlide=false;}
             BackBTN.gameObject.SetActive(_currentI > 0);
             SetContentBox();
         }
     }
     public float secondsAfterFinish = 2f;
+    bool _isLastSlide;
+    public bool IsLastSlide{
+        get=>_isLastSlide;
+        set{
+            _isLastSlide = value;
+            NextBTN.GetComponent<Image>().sprite = value?DoneSprite:ArrowSprite;
+        }
+    }
     public UnityEvent OnFinish;
     [SerializeField] AudioSource _as;
 
@@ -66,6 +76,7 @@ public class TextBoxController : MonoBehaviour
     }
 
     public void GoNext(){
+        if(IsLastSlide){OnFinish?.Invoke();return;}
         CurrentI++;
     }
     public void GoBack(){
@@ -78,10 +89,6 @@ public class TextBoxController : MonoBehaviour
         if(_as.clip!=null){
             _as.Play();
         }
-        if(_currentI==Dialogs.Count-1)
-        {
-            StartCoroutine(nameof(WaitDialog));
-        }
 
         Image[] images = new Image[]{PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer};
         foreach (var image in images)
@@ -91,14 +98,5 @@ public class TextBoxController : MonoBehaviour
         images[(int)Dialogs[CurrentI].SpritePosition].sprite = Dialogs[CurrentI].Personaje;
         images[(int)Dialogs[CurrentI].SpritePosition].gameObject.SetActive(true);
         
-    }
-
-    IEnumerator WaitDialog(){
-         if(_as.clip!=null){
-            yield return new WaitForSeconds( _as.clip.length + secondsAfterFinish );
-         }else{
-            yield return new WaitForSeconds( secondsAfterFinish );
-         }
-        OnFinish?.Invoke();
     }
 }

@@ -19,17 +19,24 @@ public class InputManager : MonoBehaviour, IManager
             if(value)
             {
                 OnCerebroDetected.Raise();
-                OnBrainConnect?.Invoke();                
+                OnBrainConnect?.Invoke();
+                CancelInvoke();
+                _frecuenciaDeBusqueda=10;
+                InvokeRepeating(nameof(SearchForBrain), 1, _frecuenciaDeBusqueda);
+
             }else{
+                OnCerebroUndetect.Raise();
                 OnBrainDisconnect?.Invoke();
+                CancelInvoke();
+                _frecuenciaDeBusqueda=3;
+                InvokeRepeating(nameof(SearchForBrain), 1, _frecuenciaDeBusqueda);
             }
         }
     }
 
     [SerializeField] SerialReader _serialReader;
-    
-    [Header("Eventos de Entrada")]
-    public GameEvent OnCerebroDetected;
+    public GameEvent OnCerebroDetected, OnCerebroUndetect;
+    [Header("Eventos")]
     [SerializeField] UnityEvent OnBrainConnect;
     [SerializeField] UnityEvent  OnBrainDisconnect;
     Dictionary<KeyCode, UnityAction> _accionesTeclas = new Dictionary<KeyCode, UnityAction>();
@@ -50,8 +57,15 @@ public class InputManager : MonoBehaviour, IManager
     private void Start() {
         if(_serialReader==null){_serialReader = GetComponentInChildren<SerialReader>();}
 
-        ConfigTeclasMentor();        
+        ConfigTeclasMentor();      
+        IsBrainConect=false; 
     }
+    //brain connect
+    int _frecuenciaDeBusqueda = 1;
+    void SearchForBrain(){
+        _serialReader.SendSerialPortData(SerialReader.CerebroComds.Connect);
+    }
+    //braind connect
     
     private void Update() {
         HanldeTeclasMentor();
