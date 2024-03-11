@@ -45,6 +45,17 @@ public class Managers : MonoBehaviour
     {
         scriptableActivitiesInfo = Resources.Load<ScriptableActivitiesInfo>("Scriptables/ActivitiesInfoScriptable");
     }
+    public T GetManager<T>() where T : Component
+    {
+        foreach (var manager in _managers)
+        {
+            if (manager is T)
+            {
+                return (T)manager;
+            }
+        }
+        return null;
+    }
     public void SetGameState(int newGameState){
         gameState = (GameState)newGameState;
     }
@@ -54,6 +65,7 @@ public class Managers : MonoBehaviour
             case GameState.Configuration:
             Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
             SceneManager.LoadScene("Configuracion");
+            _ambienteActual = 0; _actividadActual=0;
             break;
             case GameState.Inicio:
             SceneManager.LoadScene(scriptableActivitiesInfo.Ambientes[_ambienteActual]._activitiesNames[_actividadActual]._scene.name);
@@ -61,5 +73,8 @@ public class Managers : MonoBehaviour
             default:
             break;
         }
+    }
+    public void DebugLog(string text){
+        Debug.Log(text);
     }
 }

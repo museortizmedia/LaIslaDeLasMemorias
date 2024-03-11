@@ -1,53 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ExperienceController : MonoBehaviour
+public abstract class ExperienceController : MonoBehaviour
 {
     //[TextArea] [SerializeField] string instrucciones = "¡Hola! Espero que este mensaje sea suficiente para aprender a usar tu controlador de experiencia.";
 
-    [Header("Inspector de Experience Controller")]
-    public Managers Manager;
-    [SerializeField] ScriptableIntroMensajes _scriptableIntroMensajes;
+    [HideInInspector] public Managers Manager;
+    ScriptableIntroMensajes _scriptableIntroMensajes;
     GameObject _canvasIntroPrefab, _canvasIntro;
-
-    public UnityEvent OnStartExperience;
     
+    
+    [Header("Inspector de Experience Controller")]
+    [Tooltip("Se ejecuta al terminar la Introducción de Intro.")]
+    public UnityEvent OnStartExperience;
     [Header("Inspector de Experience Personalizado")]
     public string DevName = "Escribe tu nombre aquí";
 
-    private void Awake()
-    {
-        
 
+    protected virtual void Awake()
+    {
         //Iniciar Intro
         _canvasIntroPrefab = Resources.Load<GameObject>("Prefabs/CanvasIntro");
         _scriptableIntroMensajes = Resources.Load<ScriptableIntroMensajes>("Scriptables/IntroMensajesScriptable");
-        
     }
-
-    private void Start() {
+    public virtual void Start(){
         Manager = Managers.Instance;
         Invoke(nameof(StartIntro), 0.5f);
-    }
-
-    public void StartIntro(){
         _canvasIntro = Instantiate(_canvasIntroPrefab, transform);
         _canvasIntro.SetActive(false);
+        Debug.Log("Se incializó ExperienceController");
+    }
+
+    /// <summary>
+    /// Inicia la introducción del Centro usando TextBox
+    /// </summary>
+    void StartIntro(){
+
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).Dialogs =
-        _scriptableIntroMensajes.TodosLosDialogos[Manager._ambienteActual-1].DialogoActividades[Manager._actividadActual-1].Dialogo;
-        _canvasIntro.GetComponentInChildren<TextBoxController>(true).OnFinish.AddListener( ()=>{OnStartExperience?.Invoke();} );
-        
+        _scriptableIntroMensajes.TodosLosDialogos[Manager._ambienteActual].DialogoActividades[Manager._actividadActual].Dialogo;
+        _canvasIntro.GetComponentInChildren<TextBoxController>(true).OnFinish.AddListener( ()=>{ Destroy(_canvasIntro); OnStartExperience?.Invoke();} );
         _canvasIntro.SetActive(true);        
     }
 
-    public void StartExperience(){
-        //
-    }
-
-    public void EndExperience(){
-        //
+    public virtual void EndExperience(){
+        Manager.gameState = Managers.GameState.Configuration;
     }
 }

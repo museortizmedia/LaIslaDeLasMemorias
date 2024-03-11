@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 853153669007798242}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &3095707954625986772
 MonoBehaviour:
@@ -275,6 +275,10 @@ PrefabInstance:
     - target: {fileID: 6943556297305105888, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210368715269714429, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_fontSize
+      value: 22.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

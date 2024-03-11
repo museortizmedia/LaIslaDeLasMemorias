@@ -6,11 +6,15 @@ using System.Text.RegularExpressions;
 
 public class SerialReader : MonoBehaviour, IManager
 {
+    [Tooltip("Ignora la apertura del puerto serial")]
     public bool _isSimulation;
+    [Tooltip("Si está activo mostrará en consola las acciones por el Serial")]
+    public bool IsDebuging;
     private SerialPort serialPort;
     private Thread readThread;
     private string receivedData = "";
     [SerializeField] UnityEvent<ButtonData> OnDataRecive;
+    [Tooltip("Establece el estado de la conexión de Brain")]
     [SerializeField] UnityEvent<bool> OnBrainConnectState;
 
 
@@ -83,7 +87,7 @@ public class SerialReader : MonoBehaviour, IManager
             string requestValue = matchAPI.Groups[1].Value;
             string responseValue = matchAPI.Groups[2].Value;
 
-            Debug.Log("Secuencia [s: " + requestValue + " - r: " + responseValue + "] detectada");
+            if(IsDebuging){Debug.Log("Secuencia [s: " + requestValue + " - r: " + responseValue + "] detectada");}
             CerebroRequestResponse(requestValue, responseValue);
             receivedData = ""; return;
         }
@@ -91,7 +95,7 @@ public class SerialReader : MonoBehaviour, IManager
                 //recibe una orden de interacción
         if (matchButton.Success)
         {
-            Debug.Log("Secuencia detectada: " + receivedData);
+            if(IsDebuging){Debug.Log("Secuencia detectada: " + receivedData);}
             OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[1]) });
             receivedData = "";
             return;
@@ -149,6 +153,7 @@ public class SerialReader : MonoBehaviour, IManager
     /// <param name="command">comando escogido del CerebroComds</param>
     public void SendSerialPortData(CerebroComds command)
     {
+        if(IsDebuging){Debug.Log("Enviando comando: "+command);}
         if (serialPort != null && serialPort.IsOpen)
         {
             string[] letters = command.ToString().Split();
@@ -158,6 +163,10 @@ public class SerialReader : MonoBehaviour, IManager
             }
         }       
     }
+    /// <summary>
+    /// Envia un dato string al cerebro, considere usar comandos predefinidos para acciones epecíficas.
+    /// </summary>
+    /// <param name="data">string que desea enviar</param>
     public void SendSerialPortData(string data)
     {
         if (serialPort != null && serialPort.IsOpen)
