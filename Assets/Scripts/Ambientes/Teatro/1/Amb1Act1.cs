@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Amb1Act1 : ExperienceController
 {
+    public List<int> buttonsUsedIndex = new List<int>();
+    public TutorialCardController TableController = new TutorialCardController();
+
     public override void Start()
     {
         base.Start(); //llamada obligatoria al comenzar
@@ -46,6 +49,44 @@ public class Amb1Act1 : ExperienceController
         else
         {
             Debug.LogError("No se encontró el Canvas 'WorkSpace'");
+        }
+    }
+
+    void NextButton()
+    {
+        List<int> availableIndexes = new List<int>();
+        for (int i = 0; i < TableController.buttons.Count; i++)
+        {
+            if (!buttonsUsedIndex.Contains(i))
+            {
+                availableIndexes.Add(i);
+            }
+        }
+
+        if (availableIndexes.Count == 0)
+        {
+            Finalizar();
+            return;
+        }
+
+        int randomIndex = Random.Range(0, availableIndexes.Count);
+        int selectedIndex = availableIndexes[randomIndex];
+
+        buttonsUsedIndex.Add(selectedIndex);
+        TableController.ShowInfo(selectedIndex, "Selecciona el botón que se indica en la imagen para realizar otro trazado");
+    }
+
+    public void ShowFirstTutorial()
+    {
+        TableController.ShowInfo(2, "Selecciona el botón “E” de la mesa interactiva para pintar el primer fragmento de la pintura");
+    }
+
+    // TODO Delete this function when the InteractableArea Call the Events
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            NextButton();
         }
     }
 
