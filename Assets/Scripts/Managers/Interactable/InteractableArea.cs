@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
+    //definir evento cuando se escoge por esta area
     public int[] ButonIdAcepted;
     public List<int> UsersVotes;
     [SerializeField] int _votesCount;
@@ -16,11 +16,8 @@ public class InteractableArea : MonoBehaviour
         {
             _votesCount = value;
             MostrarJugadoresUI();
-            VerificarAccion();
         }
     }
-    public UnityEvent OnChooseThisArea;
-    public float SecondToRestart = 2f;
     [SerializeField] ScriptableUserSprite UserIcons;
 
     //ajustes visuales
@@ -30,7 +27,6 @@ public class InteractableArea : MonoBehaviour
 
     private void Awake() {
         if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}
-        OnChooseThisArea.AddListener(()=>{Invoke(nameof(ReinciarInteraction), SecondToRestart);});
     }
     private void Start() {
         UserIcons = Resources.Load<ScriptableUserSprite>("Scriptables/UsersSpriteScriptable");
@@ -53,29 +49,20 @@ public class InteractableArea : MonoBehaviour
     void MostrarJugadoresUI(){
 
         for (int j = 0; j < transform.childCount; j++)
-        {
+         {
             transform.GetChild(j).gameObject.SetActive(UsersVotes.Contains(j+1));
         }
         
-    }
-    void VerificarAccion(){
-        if(VotesCount == Managers.Instance.GetManager<InteractableManager>().Users.Count-1){
-            OnChooseThisArea?.Invoke();
-            Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(false);            
-        }
-    }
-    void ReinciarInteraction(){
-        Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(true); 
     }
     private void OnEnable() {
         Invoke(nameof(RegistrarArea), 0.5f);
     }
     private void OnDisable() {
-        InteractableManager interactableManager = Managers.Instance.GetManager<InteractableManager>();
+        InteractableManager interactableManager = (InteractableManager)Managers.Instance._managers[2];
         interactableManager.AddInteractionRemove(this);
     }
     void RegistrarArea(){
-        InteractableManager interactableManager = Managers.Instance.GetManager<InteractableManager>();
+        InteractableManager interactableManager = (InteractableManager)Managers.Instance._managers[2];
         interactableManager.AddInteractionArea(this);
     }
 }
