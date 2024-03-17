@@ -9,7 +9,7 @@ public class Managers : MonoBehaviour
     public List<Component> _managers = new List<Component>();
     public ScriptableActivitiesInfo scriptableActivitiesInfo;
 
-    public enum GameState { Splash, Configuration, Inicio, Experiencia, Victory, Fail }
+    public enum GameState { Splash, Configuration, Inicio }
     [SerializeField] GameState _gameState = GameState.Splash;
     public GameState EstadoGame {
         get=>_gameState;
@@ -18,7 +18,9 @@ public class Managers : MonoBehaviour
             ChangeGameState();
         }
     }
-    public int _ambienteActual, _actividadActual;
+    [SerializeField] int _ambienteActual, _actividadActual;
+    public int AmbienteActual {get=>_ambienteActual; set=>_ambienteActual=value;}
+    public int ActividadActual {get=>_actividadActual; set=>_actividadActual=value;}
 
 
     private void Awake()

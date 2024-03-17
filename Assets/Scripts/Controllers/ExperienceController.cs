@@ -41,7 +41,7 @@ public abstract class ExperienceController : MonoBehaviour
     void StartIntro(){
 
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).Dialogs =
-        _scriptableIntroMensajes.TodosLosDialogos[Manager._ambienteActual].DialogoActividades[Manager._actividadActual].Dialogo;
+        _scriptableIntroMensajes.TodosLosDialogos[Manager.AmbienteActual].DialogoActividades[Manager.ActividadActual].Dialogo;
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).OnFinish.AddListener( ()=>{ Destroy(_canvasIntro); OnStartExperience?.Invoke();} );
         _canvasIntro.SetActive(true);        
     }
