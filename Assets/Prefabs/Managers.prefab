@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSimulation: 1
+  IsDebuging: 0
   OnDataRecive:
     m_PersistentCalls:
       m_Calls:
@@ -552,10 +553,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b930352205d404681878656130efd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _users: 00000000
+  IsActive: 1
+  IsDebug: 0
+  _users: 
   UserIcons: {fileID: 11400000, guid: 167be22bd9cd99448b30521decdc4875, type: 2}
   _usersBar: {fileID: 0}
   InteractionAreas: []
+  GameButtonsEvents: []
 --- !u!1 &2717333727413673963
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8907624443804945082}
+  - component: {fileID: 1456042370331570448}
   - component: {fileID: 8468559365454009831}
   m_Layer: 0
   m_Name: InputManager
@@ -881,6 +886,19 @@ Transform:
   m_Father: {fileID: 1761617685345261586}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1456042370331570448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551444817945615627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84fa45cade6a744a882be0daded45cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentDeviceID: 0
 --- !u!114 &8468559365454009831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,51 +948,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnButtonAPress:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonBPress:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButtonCPress:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton1Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton2Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton3Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton4Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton5Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton6Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton7Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton8Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnButton9Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCanalButton1Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCanalButton2Press:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCanalButton3Press:
-    m_PersistentCalls:
-      m_Calls: []
+  gameEvents:
+  - {fileID: 11400000, guid: 256d1f141708d00439cbeb8c6678bf5c, type: 2}
+  - {fileID: 11400000, guid: de312f07428790a489e21f6ce11a67e5, type: 2}
+  - {fileID: 11400000, guid: 34823a07360290e4d864a4788424f2cf, type: 2}
+  - {fileID: 11400000, guid: 01082b891cdcbbd458675a78d1e9cb8d, type: 2}
+  - {fileID: 11400000, guid: 4e6194a2672476c469ea47308147b290, type: 2}
+  - {fileID: 11400000, guid: 6fba3b60a5bcff24080a9018b03d84a4, type: 2}
+  - {fileID: 11400000, guid: 2f1b48d6d3e3aed44a791dee28c743b9, type: 2}
+  - {fileID: 11400000, guid: b14d52c1f3b01e4409eaedb0a9eb4e74, type: 2}
+  - {fileID: 11400000, guid: 434ae6d27e93b3c4695d7d292df571f3, type: 2}
+  - {fileID: 11400000, guid: 4c517df2ff1c9374fa92001bf69fa854, type: 2}
+  - {fileID: 11400000, guid: 288b8d0310f053b4fb495f55b6946d2a, type: 2}
+  - {fileID: 11400000, guid: d3c36e0ad039e0d4986917912c82e4c7, type: 2}
 --- !u!1 &3849906311857829951
 GameObject:
   m_ObjectHideFlags: 0

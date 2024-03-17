@@ -34,8 +34,11 @@ public class DropDownController : MonoBehaviour
         Description.text = GameInfo.Ambientes[DropAmbiente.value]._activitiesNames[activityindex]._desc;
     }
     public void SetManagerconfig(){
-        Managers.Instance._ambienteActual = DropAmbiente.value;
-        Managers.Instance._actividadActual = DropActividad.value;
+        Managers.Instance.AmbienteActual = DropAmbiente.value;
+        Managers.Instance.ActividadActual = DropActividad.value;
+    }
+
+    public void ChangeToInicio(){
         Managers.Instance.SetGameState((int)Managers.GameState.Inicio);
     }
 }

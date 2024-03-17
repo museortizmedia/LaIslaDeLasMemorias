@@ -14,6 +14,8 @@ public class InteractableManager : MonoBehaviour, IManager
     [SerializeField] Transform _usersBar;
     public List<InteractableArea> InteractionAreas = new List<InteractableArea>();
     Dictionary<int, InteractableArea> _usersVoted = new Dictionary<int, InteractableArea>();
+    [SerializeField] GameEvent[] GameButtonsEvents;
+    //gameEvents[ButData.ButtonId]?.Raise();
 
     private void Start()
     {
@@ -26,6 +28,7 @@ public class InteractableManager : MonoBehaviour, IManager
         {
             _usersBar.GetChild(i-1).gameObject.SetActive(Users.Contains(i));
             _usersBar.GetChild(i-1).gameObject.GetComponent<Image>().sprite = UserIcons.UserSprites[i-1];
+            _usersBar.GetChild(i-1).gameObject.GetComponent<Image>().color = new Color(255,255,255,0.7f);
         }
     }
     public void VerificarJugadoresNuevos(ButtonData buttonData){
@@ -35,10 +38,9 @@ public class InteractableManager : MonoBehaviour, IManager
         }
     }
     public void OnInteraction(ButtonData buttonData){
-        if(IsDebug){Debug.Log("Usuario: "+buttonData.DeviceId+" interactuó con: "+buttonData.ButtonId);}
+        
         if(IsActive && InteractionAreas.Count!=0){
-            //verificar si es una accion valida para este contexto
-            //bool isAcept = false;
+            if(IsDebug){Debug.Log("Usuario: "+buttonData.DeviceId+" interactuó con: "+buttonData.ButtonId);}
             foreach (InteractableArea interactionArea in InteractionAreas)
             {
                 if (interactionArea == null)
@@ -57,6 +59,13 @@ public class InteractableManager : MonoBehaviour, IManager
                 {
                     if (IsActive && buttonID == buttonData.ButtonId)
                     {
+                        //verificar que sea desicion del Mentor
+                        if(buttonData.DeviceId == 0){
+                            Debug.LogWarning("El Mentor ha hecho una super votación");
+                            interactionArea.SuperVoto(buttonData);
+                            return;
+                        }
+
                         MoveIcon(interactionArea, buttonData.DeviceId);
                         if(!_usersVoted.ContainsKey(buttonData.DeviceId)){
                             //Registrar voto en el Padre
@@ -87,11 +96,18 @@ public class InteractableManager : MonoBehaviour, IManager
     public void MoveIcon(InteractableArea area, int playerId)
     {
         area.UsersVotes.Add(playerId);
+        _usersBar.GetChild(playerId-1).gameObject.GetComponent<Image>().color = new Color(255,255,255,1f);
         area.VotesCount++;
     }
     public void ChangeInteractionMode(bool state){
         //Debug.Log("El estado del InputManager cambió a: "+state);
-        Managers.Instance.GetManager<InteractableManager>().IsActive = state;   
+        Managers.Instance.GetManager<InteractableManager>().IsActive = state;
+        if(state){
+            for (int i = 1; i <= 10; i++)
+            {
+                _usersBar.GetChild(i-1).gameObject.GetComponent<Image>().color = new Color(255,255,255,0.7f);
+            }
+        }
     }
     public void AddInteractionArea(InteractableArea interArea){
         InteractionAreas.Add(interArea);
