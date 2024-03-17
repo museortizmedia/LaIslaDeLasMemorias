@@ -47,6 +47,6 @@ public abstract class ExperienceController : MonoBehaviour
     }
 
     public virtual void EndExperience(){
-        Manager.gameState = Managers.GameState.Configuration;
+        Manager.EstadoGame = Managers.GameState.Configuration;
     }
 }

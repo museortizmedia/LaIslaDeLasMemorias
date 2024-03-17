@@ -11,7 +11,7 @@ public class Managers : MonoBehaviour
 
     public enum GameState { Splash, Configuration, Inicio, Experiencia, Victory, Fail }
     [SerializeField] GameState _gameState = GameState.Splash;
-    public GameState gameState {
+    public GameState EstadoGame {
         get=>_gameState;
         set{
             _gameState = value;
@@ -57,11 +57,11 @@ public class Managers : MonoBehaviour
         return null;
     }
     public void SetGameState(int newGameState){
-        gameState = (GameState)newGameState;
+        EstadoGame = (GameState)newGameState;
     }
     void ChangeGameState(){
-        Debug.Log("GAME: Se cambió el estado de juego a: "+gameState);
-        switch(gameState){
+        Debug.Log("GAME: Se cambió el estado de juego a: "+EstadoGame);
+        switch(EstadoGame){
             case GameState.Configuration:
             Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
             SceneManager.LoadScene("Configuracion");

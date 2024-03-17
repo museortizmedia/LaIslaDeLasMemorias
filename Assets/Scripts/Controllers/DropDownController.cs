@@ -36,6 +36,9 @@ public class DropDownController : MonoBehaviour
     public void SetManagerconfig(){
         Managers.Instance._ambienteActual = DropAmbiente.value;
         Managers.Instance._actividadActual = DropActividad.value;
+    }
+
+    public void ChangeToInicio(){
         Managers.Instance.SetGameState((int)Managers.GameState.Inicio);
     }
 }
