@@ -80,9 +80,9 @@ public class InteractableArea : MonoBehaviour
         Invoke(nameof(RegistrarArea), 0.5f);
     }
     private void OnDisable() {
-        if(Managers.Instance!=null){
+        if(Managers.Instance != null){
             InteractableManager interactableManager = Managers.Instance.GetManager<InteractableManager>();
-            interactableManager.AddInteractionRemove(this);
+            interactableManager.RemoveInteractionArea(this);
         }
     }
     void RegistrarArea(){

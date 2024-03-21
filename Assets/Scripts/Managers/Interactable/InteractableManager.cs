@@ -39,7 +39,7 @@ public class InteractableManager : MonoBehaviour, IManager
     }
     public void OnInteraction(ButtonData buttonData){
         
-        if(IsActive && InteractionAreas.Count!=0){
+        if(IsActive && InteractionAreas.Count != 0){
             if(IsDebug){Debug.Log("Usuario: "+buttonData.DeviceId+" interactuó con: "+buttonData.ButtonId);}
             foreach (InteractableArea interactionArea in InteractionAreas)
             {
@@ -112,7 +112,7 @@ public class InteractableManager : MonoBehaviour, IManager
     public void AddInteractionArea(InteractableArea interArea){
         InteractionAreas.Add(interArea);
     }
-    public void AddInteractionRemove(InteractableArea interArea){
+    public void RemoveInteractionArea(InteractableArea interArea){
         InteractionAreas.Remove(interArea);
     }
     public void ClearInteractionAreas(){
