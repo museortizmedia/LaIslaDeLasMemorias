@@ -33,20 +33,22 @@ public class TextBoxController : MonoBehaviour
         set
         {
             //StopAllCoroutines();
-            _currentI = value>=Dialogs.Count?0:value<0?Dialogs.Count:value;
+            _currentI = value >= Dialogs.Count ? 0 : value < 0 ? Dialogs.Count : value;
             NextBTN.gameObject.SetActive(_currentI < Dialogs.Count);
-            if(_currentI == Dialogs.Count-1){IsLastSlide=true;}else{IsLastSlide=false;}
+            CancelInvoke();
+            NextBTN.interactable = false;
+            if (_currentI == Dialogs.Count - 1) { IsLastSlide = true; } else { IsLastSlide = false; }
             BackBTN.gameObject.SetActive(_currentI > 0);
             SetContentBox();
         }
     }
     public float secondsAfterFinish = 2f;
     bool _isLastSlide;
-    public bool IsLastSlide{
-        get=>_isLastSlide;
-        set{
+    public bool IsLastSlide {
+        get => _isLastSlide;
+        set {
             _isLastSlide = value;
-            NextBTN.GetComponent<Image>().sprite = value?DoneSprite:ArrowSprite;
+            NextBTN.GetComponent<Image>().sprite = value ? DoneSprite : ArrowSprite;
         }
     }
     public UnityEvent OnFinish;
@@ -64,9 +66,9 @@ public class TextBoxController : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.RightArrow)){
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
             GoNext();
-        }else if(Input.GetKeyDown(KeyCode.LeftArrow)){
+        } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             GoBack();
         }
     }
@@ -75,28 +77,39 @@ public class TextBoxController : MonoBehaviour
         CurrentI = 0;
     }
 
-    public void GoNext(){
-        if(IsLastSlide){OnFinish?.Invoke();return;}
+    public void GoNext() {
+        if (IsLastSlide) { OnFinish?.Invoke(); return; }
         CurrentI++;
     }
-    public void GoBack(){
+    public void GoBack() {
         CurrentI--;
     }
-    void SetContentBox(){
+    void SetContentBox() {
         TitleBox.text = Dialogs[CurrentI].Title;
         ContentBox.text = Dialogs[CurrentI].Content;
         _as.clip = Dialogs[CurrentI].Audio;
-        if(_as.clip!=null){
+        if (_as.clip != null) {
             _as.Play();
+            Invoke(nameof(ActiveBtn), _as.clip.length);
         }
+        else
+        {
+            Invoke(nameof(ActiveBtn), 2f);
+        }
+        
 
-        Image[] images = new Image[]{PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer};
+        Image[] images = new Image[] { PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer };
         foreach (var image in images)
         {
             image.gameObject.SetActive(false);
         }
         images[(int)Dialogs[CurrentI].SpritePosition].sprite = Dialogs[CurrentI].Personaje;
         images[(int)Dialogs[CurrentI].SpritePosition].gameObject.SetActive(true);
-        
+
+    }
+
+    void ActiveBtn()
+    {
+        NextBTN.interactable = true;
     }
 }
