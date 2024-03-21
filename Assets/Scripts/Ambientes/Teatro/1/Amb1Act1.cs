@@ -7,7 +7,7 @@ using UnityEngine;
 public class Amb1Act1 : ExperienceController
 {
     public List<int> buttonsUsedIndex = new List<int>();
-    public TutorialCardController TableController = new TutorialCardController();
+    public TutorialCardController TableController;
 
     public override void Start()
     {
