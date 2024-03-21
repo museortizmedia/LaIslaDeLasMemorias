@@ -538,7 +538,7 @@ TextureImporter:
         width: 682
         height: 682
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,6 +546,48 @@ TextureImporter:
       bones: []
       spriteID: 0dbd7745e918f5c409b33c868e3825af
       internalID: 1895314182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconsPlayer_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 682
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d014adc4abe5a964796f979c38f779f0
+      internalID: -107967645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IconsPlayer_1
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 0
+        width: 682
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0777998906e6e884fa2b749047a50e11
+      internalID: -994504249
       vertices: []
       indices: 
       edges: []
@@ -561,6 +603,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      IconsPlayer_0: -107967645
+      IconsPlayer_1: -994504249
       Icons_0: 408798870
       Icons_1: -522274828
       Icons_10: -1390718740

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
-    //definir evento cuando se escoge por esta area
+    [Tooltip("Es la demora que tendrá el InteractableArea en recibir un nuevo voto")]
+    public float SecondToRestart = 2f;
     public int[] ButonIdAcepted;
     public List<int> UsersVotes;
     [SerializeField] int _votesCount;
@@ -17,8 +19,11 @@ public class InteractableArea : MonoBehaviour
         {
             _votesCount = value;
             MostrarJugadoresUI();
+            VerificarAccion();
         }
     }
+    public UnityEvent OnChooseThisArea;
+
     [SerializeField] ScriptableUserSprite UserIcons;
 
     //ajustes visuales
@@ -28,6 +33,7 @@ public class InteractableArea : MonoBehaviour
 
     private void Awake() {
         if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}
+        OnChooseThisArea.AddListener(()=>{Invoke(nameof(ReinciarInteraction), SecondToRestart);});
     }
     private void Start() {
         UserIcons = Resources.Load<ScriptableUserSprite>("Scriptables/UsersSpriteScriptable");
@@ -50,20 +56,37 @@ public class InteractableArea : MonoBehaviour
     void MostrarJugadoresUI(){
 
         for (int j = 0; j < transform.childCount; j++)
-         {
+        {
             transform.GetChild(j).gameObject.SetActive(UsersVotes.Contains(j+1));
         }
         
+    }
+    void VerificarAccion(bool supervoto = false){
+        if( VotesCount+1 == Managers.Instance.GetManager<InteractableManager>().Users.Count || supervoto){
+            OnChooseThisArea?.Invoke();
+            Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(false);
+            //limpieza del interactive area
+            UsersVotes.Clear();
+            _votesCount = 0;          
+        }
+    }
+    void ReinciarInteraction(){
+        Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(true); 
+    }
+    public void SuperVoto(ButtonData buttonData){
+        VerificarAccion(true);
     }
     private void OnEnable() {
         Invoke(nameof(RegistrarArea), 0.5f);
     }
     private void OnDisable() {
-        InteractableManager interactableManager = (InteractableManager)Managers.Instance._managers[2];
-        interactableManager.AddInteractionRemove(this);
+        if(Managers.Instance!=null){
+            InteractableManager interactableManager = Managers.Instance.GetManager<InteractableManager>();
+            interactableManager.AddInteractionRemove(this);
+        }
     }
     void RegistrarArea(){
-        InteractableManager interactableManager = (InteractableManager)Managers.Instance._managers[2];
+        InteractableManager interactableManager = Managers.Instance.GetManager<InteractableManager>();
         interactableManager.AddInteractionArea(this);
     }
 }

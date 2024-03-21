@@ -9,16 +9,18 @@ public class Managers : MonoBehaviour
     public List<Component> _managers = new List<Component>();
     public ScriptableActivitiesInfo scriptableActivitiesInfo;
 
-    public enum GameState { Splash, Configuration, Inicio, Experiencia, Victory, Fail }
+    public enum GameState { Splash, Configuration, Inicio }
     [SerializeField] GameState _gameState = GameState.Splash;
-    public GameState gameState {
+    public GameState EstadoGame {
         get=>_gameState;
         set{
             _gameState = value;
             ChangeGameState();
         }
     }
-    public int _ambienteActual, _actividadActual;
+    [SerializeField] int _ambienteActual, _actividadActual;
+    public int AmbienteActual {get=>_ambienteActual; set=>_ambienteActual=value;}
+    public int ActividadActual {get=>_actividadActual; set=>_actividadActual=value;}
 
 
     private void Awake()
@@ -57,11 +59,11 @@ public class Managers : MonoBehaviour
         return null;
     }
     public void SetGameState(int newGameState){
-        gameState = (GameState)newGameState;
+        EstadoGame = (GameState)newGameState;
     }
     void ChangeGameState(){
-        Debug.Log("GAME: Se cambió el estado de juego a: "+gameState);
-        switch(gameState){
+        Debug.Log("GAME: Se cambió el estado de juego a: "+EstadoGame);
+        switch(EstadoGame){
             case GameState.Configuration:
             Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
             SceneManager.LoadScene("Configuracion");
