@@ -52,7 +52,7 @@ public class Amb1Act1 : ExperienceController
         }
     }
 
-    void NextButton()
+    public void NextButton()
     {
         List<int> availableIndexes = new List<int>();
         for (int i = 0; i < TableController.buttons.Count; i++)
@@ -79,10 +79,7 @@ public class Amb1Act1 : ExperienceController
     // TODO Delete this function when the InteractableArea Call the Events
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            NextButton();
-        }
+
     }
 
 }
