@@ -12,6 +12,7 @@ public class InteractableArea : MonoBehaviour
     public int[] ButonIdAcepted;
     public List<int> UsersVotes;
     [SerializeField] int _votesCount;
+
     public int VotesCount{
         get=>_votesCount;
         set
