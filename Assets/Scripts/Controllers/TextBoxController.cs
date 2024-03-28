@@ -13,7 +13,7 @@ public class TextBoxDialog
     public string Content;
     public AudioClip Audio;
     public Sprite Personaje;
-    public enum SpritePos {Izquierda,Centro,Derecha}
+    public enum SpritePos {Izquierda,Centro,Derecha,Hide}
     public SpritePos SpritePosition = SpritePos.Centro;
 }
 
@@ -103,8 +103,10 @@ public class TextBoxController : MonoBehaviour
         {
             image.gameObject.SetActive(false);
         }
+        if(Dialogs[CurrentI].SpritePosition != TextBoxDialog.SpritePos.Hide){
         images[(int)Dialogs[CurrentI].SpritePosition].sprite = Dialogs[CurrentI].Personaje;
         images[(int)Dialogs[CurrentI].SpritePosition].gameObject.SetActive(true);
+        }
 
     }
 
