@@ -16,6 +16,7 @@ public class SerialReader : MonoBehaviour, IManager
     [SerializeField] UnityEvent<ButtonData> OnDataRecive;
     [Tooltip("Establece el estado de la conexión de Brain")]
     [SerializeField] UnityEvent<bool> OnBrainConnectState;
+    [SerializeField] UnityEvent<PopOverController.PopOverInfo> OnGetTableState;
 
 
     //Iniciación, Finalización
@@ -113,7 +114,12 @@ public class SerialReader : MonoBehaviour, IManager
             case "Connect":
                 OnBrainConnectState?.Invoke(response.ToString()=="true");
             break;
-            case "":
+            case "TableState":
+                PopOverController.PopOverInfo _PopOverInfo = new PopOverController.PopOverInfo{
+                    Title = response.ToString().Split(",")[0],
+                    Content =response.ToString().Split(",")[1]
+                    };
+                OnGetTableState?.Invoke(_PopOverInfo);
             break;
             
             default:
@@ -130,9 +136,13 @@ public class SerialReader : MonoBehaviour, IManager
         /// </summary>
         Connect,
         /// <summary>
-        /// Envia una configuracion al Vibrador, agrege [value] para definir el poder.
+        /// Envia una configuracion al Vibrador, agregue [value] para definir el poder.
         /// </summary>
         ConfigVibration,
+        /// <summary>
+        /// Solicita el estado de una mesa específica, agregue [value] para definir la mesa a conectar.
+        /// </summary>
+        TableState,
     }
 
     /// <summary>

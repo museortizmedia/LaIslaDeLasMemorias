@@ -63,5 +63,4 @@ public class InputManager : MonoBehaviour, IManager
         OnAnyButtonPress?.Invoke(ButData);
         gameEvents[ButData.ButtonId]?.Raise();
     }
-
 }
