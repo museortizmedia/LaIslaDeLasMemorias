@@ -30,9 +30,11 @@ public class InteractableArea : MonoBehaviour
     public float cellSize = 0.2f, cellSpace = 0.11f;
     GridLayoutGroup _gridLayoutGroup;
     float alto, ancho;
+    bool _useOwnGrid;
 
     private void Awake() {
-        if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}
+        _gridLayoutGroup = GetComponent<GridLayoutGroup>();
+        if(_gridLayoutGroup==null){_gridLayoutGroup = gameObject.AddComponent<GridLayoutGroup>();}else{_useOwnGrid = true;}
         OnChooseThisArea.AddListener(()=>{Invoke(nameof(ReinciarInteraction), SecondToRestart);});
     }
     private void Start() {
@@ -40,12 +42,13 @@ public class InteractableArea : MonoBehaviour
 
         ancho = GetComponent<RectTransform>().rect.width;
         alto = GetComponent<RectTransform>().rect.height;
-        
-        _gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
-        _gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
-        _gridLayoutGroup.constraintCount = 4;
-        _gridLayoutGroup.cellSize = new Vector2( ancho*cellSize, alto*cellSize );
-        _gridLayoutGroup.spacing = new Vector2( ancho*cellSpace, alto*cellSpace );
+        if(!_useOwnGrid){
+            _gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
+            _gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
+            _gridLayoutGroup.constraintCount = 4;
+            _gridLayoutGroup.cellSize = new Vector2( ancho*cellSize, alto*cellSize );
+            _gridLayoutGroup.spacing = new Vector2( ancho*cellSpace, alto*cellSpace );
+        }
 
         for (int i = 0; i < transform.childCount; i++)
         {

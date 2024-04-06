@@ -7,7 +7,7 @@ using UnityEngine;
 public class Amb1Act1 : ExperienceController
 {
     public List<int> buttonsUsedIndex = new List<int>();
-    public TutorialCardController TableController = new TutorialCardController();
+    public TutorialCardController TableController;
 
     public override void Start()
     {
@@ -52,7 +52,7 @@ public class Amb1Act1 : ExperienceController
         }
     }
 
-    void NextButton()
+    public void NextButton()
     {
         List<int> availableIndexes = new List<int>();
         for (int i = 0; i < TableController.buttons.Count; i++)
@@ -76,18 +76,10 @@ public class Amb1Act1 : ExperienceController
         TableController.ShowInfo(selectedIndex, "Selecciona el botón que se indica en la imagen para realizar otro trazado");
     }
 
-    public void ShowFirstTutorial()
-    {
-        TableController.ShowInfo(2, "Selecciona el botón “E” de la mesa interactiva para pintar el primer fragmento de la pintura");
-    }
-
     // TODO Delete this function when the InteractableArea Call the Events
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            NextButton();
-        }
+
     }
 
 }

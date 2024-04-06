@@ -24,7 +24,6 @@ public class TutorialCardController : MonoBehaviour
     {
         interactable.ButonIdAcepted[0] = 0;
         selectedButton?.SetActive(false);
-        interactable.VotesCount = 0;
         ContentBox.text = "";
     }
 }
