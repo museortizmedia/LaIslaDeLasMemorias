@@ -16,6 +16,7 @@ public class TutorialCardController : MonoBehaviour
 
         ContentBox.text = content;
         selectedButton = buttons[index];
+
         interactable.ButonIdAcepted[0] = index + 1;
         selectedButton.SetActive(true);
     }
@@ -26,4 +27,5 @@ public class TutorialCardController : MonoBehaviour
         selectedButton?.SetActive(false);
         ContentBox.text = "";
     }
+
 }
