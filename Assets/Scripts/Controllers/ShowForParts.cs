@@ -12,6 +12,9 @@ public class ShowForParts : MonoBehaviour
 
     void Start()
     {
+        
+    }
+    void Initialize(){
         RectTransform rectTransform = GetComponent<RectTransform>();
 
         originalWidth = - rectTransform.rect.width;
