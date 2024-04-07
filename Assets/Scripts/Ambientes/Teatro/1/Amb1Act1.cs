@@ -7,10 +7,12 @@ using UnityEngine.Events;
 
 public class Amb1Act1 : ExperienceController
 {
-    public List<int> buttonsUsedIndex = new List<int>();
+    //public List<int> buttonsUsedIndex = new List<int>();
     public TutorialCardController TableController;
 
-    public UnityEvent OnEndTutorial;
+    public UnityEvent OnFailTutorial, OnEndTutorial;
+
+    int _failCount;
 
     public override void Start()
     {
@@ -27,28 +29,18 @@ public class Amb1Act1 : ExperienceController
         EndExperience(); // llamada obligatoria al finalizar
     }
 
-    public void NextButton()
-    {
-        List<int> availableIndexes = new List<int>();
-        for (int i = 0; i < TableController.buttons.Count; i++)
-        {
-            if (!buttonsUsedIndex.Contains(i))
-            {
-                availableIndexes.Add(i);
-            }
+    public void SumarFail(){
+        _failCount++;
+        if(_failCount == (Manager.GetManager<InteractableManager>().Users.Count-1)){
+            ResetFailCount();
+            OnFailTutorial?.Invoke();
         }
+    }
+    void ResetFailCount(){
+        _failCount = 0;
+    }
 
-        if (availableIndexes.Count == 0)
-        {
-            OnEndTutorial?.Invoke();
-            return;
-        }
-
-        int randomIndex = Random.Range(0, availableIndexes.Count);
-        int selectedIndex = availableIndexes[randomIndex];
-
-        buttonsUsedIndex.Add(selectedIndex);
-        TableController.ShowInfo(selectedIndex, "Selecciona el botón que se indica en la imagen para realizar otro trazado");
-        Manager.GetManager<InteractableManager>().ChangeInteractionMode(true); //forzar la activación de la interacción
+    public void EndTutorial(){
+        OnEndTutorial?.Invoke();
     }
 }
