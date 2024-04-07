@@ -802,7 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   IsDebug: 0
-  _users: 
+  _users: 00000000
   UserIcons: {fileID: 11400000, guid: 167be22bd9cd99448b30521decdc4875, type: 2}
   _usersBar: {fileID: 0}
   InteractionAreas: []
@@ -1195,7 +1195,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  gameEvents:
+  _gameEvents:
   - {fileID: 11400000, guid: 256d1f141708d00439cbeb8c6678bf5c, type: 2}
   - {fileID: 11400000, guid: de312f07428790a489e21f6ce11a67e5, type: 2}
   - {fileID: 11400000, guid: 34823a07360290e4d864a4788424f2cf, type: 2}
