@@ -543,17 +543,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: b14d52c1f3b01e4409eaedb0a9eb4e74, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: s
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &164940187 stripped
@@ -576,17 +579,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: d3c36e0ad039e0d4986917912c82e4c7, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: c
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &171700229 stripped
@@ -624,30 +630,22 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 4e6194a2672476c469ea47308147b290, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: w
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &227286600 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8185027393526532683, guid: afd60680008fce846a3a15c417627837, type: 3}
-  m_PrefabInstance: {fileID: 516058105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c6313b58844c14b89ad6074e77c1cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &312360793
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +657,7 @@ GameObject:
   - component: {fileID: 312360794}
   - component: {fileID: 312360795}
   - component: {fileID: 312360796}
+  - component: {fileID: 312360797}
   m_Layer: 5
   m_Name: PinturaEscogida
   m_TagString: Untagged
@@ -715,6 +714,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partsInX: 12
   currentPartsInX: 0
+  OnChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &312360797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312360793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e210954cbd0aead459d3d1ec8fb50231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalDuration: 3
+  amplitude: 10
+  OnStopped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &358908043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2245136895739846254, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
@@ -735,17 +754,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 01082b891cdcbbd458675a78d1e9cb8d, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: q
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &397081063 stripped
@@ -768,17 +790,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 2f1b48d6d3e3aed44a791dee28c743b9, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: a
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &407989472
@@ -803,7 +828,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Content
-      value: "\xA1Mucho cuidado! Int\xE9ntalo otra vez."
+      value: "\xA1Mucho cuidado! Presionaste el bot\xF3n equivocado, int\xE9ntalo
+        otra vez."
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Personaje
@@ -811,11 +837,15 @@ PrefabInstance:
       objectReference: {fileID: -1860527514, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].SpritePosition
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -846,6 +876,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 171700229}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -858,6 +892,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: NextButton
       objectReference: {fileID: 0}
@@ -868,6 +906,10 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -896,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1367,17 +1413,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 434ae6d27e93b3c4695d7d292df571f3, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: d
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &516058105
@@ -1388,10 +1437,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1456042370331570448, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: IsDebug
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1761617685345261586, guid: afd60680008fce846a3a15c417627837, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1436,30 +1481,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2453730995888934659, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: IsDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453730995888934659, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: _users.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3194461485391017021, guid: afd60680008fce846a3a15c417627837, type: 3}
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    - target: {fileID: 8468559365454009831, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: _gameEvents.Array.data[12]
-      value: 
-      objectReference: {fileID: 11400000, guid: 256d1f141708d00439cbeb8c6678bf5c, type: 2}
-    - target: {fileID: 8468559365454009831, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: _gameEvents.Array.data[13]
-      value: 
-      objectReference: {fileID: 11400000, guid: de312f07428790a489e21f6ce11a67e5, type: 2}
-    - target: {fileID: 8468559365454009831, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: _gameEvents.Array.data[14]
-      value: 
-      objectReference: {fileID: 11400000, guid: 34823a07360290e4d864a4788424f2cf, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2053,17 +2078,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 6fba3b60a5bcff24080a9018b03d84a4, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: e
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &875400204
@@ -2805,7 +2833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2822,7 +2854,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 210146046}
+      objectReference: {fileID: 1961635853}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2836,6 +2868,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 171700229}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2848,6 +2884,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: NextButton
       objectReference: {fileID: 0}
@@ -2858,6 +2898,10 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Amb1Act1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2873,7 +2917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -2886,6 +2930,10 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3969,17 +4017,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 4c517df2ff1c9374fa92001bf69fa854, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: z
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1541015329
@@ -4600,20 +4651,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1961635853}
+      objectReference: {fileID: 1815867873}
+    - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1815867873}
     - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EndTutorial
+      value: DestroyIt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DestroyIt
       objectReference: {fileID: 0}
     - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Amb1Act1, Assembly-CSharp
+      value: Destroyer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Destroyer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -4621,6 +4692,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501606223327062231, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: OnFinishTutorial.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3021880924314106425, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
@@ -4843,6 +4918,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1219938795786634527, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815867873}
     - targetCorrespondingSourceObject: {fileID: 2228238744716560545, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1845101143}
@@ -4896,6 +4974,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b321a8692ba81db47a8f7c07227b33f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1815867873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171700229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6978eb2c12e9a4545b579ab20da06aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  SecondToDestroy: 0
+  BeforeDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 312360797}
+        m_TargetAssemblyTypeName: VibrateImage, Assembly-CSharp
+        m_MethodName: Vibrar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 210146046}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  AfterDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1836205096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4992,17 +5114,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 256d1f141708d00439cbeb8c6678bf5c, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1892095999
@@ -5567,17 +5692,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: de312f07428790a489e21f6ce11a67e5, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1940102407
@@ -5914,21 +6042,23 @@ MonoBehaviour:
   OnFailTutorial:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 1138047641}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_StringArgument: Fallo :c
+          m_BoolArgument: 1
         m_CallState: 2
   OnEndTutorial:
     m_PersistentCalls:
       m_Calls: []
+  _failCount: 0
+  _failList: 
 --- !u!224 &1966462398 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5713417011026754412, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
@@ -6193,17 +6323,20 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 34823a07360290e4d864a4788424f2cf, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2017649440
@@ -6307,16 +6440,19 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: 288b8d0310f053b4fb495f55b6946d2a, type: 2}
   Response:
     m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 227286600}
-        m_TargetAssemblyTypeName: Managers, Assembly-CSharp
-        m_MethodName: DebugLog
-        m_Mode: 5
+      - m_Target: {fileID: 1961635853}
+        m_TargetAssemblyTypeName: Amb1Act1, Assembly-CSharp
+        m_MethodName: SumarFail
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: x
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

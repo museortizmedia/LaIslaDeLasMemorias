@@ -285,6 +285,9 @@ MonoBehaviour:
           m_StringArgument: '[06-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &400368111955269573
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 1
   IsDebug: 0
-  _users: 00000000
+  _users: 
   UserIcons: {fileID: 11400000, guid: 167be22bd9cd99448b30521decdc4875, type: 2}
   _usersBar: {fileID: 0}
   InteractionAreas: []
@@ -915,6 +918,9 @@ MonoBehaviour:
           m_StringArgument: '[03-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2901707588584927473
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +981,9 @@ MonoBehaviour:
           m_StringArgument: '[05-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3194461485391017021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84fa45cade6a744a882be0daded45cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDebug: 0
   _currentDeviceID: 0
 --- !u!114 &8468559365454009831
 MonoBehaviour:
@@ -1402,6 +1412,9 @@ MonoBehaviour:
           m_StringArgument: '[01-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4407291170219954822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,6 +1475,9 @@ MonoBehaviour:
           m_StringArgument: '[04-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5042058667294705238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1538,9 @@ MonoBehaviour:
           m_StringArgument: '[09-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5127387764411380128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1601,9 @@ MonoBehaviour:
           m_StringArgument: '[02-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5225147607904851157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2277,9 @@ MonoBehaviour:
           m_StringArgument: '[s:Connect-r:true]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6772873672309390932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2474,9 @@ MonoBehaviour:
           m_StringArgument: '[07-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7727685858263919409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,6 +2537,9 @@ MonoBehaviour:
           m_StringArgument: '[08-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7869715633961567908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2600,9 @@ MonoBehaviour:
           m_StringArgument: '[10-00]'
           m_BoolArgument: 0
         m_CallState: 2
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7982561868701262701
 GameObject:
   m_ObjectHideFlags: 0

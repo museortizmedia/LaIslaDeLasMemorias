@@ -61,6 +61,6 @@ public class InputManager : MonoBehaviour, IManager
     /// <param name="ButData">Estrucutra ButtonData con la info de la interacción</param>
     public void ReciveButtonInteraction(ButtonData ButData){    
         OnAnyButtonPress?.Invoke(ButData);
-        _gameEvents[ButData.ButtonId-1]?.Raise(); //-1 porque los botones data son del 1 al 12. Y el arreglo es de 0 a 11
+        _gameEvents[ButData.ButtonId-1]?.ButtonRaise(ButData); //-1 porque los botones data son del 1 al 12. Y el arreglo es de 0 a 11
     }
 }

@@ -10,7 +10,7 @@ public class TutorialCardController : MonoBehaviour
     [SerializeField] TextMeshProUGUI _contentBox;
     [SerializeField] string _contentBoxText = "Selecciona el botón que se indica en la imagen para realizar otro trazado";
     [SerializeField] List<int> buttonsOptions = new() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-    [SerializeField] int _currentButton = -1;
+    public int _currentButton = -1;
     [SerializeField] GameObject _cellGO;
     public UnityEvent OnFinishTutorial;
 

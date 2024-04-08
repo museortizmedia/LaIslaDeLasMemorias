@@ -12,35 +12,46 @@ public class Amb1Act1 : ExperienceController
 
     public UnityEvent OnFailTutorial, OnEndTutorial;
 
-    int _failCount;
+    [SerializeField] int _failCount;
+    [SerializeField] List<int> _failList = new List<int>();
 
     public override void Start()
     {
         base.Start(); //llamada obligatoria al comenzar
-        //Debug.Log(Manager.GetManager<InputManager>().name);
-        IniciarCon(2);
         OnEndTutorial.AddListener(()=>Finalizar());
-    }
 
+        //IniciarCon(2);
+    }
+    public void EndTutorial(){
+        OnEndTutorial?.Invoke();
+    }
     void Finalizar()
     {
         Debug.Log("Terminó la experiencia con éxito");
         // Desactiva esta línea para evitar que se cambie la escena
         EndExperience(); // llamada obligatoria al finalizar
     }
+    
+    //Feedback Negativo (Button Events)
+    public void SumarFail(ButtonData buttonData){
+        int botonId = buttonData.ButtonId;
+        int botonIndex = botonId-1;
 
-    public void SumarFail(){
-        _failCount++;
-        if(_failCount == (Manager.GetManager<InteractableManager>().Users.Count-1)){
-            ResetFailCount();
-            OnFailTutorial?.Invoke();
+        if(botonIndex != TableController._currentButton)
+        {
+            if(!_failList.Contains(botonIndex)){_failList.Add(buttonData.DeviceId);}
+
+            if(_failList.Count == (Manager.GetManager<InteractableManager>().Users.Count-1)){
+                ResetFailList();
+                OnFailTutorial?.Invoke();
+            }
         }
     }
-    void ResetFailCount(){
-        _failCount = 0;
+    void ResetFailList(){
+        _failList.Clear();
     }
 
-    public void EndTutorial(){
-        OnEndTutorial?.Invoke();
-    }
+
+    //
+    
 }

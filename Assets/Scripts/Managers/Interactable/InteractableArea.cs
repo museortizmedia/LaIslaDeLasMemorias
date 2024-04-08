@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
+    [SerializeField] bool noVotes;
     [Tooltip("Es la demora que tendrá el InteractableArea en recibir un nuevo voto")]
     public float SecondToRestart = 2f;
     public int[] ButonIdAcepted;
@@ -18,11 +19,13 @@ public class InteractableArea : MonoBehaviour
         set
         {
             _votesCount = value;
-            if(value!=0){VerificarAccion();}
+            if(value!=0 && !noVotes){VerificarAccion();}
+            if(noVotes){OnNoVotes?.Invoke();}
             MostrarJugadoresUI();
         }
     }
     public UnityEvent OnChooseThisArea;
+    public UnityEvent OnNoVotes;
 
     [SerializeField] ScriptableUserSprite UserIcons;
 
