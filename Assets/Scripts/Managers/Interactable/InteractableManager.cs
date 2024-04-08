@@ -20,6 +20,7 @@ public class InteractableManager : MonoBehaviour, IManager
     private void Start()
     {
         if(_usersBar==null){_usersBar = transform.GetChild(0).GetChild(0).GetChild(0);}
+        Users.Add(0);
     }
     void MostrarJugadoresUI(){
         if(IsDebug){Debug.Log("Se actualizó la lista de jugadores");}
@@ -37,21 +38,22 @@ public class InteractableManager : MonoBehaviour, IManager
             MostrarJugadoresUI();
         }
     }
-    public void OnInteraction(ButtonData buttonData){
-        
-        if(IsActive && InteractionAreas.Count!=0){
-            if(IsDebug){Debug.Log("Usuario: "+buttonData.DeviceId+" interactuó con: "+buttonData.ButtonId);}
+    public void OnInteraction(ButtonData buttonData)
+    {
+        if (IsActive && InteractionAreas.Count != 0)
+        {
+            if (IsDebug) { Debug.Log("Usuario: " + buttonData.DeviceId + " interactuó con: " + buttonData.ButtonId); }
             foreach (InteractableArea interactionArea in InteractionAreas)
             {
                 if (interactionArea == null)
                 {
-                    Debug.LogWarning("Su interactable area no existe", transform);
+                    Debug.LogWarning("Su InteractableArea no existe", transform);
                     continue;
                 }
 
                 if (interactionArea.ButonIdAcepted.Length == 0)
                 {
-                    Debug.LogWarning("Su interactable area es nula o no tiene botones compatibles, asigne alguno", interactionArea.transform);
+                    Debug.LogWarning("Su InteractableArea es nula o no tiene botones compatibles, asigne alguno", interactionArea.transform);
                     continue;
                 }
 
@@ -59,48 +61,61 @@ public class InteractableManager : MonoBehaviour, IManager
                 {
                     if (IsActive && buttonID == buttonData.ButtonId)
                     {
-                        //verificar que sea desicion del Mentor
-                        if(buttonData.DeviceId == 0){
+                        // Es decisión del Mentor
+                        if (buttonData.DeviceId == 0)
+                        {
                             Debug.LogWarning("El Mentor ha hecho una super votación");
                             interactionArea.SuperVoto(buttonData);
                             return;
                         }
 
-                        MoveIcon(interactionArea, buttonData.DeviceId);
-                        if(!_usersVoted.ContainsKey(buttonData.DeviceId)){
-                            //Registrar voto en el Padre
+                        // No es decisión del Mentor
+                        // Registrar voto
+                        if (!_usersVoted.ContainsKey(buttonData.DeviceId))
+                        {
+                            // Registrar voto en el Padre
                             _usersVoted.Add(buttonData.DeviceId, interactionArea);
 
-                            if(IsDebug){Debug.Log("Se ha agregado el usuario "+buttonData.DeviceId+" al InteractableArea", interactionArea.transform);}
-                        }else{
-                            
-                            //remover voto del anterior InteractableArea
-                            _usersVoted[buttonData.DeviceId].UsersVotes.Remove(buttonData.DeviceId);
-                            _usersVoted[buttonData.DeviceId].VotesCount--;
-
-                            //Registrar voto en el Padre
+                            if (IsDebug) { Debug.Log("Se ha agregado el usuario " + buttonData.DeviceId + " al InteractableArea", interactionArea.transform); }
+                        }
+                        else
+                        {
+                            // Actualizar voto
+                            // Remover voto del anterior InteractableArea
+                            if (_usersVoted[buttonData.DeviceId] != null)
+                            {
+                                _usersVoted[buttonData.DeviceId].UsersVotes.Remove(buttonData.DeviceId);
+                                //_usersVoted[buttonData.DeviceId].VotesCount--;
+                            }
+                            // Registrar voto en el Padre
                             _usersVoted[buttonData.DeviceId] = interactionArea;
 
-                            if(IsDebug){Debug.Log("Se ha actualizado el voto del usuario "+buttonData.DeviceId+" al InteractableArea", interactionArea.transform);}
+                            if (IsDebug) { Debug.Log("Se ha actualizado el voto del usuario " + buttonData.DeviceId + " al InteractableArea", interactionArea.transform); }
+                        }
+
+                        if (!ReferenceEquals(interactionArea, null))
+                        {
+                            MoveIcon(interactionArea, buttonData.DeviceId);
                         }
                     }
                 }
             }
-            //Debug.Log("La acción seleccionada "+(isAcept==true?"Es valida":"no es valida"));
-        }else{
-            if(!IsActive){Debug.LogWarning("El InputManager está inactivo"); return;}
+        }
+        else
+        {
+            if (!IsActive) { Debug.LogWarning("El InputManager está inactivo"); return; }
             Debug.LogWarning("No tiene InteractionAreas activas! Asigne sus interaction areas", transform);
         }
-
     }
+
     public void MoveIcon(InteractableArea area, int playerId)
     {
         area.UsersVotes.Add(playerId);
         _usersBar.GetChild(playerId-1).gameObject.GetComponent<Image>().color = new Color(255,255,255,1f);
-        area.VotesCount++;
+        if(IsDebug){Debug.Log("Subiendo "+area.VotesCount+" a "+(1+(int)area.VotesCount));}
+        area.VotesCount = area.VotesCount<0?1:area.VotesCount++;
     }
     public void ChangeInteractionMode(bool state){
-        //Debug.Log("El estado del InputManager cambió a: "+state);
         Managers.Instance.GetManager<InteractableManager>().IsActive = state;
         if(state){
             for (int i = 1; i <= 10; i++)
@@ -112,7 +127,7 @@ public class InteractableManager : MonoBehaviour, IManager
     public void AddInteractionArea(InteractableArea interArea){
         InteractionAreas.Add(interArea);
     }
-    public void AddInteractionRemove(InteractableArea interArea){
+    public void RemoveInteractionArea(InteractableArea interArea){
         InteractionAreas.Remove(interArea);
     }
     public void ClearInteractionAreas(){

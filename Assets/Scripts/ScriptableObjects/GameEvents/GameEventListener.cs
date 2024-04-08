@@ -9,6 +9,7 @@ public class GameEventListener : MonoBehaviour
     public GameEvent Event;
     [Tooltip("qué deberia hacer cuando se consuma este evento?")]
     public UnityEvent Response;
+    public UnityEvent<ButtonData> ButtonResponse;
 
     private void OnEnable()
     { Event?.RegisterListener(this); }
@@ -18,6 +19,9 @@ public class GameEventListener : MonoBehaviour
 
     public void OnEventRaised()
     { Response.Invoke(); }
+
+    public void OnButtonEventRaised(ButtonData buttonData)
+    { ButtonResponse.Invoke(buttonData); }
 
     public void OnEventRais(){
         Event.Raise();

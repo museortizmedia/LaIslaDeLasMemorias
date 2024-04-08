@@ -45,7 +45,7 @@ public class InputManager : MonoBehaviour, IManager
   
     [Header("Eventos Input")]
     public UnityEvent <ButtonData> OnAnyButtonPress;
-    [SerializeField] GameEvent[] gameEvents;
+    [SerializeField] GameEvent[] _gameEvents;
 
     private void Start() {
         if(_serialReader==null){_serialReader = GetComponentInChildren<SerialReader>();}     
@@ -61,6 +61,6 @@ public class InputManager : MonoBehaviour, IManager
     /// <param name="ButData">Estrucutra ButtonData con la info de la interacción</param>
     public void ReciveButtonInteraction(ButtonData ButData){    
         OnAnyButtonPress?.Invoke(ButData);
-        gameEvents[ButData.ButtonId]?.Raise();
+        _gameEvents[ButData.ButtonId-1]?.ButtonRaise(ButData); //-1 porque los botones data son del 1 al 12. Y el arreglo es de 0 a 11
     }
 }
