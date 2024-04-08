@@ -13,7 +13,7 @@ public class TextBoxDialog
     public string Content;
     public AudioClip Audio;
     public Sprite Personaje;
-    public enum SpritePos {Izquierda,Centro,Derecha,Hide}
+    public enum SpritePos {Izquierda,Centro,Derecha, Hide}
     public SpritePos SpritePosition = SpritePos.Centro;
 }
 
@@ -21,6 +21,7 @@ public class TextBoxDialog
 public class TextBoxController : MonoBehaviour
 {
     //boton seguir con chulo al terminar omitir tiempo
+    public int SecondsToShowBox;
     public List<TextBoxDialog> Dialogs = new List<TextBoxDialog>();
     public TextMeshProUGUI TitleBox, ContentBox;
     public Image PersonajeBoxIzq, PersonajeBoxCen, PersonajeBoxDer;
@@ -104,10 +105,21 @@ public class TextBoxController : MonoBehaviour
             image.gameObject.SetActive(false);
         }
         if(Dialogs[CurrentI].SpritePosition != TextBoxDialog.SpritePos.Hide){
-        images[(int)Dialogs[CurrentI].SpritePosition].sprite = Dialogs[CurrentI].Personaje;
-        images[(int)Dialogs[CurrentI].SpritePosition].gameObject.SetActive(true);
+            images[(int)Dialogs[CurrentI].SpritePosition].sprite = Dialogs[CurrentI].Personaje;
+            images[(int)Dialogs[CurrentI].SpritePosition].gameObject.SetActive(true);
         }
-
+        //espera antes de comenzar
+        if(SecondsToShowBox!=0){
+            StartCoroutine(EsperarAntesdeMostrarBoxCorrutine());
+        }
+        
+    }
+    IEnumerator EsperarAntesdeMostrarBoxCorrutine(){
+        TitleBox.transform.parent.gameObject.SetActive(false);
+        GetComponent<Image>().enabled = false;
+        yield return new WaitForSeconds(SecondsToShowBox);
+        TitleBox.transform.parent.gameObject.SetActive(true);
+        GetComponent<Image>().enabled = true;
     }
 
     void ActiveBtn()

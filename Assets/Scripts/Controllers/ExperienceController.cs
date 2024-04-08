@@ -49,4 +49,13 @@ public abstract class ExperienceController : MonoBehaviour
     public virtual void EndExperience(){
         Manager.EstadoGame = Managers.GameState.Configuration;
     }
+
+    public void IniciarCon(int jugadores){
+        int i;
+        for (i = 1; i <= jugadores; i++)
+        {
+            Manager.GetManager<InputManager>().ReciveButtonInteraction(new ButtonData{DeviceId = i, ButtonId = 01});
+        }
+        Debug.Log("Se crearon "+(i-1)+" jugadores para pruebas");
+    }
 }

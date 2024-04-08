@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
+    [SerializeField] bool noVotes;
     [Tooltip("Es la demora que tendrá el InteractableArea en recibir un nuevo voto")]
     public float SecondToRestart = 2f;
     public int[] ButonIdAcepted;
-    public List<int> UsersVotes;
+    public List<int> UsersVotes = new List<int>();
     [SerializeField] int _votesCount;
 
     public int VotesCount{
@@ -18,11 +19,13 @@ public class InteractableArea : MonoBehaviour
         set
         {
             _votesCount = value;
+            if(value!=0 && !noVotes){VerificarAccion();}
+            if(noVotes){OnNoVotes?.Invoke();}
             MostrarJugadoresUI();
-            VerificarAccion();
         }
     }
     public UnityEvent OnChooseThisArea;
+    public UnityEvent OnNoVotes;
 
     [SerializeField] ScriptableUserSprite UserIcons;
 
@@ -44,7 +47,7 @@ public class InteractableArea : MonoBehaviour
         alto = GetComponent<RectTransform>().rect.height;
         if(!_useOwnGrid){
             _gridLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
-            _gridLayoutGroup.constraint =GridLayoutGroup.Constraint.FixedColumnCount;
+            _gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
             _gridLayoutGroup.constraintCount = 4;
             _gridLayoutGroup.cellSize = new Vector2( ancho*cellSize, alto*cellSize );
             _gridLayoutGroup.spacing = new Vector2( ancho*cellSpace, alto*cellSpace );
@@ -57,21 +60,27 @@ public class InteractableArea : MonoBehaviour
         }
     }
     void MostrarJugadoresUI(){
-
         for (int j = 0; j < transform.childCount; j++)
         {
             transform.GetChild(j).gameObject.SetActive(UsersVotes.Contains(j+1));
         }
-        
     }
     void VerificarAccion(bool supervoto = false){
-        if( VotesCount+1 == Managers.Instance.GetManager<InteractableManager>().Users.Count || supervoto){
-            OnChooseThisArea?.Invoke();
-            Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(false);
-            //limpieza del interactive area
-            UsersVotes.Clear();
-            _votesCount = 0;          
+        if(UsersVotes!=null){
+            int count = ((int)Managers.Instance.GetManager<InteractableManager>().Users.Count-1);
+            //Debug.Log("AREA cuenta "+UsersVotes.Count +" de "+count+" por ende "+(VotesCount == ((int)Managers.Instance.GetManager<InteractableManager>().Users.Count-1) || supervoto)+" termina el conteo", transform);
+            if( UsersVotes.Count == ((int)Managers.Instance.GetManager<InteractableManager>().Users.Count-1) || supervoto){ //si es un super voto o si todos votaron
+                OnChooseThisArea?.Invoke();
+                Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(false);
+                LimpiarArea();
+            }
         }
+    }
+    public void LimpiarArea(){
+        UsersVotes.Clear();
+        //VotesCount = 0;
+        MostrarJugadoresUI();
+
     }
     void ReinciarInteraction(){
         Managers.Instance.GetManager<InteractableManager>().ChangeInteractionMode(true); 
@@ -80,12 +89,17 @@ public class InteractableArea : MonoBehaviour
         VerificarAccion(true);
     }
     private void OnEnable() {
+        //Debug.Log("Aparece");
         Invoke(nameof(RegistrarArea), 0.5f);
     }
     private void OnDisable() {
-        if(Managers.Instance!=null){
+        Invoke(nameof(SuprimirArea), 0.5f);
+    }
+    void SuprimirArea(){
+        LimpiarArea();
+        if(Managers.Instance != null){
             InteractableManager interactableManager = Managers.Instance.GetManager<InteractableManager>();
-            interactableManager.AddInteractionRemove(this);
+            interactableManager.RemoveInteractionArea(this);
         }
     }
     void RegistrarArea(){

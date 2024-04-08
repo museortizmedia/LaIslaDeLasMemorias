@@ -5,13 +5,14 @@ using UnityEngine.Events;
 
 public class SimulatePlayer : MonoBehaviour
 {
+    public bool IsDebug = true;
     bool CanChangePlayer = true;
     [SerializeField] int _currentDeviceID = 0;
     public int CurrentDeviceID {
         get => _currentDeviceID;
         set {
             _currentDeviceID = value;
-            Debug.LogWarning("SIMULATOR: Ahora interactua como: "+_currentDeviceID);
+            if(IsDebug){Debug.LogWarning("SIMULATOR: Ahora interactua como: "+_currentDeviceID);}
         }
     }
     Dictionary<KeyCode, UnityAction> _accionesTeclas = new Dictionary<KeyCode, UnityAction>();
@@ -118,7 +119,7 @@ public class SimulatePlayer : MonoBehaviour
             int boton = teclas.IndexOf(tecla);
             UnityAction accion = () =>
             {
-                Debug.LogWarning("SIMULADOR: Jugador "+_currentDeviceID+" usó tecla: " + tecla+" que corresponde al indice de eventos "+boton+" y el boton "+(1+ +boton));
+                if(IsDebug){Debug.LogWarning("SIMULADOR: Jugador "+_currentDeviceID+" usó tecla: " + tecla+" que corresponde al indice de eventos "+boton+" y el boton "+(1+ +boton));}
                 ButtonData newData = new()
                 {
                     DeviceId = _currentDeviceID,
