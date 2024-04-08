@@ -2,42 +2,45 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShowForParts : MonoBehaviour
 {
-    // For use this component, must have React Transform component
+    
+    public int partsInX = 12;
+    [SerializeField] private int currentPartsInX = 0;
+    public UnityEvent OnChange;
+
+    RectTransform _rectTransform;
     private float originalWidth, height;
-    public int partsInX = 1;
-    private int currentPartsInX = 0;
 
     void Start()
     {
-        
-    }
-    void Initialize(){
-        RectTransform rectTransform = GetComponent<RectTransform>();
+        _rectTransform = GetComponent<RectTransform>();
 
-        originalWidth = - rectTransform.rect.width;
-        height = rectTransform.rect.height;
+        originalWidth = - _rectTransform.rect.width;
+        height = _rectTransform.rect.height;
 
-        rectTransform.offsetMax = new Vector2(originalWidth, 0);
+        _rectTransform.offsetMax = new Vector2(0, 0); //iniciar siempre viendose
     }
     public void ShowOnePartMore()
     {
-        RectTransform rectTransform = GetComponent<RectTransform>();
-
         if (currentPartsInX < partsInX)
         {
             currentPartsInX++;
-            rectTransform.offsetMax = new Vector2(originalWidth - (originalWidth * currentPartsInX) / partsInX, 0);
+            _rectTransform.offsetMax = new Vector2(originalWidth - (originalWidth * currentPartsInX) / partsInX, 0);
+            OnChange?.Invoke();
         }
     }
 
     public void ShowAllParts()
     {
-        RectTransform rectTransform = GetComponent<RectTransform>();
-
         currentPartsInX = partsInX;
-        rectTransform.offsetMax = new Vector2(0, 0);
+        _rectTransform.offsetMax = new Vector2(0, 0);
+        OnChange?.Invoke();
+    }
+    public void ShowAnyPart(){
+        currentPartsInX=0;
+        _rectTransform.offsetMax = new Vector2(originalWidth, 0);
     }
 }
