@@ -20,7 +20,7 @@ public class Amb1Act1 : ExperienceController
         base.Start(); //llamada obligatoria al comenzar
         OnEndTutorial.AddListener(()=>Finalizar());
 
-        //IniciarCon(2);
+        if(Manager.GetManager<InteractableManager>().Users.Count==1){IniciarCon(2);}
     }
     public void EndTutorial(){
         OnEndTutorial?.Invoke();

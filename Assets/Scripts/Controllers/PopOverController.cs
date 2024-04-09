@@ -26,8 +26,8 @@ public class PopOverController : MonoBehaviour
             SR.SendSerialPortData(SerialReader.CerebroComds.TableState+"["+value+"]");
             if(SR._isSimulation){
                 OnGetTableInfo(new PopOverController.PopOverInfo{
-                    Title = $"Titulo mesa {value}",
-                    Content = $"Contenido mesa {value}"
+                    Title = $"Mesa {value}",
+                    Content = $"Estado de la mesa {value}: Conectando..."
                 });
             }
         }
