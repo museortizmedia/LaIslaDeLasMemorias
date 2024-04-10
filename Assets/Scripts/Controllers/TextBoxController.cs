@@ -10,6 +10,7 @@ using UnityEngine.Events;
 public class TextBoxDialog
 {
     public string Title;
+    [TextArea]
     public string Content;
     public AudioClip Audio;
     public Sprite Personaje;
