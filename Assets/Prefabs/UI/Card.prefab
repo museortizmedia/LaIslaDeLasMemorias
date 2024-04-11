@@ -282,8 +282,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 53f7850146441324eb80442f1acbf05d, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -423,6 +423,7 @@ MonoBehaviour:
   Flipeable: 0
   FlipType: 0
   _flipDuration: 1
+  _isMuted: 0
 --- !u!1 &3662930548145426354
 GameObject:
   m_ObjectHideFlags: 0

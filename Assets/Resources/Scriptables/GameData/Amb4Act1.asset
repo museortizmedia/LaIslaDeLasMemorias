@@ -75,3 +75,4 @@ MonoBehaviour:
     Sound: {fileID: 0}
     BadgeInt: 9
   AbsurdPercent: 0
+  AbsurdWait: 5

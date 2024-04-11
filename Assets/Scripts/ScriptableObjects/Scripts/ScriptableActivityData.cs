@@ -22,4 +22,5 @@ public class ScriptableActivitiesData : ScriptableObject
     public List<ActivityData> AbsurdData;
     [Range(0,100)]
     public float AbsurdPercent = 0;
+    public float AbsurdWait = 0;
 }

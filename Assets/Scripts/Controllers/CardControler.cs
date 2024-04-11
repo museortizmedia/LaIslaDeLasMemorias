@@ -106,6 +106,7 @@ public class CardControler : MonoBehaviour
             }) );
         }
     }
+
     IEnumerator RotateCard(Action FlipCB)
     {
         float elapsedRotationTime = 0f;
@@ -136,12 +137,32 @@ public class CardControler : MonoBehaviour
 
         transform.rotation = targetRotation; //asegurar rotación
     }
-
+    public void SetCardType(CardType type){
+        Type=type;
+        Inicializar();
+    }
     public void SetGameData(ScriptableActivitiesData.ActivityData Data){
         Text = Data.Text;
         Image = Data.Imagen;
         Sound = Data.Sound;
         BadgeNumber = Data.BadgeInt;
+        Inicializar();
+    }
+    public void SetOnlyText(string Data){
+        Text = Data;
+        Inicializar();
+    }
+    public void SetOnlyImage(Sprite Data){
+        Image = Data;
+        Inicializar();
+    }
+    public void SetOnlySound(AudioClip Data){
+        Sound = Data;
+        Inicializar();
+    }
+    public void SetOnlyBadgeText(int Data){
+        BadgeNumber = Data;
+        Inicializar();
     }
 }
 
