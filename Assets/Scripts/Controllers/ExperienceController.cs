@@ -19,6 +19,7 @@ public abstract class ExperienceController : MonoBehaviour
     public UnityEvent OnStartExperience;
     [Header("Inspector de Experience Personalizado")]
     public string DevName = "Escribe tu nombre aquí";
+    public ScriptableActivitiesData ActivityData;
 
 
     protected virtual void Awake()

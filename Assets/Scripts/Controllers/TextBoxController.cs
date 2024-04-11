@@ -54,7 +54,7 @@ public class TextBoxController : MonoBehaviour
         }
     }
     public UnityEvent OnFinish;
-    [SerializeField] AudioSource _as;
+    AudioSource _as;
 
     private void Awake() {
         _as = GetComponent<AudioSource>();

@@ -10,7 +10,8 @@ using System;
 public enum CardType {
     Card,
     ImageOnly,
-    Badge
+    Badge,
+    TextOnly,
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -32,6 +33,8 @@ public class CardControler : MonoBehaviour
     public bool Flipeable;
     public CardType FlipType;
     [SerializeField]float _flipDuration = 1f;
+    [Header("Sound")]
+    [SerializeField] bool _isMuted;
 
     Image _imageCardSprite;
     AudioSource _audioSource;
@@ -44,7 +47,6 @@ public class CardControler : MonoBehaviour
     void PrivateComponents(){
         _imageCardSprite = _imageCard.GetComponentInChildren<Image>();
         _audioSource = GetComponent<AudioSource>();
-        _textCard.fontSize = FontSize;
     }
 
     public void Inicializar() {
@@ -71,15 +73,30 @@ public class CardControler : MonoBehaviour
                 _badge.SetActive(true);
                 _imageCard.SetActive(true);
                 _textCard.gameObject.SetActive(true);
-                //set
-                
+                //set                
                 _textCard.text = Text;
                 _badge.GetComponentInChildren<TextMeshProUGUI>(true).text = BadgeNumber.ToString();
+            break;
+            case CardType.TextOnly:
+                _badge.SetActive(false);
+                _imageCard.SetActive(false);
+                _textCard.gameObject.SetActive(true);
+                //set
+                _textCard.text = Text;
             break;
         }
         _imageCardSprite.sprite = Image;
         _audioSource.clip = Sound;
+        _textCard.fontSize = FontSize;
     }
+
+    /*private void OnEnable() {
+        if(_audioSource!=null && _audioSource.clip != null && !_isMuted) { _audioSource.Play(); }
+    }
+
+    private void OnDisable() {
+        _audioSource.Stop();
+    }*/
 
     public void FlipCard(){
         if(Flipeable){
@@ -97,20 +114,11 @@ public class CardControler : MonoBehaviour
 
         while (elapsedRotationTime < (_flipDuration / 2))
         {
-            // Incrementar el tiempo transcurrido
             elapsedRotationTime += Time.deltaTime;
-
-            // Calcular el progreso de la animación (entre 0 y 1)
             float t = Mathf.Clamp01(elapsedRotationTime / (_flipDuration / 2));
-
-            // Interpolar la rotación desde la rotación inicial hasta la rotación objetivo
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
-
-            // Esperar un frame antes de continuar la rotación
             yield return null;
         }
-
-        // Llamada a la acción una vez que la mitad de la rotación se ha completado
         FlipCB?.Invoke();
 
         // Reajuste de la rotación
@@ -120,21 +128,20 @@ public class CardControler : MonoBehaviour
 
         while (elapsedRotationTime < (_flipDuration / 2))
         {
-            // Incrementar el tiempo transcurrido
             elapsedRotationTime += Time.deltaTime;
-
-            // Calcular el progreso de la animación (entre 0 y 1)
             float t = Mathf.Clamp01(elapsedRotationTime / (_flipDuration / 2));
-
-            // Interpolar la rotación desde la rotación inicial hasta la rotación objetivo
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
-
-            // Esperar un frame antes de continuar la rotación
             yield return null;
         }
 
-        // Asegurar que la rotación llegue exactamente a la rotación original
-        transform.rotation = targetRotation;
+        transform.rotation = targetRotation; //asegurar rotación
+    }
+
+    public void SetGameData(ScriptableActivitiesData.ActivityData Data){
+        Text = Data.Text;
+        Image = Data.Imagen;
+        Sound = Data.Sound;
+        BadgeNumber = Data.BadgeInt;
     }
 }
 

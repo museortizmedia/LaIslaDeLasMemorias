@@ -136,7 +136,7 @@ public class SerialReader : MonoBehaviour, IManager
         /// </summary>
         Connect,
         /// <summary>
-        /// Envia una configuracion al Vibrador, agregue [value] para definir el poder.
+        /// Envia una configuracion al Vibrador, agregue [value] para definir el poder. (0-255)
         /// </summary>
         ConfigVibration,
         /// <summary>
