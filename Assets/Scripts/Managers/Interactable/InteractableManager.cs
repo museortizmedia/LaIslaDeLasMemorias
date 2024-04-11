@@ -85,6 +85,7 @@ public class InteractableManager : MonoBehaviour, IManager
                             if (_usersVoted[buttonData.DeviceId] != null)
                             {
                                 _usersVoted[buttonData.DeviceId].UsersVotes.Remove(buttonData.DeviceId);
+                                _usersVoted[buttonData.DeviceId].VotesCount = _usersVoted[buttonData.DeviceId].VotesCount; //actualizamos votes para actualizar jugadore UI (revisar si es mejor hacer publico el metodo)
                                 //_usersVoted[buttonData.DeviceId].VotesCount--;
                             }
                             // Registrar voto en el Padre
