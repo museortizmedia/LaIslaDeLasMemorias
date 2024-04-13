@@ -8,18 +8,18 @@ public class Amb4Act1 : ExperienceController
 {
     [SerializeField] List<CardControler> SecuenciaLavado = new();
     [SerializeField] List<ScriptableActivitiesData.ActivityData> Secuencia = new();
-    List<ScriptableActivitiesData.ActivityData> NuevaSecuencia = new();
+    [SerializeField] List<ScriptableActivitiesData.ActivityData> SecuenciaActual = new();
     [SerializeField] CardControler Q_Card, Q_Pregunta, Q_Area1, Q_Area2, Q_Area3;
 
     [Header("Otras referencias")]
-    [SerializeField] GameObject SecuenciaGO;
+    [SerializeField] GameObject SecuenciaLavadoGO;
+    [SerializeField] GameObject SecuenciaLavadoGOEnd;
 
     [SerializeField] GameObject FB_Positivo, FB_Negativo, FB_Absurdo, FB_Fin;
 
-    List<int> _absurdIndex = new();
-
     int _correctArea = 0; //0-inactivo, 1-Area1, 2-Area2, 3-Area3
     ScriptableActivitiesData.ActivityData _cardInfo;
+    [SerializeField] int index;
 
     public override void Start()
     {
@@ -36,108 +36,109 @@ public class Amb4Act1 : ExperienceController
         }
     }
     //mostrar por x segundos la secuencia de lavado de manos
-    public void MostrarSecuenciaLavadoDeManos()
+    public void MostrarSecuenciaLavadoDeManos(bool isLast = false)
     {
-        SecuenciaGO.SetActive(true);
+        if(isLast){SecuenciaLavadoGO.GetComponent<ActiveEvent>().enabled=false;}
+        SecuenciaLavadoGO.SetActive(true);
     }
 
     //guardar info de imagenes y textos de la secuencia
     void GenerarNuevaSecuencia()
     {
         //sumar absurdos según el porcentaje expuesto en datos
-        NuevaSecuencia = new(ActivityData.Data);
-        CombineListsRandomly(NuevaSecuencia, ActivityData.AbsurdData);
+        Secuencia = new(ActivityData.Data);
+        CombinarListaAleatorio(Secuencia, ActivityData.AbsurdData);
+        RevolverLista(Secuencia);
 
-        Secuencia = new(NuevaSecuencia);
+        SecuenciaActual = new(Secuencia);
     }
-    public void CombineListsRandomly<T>(List<T> Lista1, List<T> Lista2)
-    {
-        for (int i = 0; i < Lista2.Count; i++)
-        {
-            int absurdProbabiily = Random.Range(0, 100);
-            if (absurdProbabiily < ActivityData.AbsurdPercent)
-            {
-                int random = Random.Range(0, Lista1.Count);
-                Lista1.Insert(random, Lista2[i]);
-                _absurdIndex.Add(random);
-            }
-        }
-    }
+    
     //definir contenido de lista en Controlador Question
     public void ShowQuestion()
     {
+        Transform QuestionGO = Q_Card.transform.parent;
+        //si es el ultimo
+        if(SecuenciaActual.Count==0){
+            SecuenciaLavadoGO.SetActive(false);
+            QuestionGO.gameObject.SetActive(false);
+            FB_Fin.SetActive(true);
+            SecuenciaLavadoGOEnd.SetActive(true);
+            
+            return;
+        }
+
         //mostrar modo pregunta
         Q_Pregunta.gameObject.SetActive(true);
         Q_Area1.gameObject.SetActive(true);
         Q_Area2.gameObject.SetActive(true);
         Q_Area3.gameObject.SetActive(true);
         if(Q_Card.Type != CardType.ImageOnly) { Q_Card.SetCardType(CardType.ImageOnly); }
-
+    
         //logica
-        int index = Random.Range(0, Secuencia.Count);
-        int index1 = Random.Range(0, NuevaSecuencia.Count); while (index == index1) { index1 = Random.Range(0, NuevaSecuencia.Count); }
-        int index2 = Random.Range(0, NuevaSecuencia.Count); while (index1 == index2) { index2 = Random.Range(0, NuevaSecuencia.Count); }
-        int index3 = Random.Range(0, NuevaSecuencia.Count); while (index2 == index3) { index3 = Random.Range(0, NuevaSecuencia.Count); }
+        _cardInfo = SecuenciaActual[0];
+        int index1 = Random.Range(0, Secuencia.Count); while (index1 == 0) { index1 = Random.Range(0, Secuencia.Count); }
+        int index2 = Random.Range(0, Secuencia.Count); while (index2 == index || index2 == index1) { index2 = Random.Range(0, Secuencia.Count); }
+        int index3 = Random.Range(0, Secuencia.Count); while (index3 == index || index3 == index1 || index3 == index2) { index3 = Random.Range(0, Secuencia.Count); }
         _correctArea = Random.Range(1, 4); //(1 inclusivo - 4(exclusivo))
 
-        _cardInfo = Secuencia[index];
-        Debug.Log(index + ", " + _cardInfo.Name + " " + index1 + " " + index2 + " " + index3 + " correcta: " + _correctArea);
+        
+        //Debug.Log(index1+Secuencia[index1].Name + " " + index2+Secuencia[index2].Name + " " + index3+Secuencia[index3].Name + " correcta: " + _correctArea);
+        //Debug.Log("Respuesta correcta es: "+_correctArea);
 
         Q_Card.SetGameData(_cardInfo);
         Q_Pregunta.SetOnlyText("¿Cual es el nombre de este paso a realizar en el lavado de manos?");
 
-        InteractableArea interactableArea1 = Q_Area1.GetComponentInChildren<InteractableArea>(),
-            interactableArea2 = Q_Area2.GetComponentInChildren<InteractableArea>(),
-            interactableArea3 = Q_Area3.GetComponentInChildren<InteractableArea>();
+        InteractableArea
+        interactableArea1 = Q_Area1.GetComponentInChildren<InteractableArea>(),
+        interactableArea2 = Q_Area2.GetComponentInChildren<InteractableArea>(),
+        interactableArea3 = Q_Area3.GetComponentInChildren<InteractableArea>();
+
         //si es absurda
-        if (_absurdIndex.Contains(NuevaSecuencia.IndexOf(_cardInfo)))
+        if (_cardInfo.IsAbsurd)
         {
             Debug.Log("Es una pregunta absurda...");
-            Q_Area1.SetOnlyText(NuevaSecuencia[index1].Text);
+            Q_Area1.SetOnlyText(Secuencia[index1].Text);
             interactableArea1.OnChooseThisArea.RemoveAllListeners();
             interactableArea1.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
-            Q_Area2.SetOnlyText(NuevaSecuencia[index2].Text);
+            Q_Area2.SetOnlyText(Secuencia[index2].Text);
             interactableArea2.OnChooseThisArea.RemoveAllListeners();
             interactableArea2.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
-            Q_Area3.SetOnlyText(NuevaSecuencia[index3].Text);
+            Q_Area3.SetOnlyText(Secuencia[index3].Text);
             interactableArea3.OnChooseThisArea.RemoveAllListeners();
             interactableArea3.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
-            StartCoroutine(WaitAbsurdCorrutine());
-            return;
-        }
-        else
-        //si son normales
-        {
+            StartAbsurdCorutine(()=>{AbsurdFeedback();});
+        }else{
+            //si son normales
             if (_correctArea == 1)
             {
                 Q_Area1.SetOnlyText(_cardInfo.Text);
                 interactableArea1.OnChooseThisArea.RemoveAllListeners();
                 interactableArea1.OnChooseThisArea.AddListener(() => { PositiveFeedback(); });
-                Q_Area2.SetOnlyText(NuevaSecuencia[index2].Text);
+                Q_Area2.SetOnlyText(Secuencia[index2].Text);
                 interactableArea2.OnChooseThisArea.RemoveAllListeners();
                 interactableArea2.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
-                Q_Area3.SetOnlyText(NuevaSecuencia[index3].Text);
+                Q_Area3.SetOnlyText(Secuencia[index3].Text);
                 interactableArea3.OnChooseThisArea.RemoveAllListeners();
                 interactableArea3.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
             }
             else if (_correctArea == 2)
             {
-                Q_Area1.SetOnlyText(NuevaSecuencia[index1].Text);
+                Q_Area1.SetOnlyText(Secuencia[index1].Text);
                 interactableArea1.OnChooseThisArea.RemoveAllListeners();
                 interactableArea1.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
                 Q_Area2.SetOnlyText(_cardInfo.Text);
                 interactableArea2.OnChooseThisArea.RemoveAllListeners();
                 interactableArea2.OnChooseThisArea.AddListener(() => { PositiveFeedback(); });
-                Q_Area3.SetOnlyText(NuevaSecuencia[index3].Text);
+                Q_Area3.SetOnlyText(Secuencia[index3].Text);
                 interactableArea3.OnChooseThisArea.RemoveAllListeners();
                 interactableArea3.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
             }
-            else if(_correctArea == 2)
+            else if(_correctArea == 3)
             {
-                Q_Area1.SetOnlyText(NuevaSecuencia[index1].Text);
+                Q_Area1.SetOnlyText(Secuencia[index1].Text);
                 interactableArea1.OnChooseThisArea.RemoveAllListeners();
                 interactableArea1.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
-                Q_Area2.SetOnlyText(NuevaSecuencia[index2].Text);
+                Q_Area2.SetOnlyText(Secuencia[index2].Text);
                 interactableArea2.OnChooseThisArea.RemoveAllListeners();
                 interactableArea2.OnChooseThisArea.AddListener(() => { NegativeFeedback(); });
                 Q_Area3.SetOnlyText(_cardInfo.Text);
@@ -146,7 +147,7 @@ public class Amb4Act1 : ExperienceController
             }
         }
         ActiveInputManager(); //activamos la interaccion
-        Q_Card.transform.parent.gameObject.SetActive(true);
+        QuestionGO.gameObject.SetActive(true);
     }
 
     public void ShowAnswer()
@@ -159,40 +160,35 @@ public class Amb4Act1 : ExperienceController
         Q_Area2.gameObject.SetActive(false);
         Q_Area3.gameObject.SetActive(false);
     }
-    //si es correcta feedbackpositivo y pasar a siguiente de la lista
     void PositiveFeedback()
     {
-        ShowAnswer();
         FB_Positivo.SetActive(true);
-        Secuencia.Remove(_cardInfo);
+        SecuenciaActual.RemoveAt(0);
+        ShowAnswer();
+        
+        StopAbsurdCorutine();     
     }
-    //si es incorrecta feedback negativo
     void NegativeFeedback()
     {
         FB_Negativo.SetActive(true);
-        //resetear areas
         ActiveInputManager();
-        //si no hay mas en la lista feedbackfinal
+        ReinciarAbsurdo();
     }
     public void ActiveInputManager()
     {
         Manager.GetManager<InteractableManager>().ChangeInteractionMode(true);
     }
-    IEnumerator WaitAbsurdCorrutine()
-    {
-        yield return new WaitForSeconds(ActivityData.AbsurdWait);
-        AbsurdFeedback();
-    }
+    
     public void ReinciarAbsurdo(){
         if (ActivityData.AbsurdData.Contains(_cardInfo)){
-            StopAllCoroutines();
-            StartCoroutine(WaitAbsurdCorrutine()); //reinciar corrutina
+            Debug.Log("reinciando tiempo");
+            RestartAbsurdCorutine(()=>{AbsurdFeedback();});
         }
     }
     void AbsurdFeedback()
     {
         FB_Absurdo.SetActive(true);
-        NuevaSecuencia.Remove(_cardInfo);
+        SecuenciaActual.RemoveAt(0);
         ShowAnswer();
     }
 

@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public abstract class ExperienceController : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public abstract class ExperienceController : MonoBehaviour
     [HideInInspector] public Managers Manager;
     ScriptableIntroMensajes _scriptableIntroMensajes;
     GameObject _canvasIntroPrefab, _canvasIntro;
+
+    //Absurd Game
+    public UnityEvent OnStartAbsurdWait, OnEndAnsurdWait;
     
     
     [Header("Inspector de Experience Controller")]
@@ -58,5 +61,63 @@ public abstract class ExperienceController : MonoBehaviour
             Manager.GetManager<InputManager>().ReciveButtonInteraction(new ButtonData{DeviceId = i, ButtonId = 01});
         }
         Debug.Log("Se crearon "+(i-1)+" jugadores para pruebas");
+    }
+
+    IEnumerator WaitAbsurdCorrutine(Action CB)
+    {
+        yield return new WaitForSeconds(ActivityData.AbsurdWait);
+        CB?.Invoke();
+    }
+    public void StartAbsurdCorutine(Action CB){
+        StartCoroutine( WaitAbsurdCorrutine(()=>{CB?.Invoke();}));
+        Debug.Log("Iniciando tiempo de absurdo");
+    }
+    public void RestartAbsurdCorutine(Action CB){
+        StopAllCoroutines();
+        StartCoroutine( WaitAbsurdCorrutine(()=>{CB?.Invoke();}));
+        Debug.Log("Reinciando tiempo de absurdo");
+    }
+    public void StopAbsurdCorutine(){
+        StopAllCoroutines();
+        Debug.Log("Detenido tiempo de absurdo");
+    }
+
+    //HELPERS
+    /// <summary>
+    /// Combina en Lista1 la lista 2 en posiciones aleatorias
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="Lista1">ListaBase: Ahí quedará el resultado</param>
+    /// <param name="Lista2">Lista que se combinará aleatoriamente en lista 1</param>
+    /// <returns>lista con los indices agregados</returns>
+    public void CombinarListaAleatorio<T>(List<T> Lista1, List<T> Lista2)
+    {
+        for (int i = 0; i < Lista2.Count; i++)
+        {
+            int absurdProbabiily = UnityEngine.Random.Range(0, 100);
+            if (absurdProbabiily < ActivityData.AbsurdPercent)
+            {
+                int random = UnityEngine.Random.Range(0, Lista1.Count);
+                Lista1.Insert(random, Lista2[i]);
+            }
+        }
+    }
+    /// <summary>
+    /// Revuelve aleatoriamente una lista
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="list">Lista que desea revolver</param>
+    public void RevolverLista<T>(List<T> list)
+    {
+        System.Random rng = new System.Random();
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
     }
 }

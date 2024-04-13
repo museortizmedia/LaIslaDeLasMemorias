@@ -18,61 +18,73 @@ MonoBehaviour:
     Text: Abrir grifo
     Sound: {fileID: 0}
     BadgeInt: 1
+    IsAbsurd: 0
   - Name: Paso2
     Imagen: {fileID: 1593000376, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Humedecer manos
     Sound: {fileID: 0}
     BadgeInt: 2
+    IsAbsurd: 0
   - Name: Paso3
     Imagen: {fileID: 805239575, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Cerrar grifo
     Sound: {fileID: 0}
     BadgeInt: 3
+    IsAbsurd: 0
   - Name: Paso4
     Imagen: {fileID: 424584471, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: "Aplicar jab\xF3n"
     Sound: {fileID: 0}
     BadgeInt: 4
+    IsAbsurd: 0
   - Name: Paso5
     Imagen: {fileID: -1104432780, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Frotar manos
     Sound: {fileID: 0}
     BadgeInt: 5
+    IsAbsurd: 0
   - Name: Paso6
     Imagen: {fileID: -1602666678, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Abrir grifo
     Sound: {fileID: 0}
     BadgeInt: 6
+    IsAbsurd: 0
   - Name: Paso7
     Imagen: {fileID: -910977736, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Enjuagar manos
     Sound: {fileID: 0}
     BadgeInt: 7
+    IsAbsurd: 0
   - Name: Paso8
     Imagen: {fileID: -1365887244, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Cerrar grifo
     Sound: {fileID: 0}
     BadgeInt: 8
+    IsAbsurd: 0
   - Name: Paso9
     Imagen: {fileID: 1889587810, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Secar manos
     Sound: {fileID: 0}
     BadgeInt: 9
+    IsAbsurd: 0
   AbsurdData:
   - Name: PasoAbsurdo1
     Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Zapatos Deportivos
     Sound: {fileID: 0}
     BadgeInt: 1
+    IsAbsurd: 1
   - Name: PasoAbsurdo2
     Imagen: {fileID: -1271399637, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Yogurt de Fresa
     Sound: {fileID: 0}
     BadgeInt: 5
+    IsAbsurd: 1
   - Name: PasoAbsurdo3
     Imagen: {fileID: -1133295604, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Elefante
     Sound: {fileID: 0}
     BadgeInt: 9
-  AbsurdPercent: 0
-  AbsurdWait: 5
+    IsAbsurd: 1
+  AbsurdPercent: 56.8
+  AbsurdWait: 10

@@ -17,6 +17,7 @@ public class ScriptableActivitiesData : ScriptableObject
         public string Text;
         public AudioClip Sound;
         public int BadgeInt;
+        public bool IsAbsurd;
 	}
     public List<ActivityData> Data;
     public List<ActivityData> AbsurdData;

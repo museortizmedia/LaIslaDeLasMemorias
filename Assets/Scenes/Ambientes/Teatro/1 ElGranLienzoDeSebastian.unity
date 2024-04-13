@@ -1465,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3194461485391017021, guid: afd60680008fce846a3a15c417627837, type: 3}
       propertyPath: m_Name
-      value: Managers
+      value: Managers UNOFICIAL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6052,6 +6052,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   DevName: Diego
+  ActivityData: {fileID: 0}
   TableController: {fileID: 1815867871}
   OnFailTutorial:
     m_PersistentCalls:
