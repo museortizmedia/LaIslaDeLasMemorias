@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class InteractableArea : MonoBehaviour
 {
-    [SerializeField] bool noVotes;
+    public bool noVotes;
     [Tooltip("Es la demora que tendrá el InteractableArea en recibir un nuevo voto")]
     public float SecondToRestart = 2f;
     public int[] ButonIdAcepted;
@@ -24,6 +24,7 @@ public class InteractableArea : MonoBehaviour
             MostrarJugadoresUI();
         }
     }
+    [Tooltip("Acciones a ejecutar cuando recibe todos los votos o el supervoto")]
     public UnityEvent OnChooseThisArea;
     public UnityEvent OnNoVotes;
 
