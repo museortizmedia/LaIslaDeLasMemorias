@@ -109,30 +109,6 @@ MonoBehaviour:
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
-  - Name: TERMINADO SALPICON
-    Imagen: {fileID: -1046359260, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
-    Text: "Salpic\xF3n"
-    Sound: {fileID: 0}
-    BadgeInt: 0
-    IsAbsurd: 0
-  - Name: TERMINADO SANDWICH
-    Imagen: {fileID: 616827530, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
-    Text: Sandwich
-    Sound: {fileID: 0}
-    BadgeInt: 0
-    IsAbsurd: 0
-  - Name: TERMINADO PANELADA
-    Imagen: {fileID: -806080982, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
-    Text: Panelada
-    Sound: {fileID: 0}
-    BadgeInt: 0
-    IsAbsurd: 0
-  - Name: TERMINADO SOPA
-    Imagen: {fileID: -1167502877, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
-    Text: Sopa de Verduras
-    Sound: {fileID: 0}
-    BadgeInt: 0
-    IsAbsurd: 0
   AbsurdData:
   - Name: Zapatos Deportivos
     Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
