@@ -84,7 +84,7 @@ public abstract class ExperienceController : MonoBehaviour
 
     //HELPERS
     /// <summary>
-    /// Combina en Lista1 la lista 2 en posiciones aleatorias
+    /// Combina en Lista1 la lista 2 en posiciones aleatorias segun el percentil aleatorio de ActivityData
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="Lista1">ListaBase: Ahí quedará el resultado</param>
@@ -119,5 +119,31 @@ public abstract class ExperienceController : MonoBehaviour
             list[k] = list[n];
             list[n] = value;
         }
+    }
+    /// <summary>
+    /// Espera los segundos y ejecuta una acción
+    /// </summary>
+    /// <param name="segundos">Segundos a esperar</param>
+    /// <param name="CB">CallBack de la llamada, escribe en un afuncion anónima las acciones que quieres que realice</param>
+    public void EsperaYRealiza(float segundos, Action CB){
+        StartCoroutine(EsperaYRealizaCorrutina(segundos, CB));
+    }
+    IEnumerator EsperaYRealizaCorrutina(float segundos, Action CB){
+        yield return new WaitForSeconds(segundos);
+        CB?.Invoke();
+    }
+    /// <summary>
+    /// Activa las interacciones con el InteractableManager
+    /// </summary>
+    public void ActiveInputManager()
+    {
+        Manager.GetManager<InteractableManager>().ChangeInteractionMode(true);
+    }
+    /// <summary>
+    /// Desactiva las interacciones con el InteractableManager
+    /// </summary>
+    public void DesactiveInputManager()
+    {
+        Manager.GetManager<InteractableManager>().ChangeInteractionMode(false);
     }
 }

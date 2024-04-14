@@ -174,10 +174,6 @@ public class Amb4Act1 : ExperienceController
         ActiveInputManager();
         ReinciarAbsurdo();
     }
-    public void ActiveInputManager()
-    {
-        Manager.GetManager<InteractableManager>().ChangeInteractionMode(true);
-    }
     
     public void ReinciarAbsurdo(){
         if (ActivityData.AbsurdData.Contains(_cardInfo)){

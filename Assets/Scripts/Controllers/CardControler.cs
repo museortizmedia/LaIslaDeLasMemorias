@@ -12,6 +12,7 @@ public enum CardType {
     ImageOnly,
     Badge,
     TextOnly,
+    Hiden
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -83,6 +84,11 @@ public class CardControler : MonoBehaviour
                 _textCard.gameObject.SetActive(true);
                 //set
                 _textCard.text = Text;
+            break;
+            case CardType.Hiden:
+                _badge.SetActive(false);
+                _imageCard.SetActive(false);
+                _textCard.gameObject.SetActive(false);
             break;
         }
         _imageCardSprite.sprite = Image;
