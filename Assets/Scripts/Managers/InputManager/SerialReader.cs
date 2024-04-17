@@ -115,10 +115,11 @@ public class SerialReader : MonoBehaviour, IManager
                 OnBrainConnectState?.Invoke(response.ToString()=="true");
             break;
             case "TableState":
-                PopOverController.PopOverInfo _PopOverInfo = new PopOverController.PopOverInfo{
+                PopOverController.PopOverInfo _PopOverInfo = new()
+                {
                     Title = response.ToString().Split(",")[0],
                     Content =response.ToString().Split(",")[1]
-                    };
+                };
                 OnGetTableState?.Invoke(_PopOverInfo);
             break;
             
@@ -164,14 +165,8 @@ public class SerialReader : MonoBehaviour, IManager
     public void SendSerialPortData(CerebroComds command)
     {
         if(IsDebuging){Debug.Log("Enviando comando: "+command);}
-        if (serialPort != null && serialPort.IsOpen)
-        {
-            string[] letters = command.ToString().Split();
-            for (int i = 0; i < letters.Length; i++)
-            {
-                SendSerialPortData(char.Parse(letters[i]));
-            }
-        }       
+        string data = $"[{command}]";
+        SendSerialPortData(data);
     }
     /// <summary>
     /// Envia un dato string al cerebro, considere usar comandos predefinidos para acciones epecíficas.
@@ -179,6 +174,7 @@ public class SerialReader : MonoBehaviour, IManager
     /// <param name="data">string que desea enviar</param>
     public void SendSerialPortData(string data)
     {
+        data = $"[{data}]";
         if (serialPort != null && serialPort.IsOpen)
         {
             string[] letters = data.Split();
