@@ -439,15 +439,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3194461485391017021, guid: afd60680008fce846a3a15c417627837, type: 3}
       propertyPath: m_Name
-      value: Managers
+      value: Managers UNOFICIAL
       objectReference: {fileID: 0}
     - target: {fileID: 8185027393526532683, guid: afd60680008fce846a3a15c417627837, type: 3}
       propertyPath: _ambienteActual
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8185027393526532683, guid: afd60680008fce846a3a15c417627837, type: 3}
       propertyPath: _actividadActual
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -484,11 +484,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Manager: {fileID: 0}
-  _scriptableIntroMensajes: {fileID: 0}
-  OnStartExperience:
+  OnStartAbsurdWait:
     m_PersistentCalls:
       m_Calls: []
+  OnEndAnsurdWait:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartExperience:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1663179526}
+        m_TargetAssemblyTypeName: ExperienceController, Assembly-CSharp
+        m_MethodName: EndExperience
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   DevName: "Escribe tu nombre aqu\xED"
+  ActivityData: {fileID: 0}
 --- !u!4 &1663179527
 Transform:
   m_ObjectHideFlags: 0
