@@ -51,6 +51,7 @@ public abstract class ExperienceController : MonoBehaviour
     }
 
     public virtual void EndExperience(){
+        ActiveInputManager();
         Manager.EstadoGame = Managers.GameState.Configuration;
     }
 

@@ -887,6 +887,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 02c758627a9ff0245ad9662678ecff0a, type: 3}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
       objectReference: {fileID: 0}
@@ -1676,6 +1680,10 @@ PrefabInstance:
       propertyPath: Dialogs.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: b0bca9c71702ad0489aa0628ca4d2f5a, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -2987,6 +2995,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 20ce2905a989b4641890b39c40e59578, type: 3}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
       objectReference: {fileID: 0}
@@ -4120,6 +4132,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 73d99c843dcf32f4a9581000b1dc7114, type: 3}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
       objectReference: {fileID: 0}
@@ -4834,6 +4850,10 @@ PrefabInstance:
       propertyPath: Dialogs.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 83aa01edfa3c9574cbc05606aea21090, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -7808,6 +7828,10 @@ PrefabInstance:
       propertyPath: Dialogs.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: e76e8b093a6a9204da6946bfd26fc43f, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
