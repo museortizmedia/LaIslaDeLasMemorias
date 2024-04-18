@@ -70,7 +70,7 @@ public class Managers : MonoBehaviour
             _ambienteActual = 0; _actividadActual=0;
             break;
             case GameState.Inicio:
-            SceneManager.LoadScene(scriptableActivitiesInfo.Ambientes[_ambienteActual]._activitiesNames[_actividadActual]._scene.name);
+            SceneManager.LoadScene(scriptableActivitiesInfo.Ambientes[_ambienteActual]._activitiesNames[_actividadActual]._sceneName);
             break;
             default:
             break;

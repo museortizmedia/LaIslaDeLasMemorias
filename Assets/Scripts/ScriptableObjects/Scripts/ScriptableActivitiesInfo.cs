@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 // Define una clase para el ScriptableObject
@@ -16,7 +13,7 @@ public class ScriptableActivitiesInfo : ScriptableObject
         public struct Actividad{
             public string _name;
             public string _desc;
-            public SceneAsset _scene;
+            public string _sceneName;
             public enum NivelDificultad{Facil,Normal,Dificil}
             public NivelDificultad _dificultad;
             public float _tiempoEstimado;

@@ -17,7 +17,7 @@ MonoBehaviour:
     _activitiesNames:
     - _name: "El gran lienzo de Sebasti\xE1n"
       _desc: "Familiarizarse con las modalidades de interacci\xF3n."
-      _scene: {fileID: 102900000, guid: 4886cc592e16ff04ab63b6e73b58847a, type: 3}
+      _sceneName: 1 ElGranLienzoDeSebastian
       _dificultad: 0
       _tiempoEstimado: 600
       _personaje: {fileID: -1860527514, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
@@ -29,14 +29,14 @@ MonoBehaviour:
         ronda indicar\xE1 una maceta para sembrar, la segunda indicar\xE1 2, el estudiante
         debe recordar y sembrar en todas las macetas se\xF1aladas hasta la ronda
         5."
-      _scene: {fileID: 102900000, guid: a287eaa356f034d41a945b050115ca03, type: 3}
+      _sceneName: 1 SiembraSecuencial
       _dificultad: 1
       _tiempoEstimado: 600
       _personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
       _nombrePersonaje: Juan el Jardinero
     - _name: Riego Programado
       _desc: "Ayuda a Juan a recordar c\xF3mo y cu\xE1ndo regar las plantas"
-      _scene: {fileID: 102900000, guid: 70a382ccf8a267a41831abedd3c28732, type: 3}
+      _sceneName: 2 RiegoProgramado
       _dificultad: 0
       _tiempoEstimado: 60
       _personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
@@ -46,7 +46,7 @@ MonoBehaviour:
     - _name: "Clasificaci\xF3n de Animales"
       _desc: "Clasificar diferentes tipos de animales en tres categor\xEDas espec\xEDficas:
         dom\xE9sticos, salvajes y acu\xE1ticos."
-      _scene: {fileID: 102900000, guid: 162197b6176f18046b75c9af4c183e20, type: 3}
+      _sceneName: 1 ClasificacionAnimales
       _dificultad: 0
       _tiempoEstimado: 600
       _personaje: {fileID: 1351081170, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
@@ -56,7 +56,7 @@ MonoBehaviour:
         de asociaci\xF3n al ordenar correctamente los nombres de las herramientas,
         sus im\xE1genes y sus funciones relacionadas utilizando una palanca como
         dispositivo de selecci\xF3n."
-      _scene: {fileID: 102900000, guid: 2677d5a032a199f4ea6f0c6da0c56998, type: 3}
+      _sceneName: 2 OrdenamientoHerramientas
       _dificultad: 1
       _tiempoEstimado: 600
       _personaje: {fileID: 1351081170, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
@@ -65,7 +65,7 @@ MonoBehaviour:
     _activitiesNames:
     - _name: Lavado de manos
       _desc: Aprender la secuencia de lavado de manos y reconocer el orden
-      _scene: {fileID: 102900000, guid: f6d4b20145191c64cb24114ea34c4866, type: 3}
+      _sceneName: 1 LavadoManos
       _dificultad: 0
       _tiempoEstimado: 600
       _personaje: {fileID: 63081371, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
@@ -76,7 +76,7 @@ MonoBehaviour:
         papaya, banano, pi\xF1a, bebida roja), (sandwich: pan tajado, jam\xF3n, queso,
         mantequilla), (panelada: lim\xF3n, agua, panela, az\xFAcar), (sopa de verduras:
         agua, zanahoria, cebolla, papa)"
-      _scene: {fileID: 102900000, guid: fb56d05fb98827942b053c975e6ddc94, type: 3}
+      _sceneName: 2 ClasificadoIngredientes
       _dificultad: 1
       _tiempoEstimado: 600
       _personaje: {fileID: 63081371, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
@@ -87,16 +87,16 @@ MonoBehaviour:
       _desc: "El objetivo de esta actividad es clasificar la ropa del almac\xE9n
         seg\xFAn su tipo (camiseta, pantal\xF3n y zapatos) y su respectivo color
         (azul y rojo)."
-      _scene: {fileID: 102900000, guid: 10d961d10904e1144910de5446a7703b, type: 3}
+      _sceneName: 1 SeleccionarCategorias
       _dificultad: 0
       _tiempoEstimado: 0
-      _personaje: {fileID: 0}
-      _nombrePersonaje: 
+      _personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+      _nombrePersonaje: Pedro el Comerciante
     - _name: "Simulaci\xF3n de Ventas"
       _desc: "El objetivo es realizar una simulaci\xF3n de venta simple de una prenda
         y devolver el cambio correctamente."
-      _scene: {fileID: 102900000, guid: 5ba4298423d52014ba5fdd921dc77823, type: 3}
+      _sceneName: 2 SimuladorVentas
       _dificultad: 0
       _tiempoEstimado: 0
-      _personaje: {fileID: 0}
-      _nombrePersonaje: 
+      _personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+      _nombrePersonaje: Pedro el Comerciante

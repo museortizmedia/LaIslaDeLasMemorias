@@ -172,6 +172,7 @@ public class CardControler : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(CardControler))]
 public class MyScriptEditor : Editor {
     public override void OnInspectorGUI() {
@@ -184,3 +185,4 @@ public class MyScriptEditor : Editor {
         }
     }
 }
+#endif

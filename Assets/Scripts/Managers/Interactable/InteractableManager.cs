@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.iOS;
 using UnityEngine.UI;
 
 public class InteractableManager : MonoBehaviour, IManager
