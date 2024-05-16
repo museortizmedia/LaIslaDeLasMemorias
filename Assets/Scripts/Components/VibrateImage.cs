@@ -5,9 +5,18 @@ using UnityEngine.Events;
 
 public class VibrateImage : MonoBehaviour
 {
+    public bool IsVibrating;
     [SerializeField] float totalDuration = 0.5f;
     [SerializeField] float amplitude = 10f;
     public UnityEvent OnStopped;
+
+    [SerializeField] Transform target;
+
+    private void Start() {
+        if(target==null){
+            target = gameObject.transform;
+        }
+    }
 
     public void Vibrar(){
         StartCoroutine(StartVibration());
@@ -15,9 +24,10 @@ public class VibrateImage : MonoBehaviour
 
     IEnumerator StartVibration()
     {
+        IsVibrating=true;
         // Inicializar la rotación inicial y el temporizador
         float startTime = Time.time;
-        Quaternion startRotation = transform.rotation;
+        Quaternion startRotation = target.rotation;
 
         // Realizar la vibración
         while (Time.time - startTime < totalDuration)
@@ -29,14 +39,15 @@ public class VibrateImage : MonoBehaviour
             float angle = Mathf.Sin(progress * Mathf.PI * 2) * amplitude;
 
             // Aplicar rotación a la imagen
-            transform.rotation = startRotation * Quaternion.Euler(0, 0, angle);
+            target.rotation = startRotation * Quaternion.Euler(0, 0, angle);
 
             // Esperar al siguiente frame
             yield return null;
         }
 
         // Restaurar la rotación inicial al final de la vibración
-        transform.rotation = startRotation;
+        target.rotation = startRotation;
         OnStopped?.Invoke();
+        IsVibrating=false;
     }
 }
