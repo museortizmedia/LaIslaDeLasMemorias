@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MuseCoderLibrary;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,6 +61,9 @@ public class DropDownController : MonoBehaviour
     }
 
     public void ChangeToInicio(){
-        Managers.Instance.SetGameState((int)Managers.GameState.Inicio);
+        gameObject.AddComponent<UI_FadeTransition>().Iniciar(()=>{
+            Managers.Instance.SetGameState((int)Managers.GameState.Inicio);
+        });
+        
     }
 }
