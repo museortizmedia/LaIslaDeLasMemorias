@@ -48,6 +48,7 @@ public class VibrateImage : MonoBehaviour
                 // Esperar al siguiente frame
                 yield return null;
             }
+        }
 
         // Restaurar la rotación inicial al final de la vibración
         target.rotation = startRotation;
