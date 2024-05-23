@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e988938cc66ced49b94178b2277d59b, type: 3}
   m_Name: Amb4Act1_LavadoDeManos
   m_EditorClassIdentifier: 
+  ActivityName: Lavado De Manos
   Data:
   - Name: Paso1
     Imagen: {fileID: -2052876127, guid: 67c9194cc64e4c146a24130646978abf, type: 3}

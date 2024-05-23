@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e988938cc66ced49b94178b2277d59b, type: 3}
   m_Name: Amb4Act2_ClasificandoIngredientes
   m_EditorClassIdentifier: 
+  ActivityName: Clasificando Ingredientes
   Data:
   - Name: Papaya
     Imagen: {fileID: 709194923, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
@@ -128,5 +129,5 @@ MonoBehaviour:
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1
-  AbsurdPercent: 100
+  AbsurdPercent: 73.3
   AbsurdWait: 10
