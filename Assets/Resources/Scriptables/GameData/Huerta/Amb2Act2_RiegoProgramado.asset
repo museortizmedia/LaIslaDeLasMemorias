@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e988938cc66ced49b94178b2277d59b, type: 3}
+  m_Name: Amb2Act2_RiegoProgramado
+  m_EditorClassIdentifier: 
+  ActivityName: Riego Programado
+  Data:
+  - Name: Zanahoria
+    Imagen: {fileID: -1944909630, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Zanahoria
+    Imagen: {fileID: 1673181877, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Zanahoria
+    Imagen: {fileID: 284121316, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Zanahoria
+    Imagen: {fileID: 1084192588, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Cebolla
+    Imagen: {fileID: 690705015, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Cebolla
+    Imagen: {fileID: 414938063, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Cebolla
+    Imagen: {fileID: -1828086758, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Cebolla
+    Imagen: {fileID: -1332727380, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Mango
+    Imagen: {fileID: -280223696, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Mango
+    Imagen: {fileID: -168967455, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Mango
+    Imagen: {fileID: 426381698, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Mango
+    Imagen: {fileID: 522767609, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Ca\xF1a"
+    Imagen: {fileID: 721678364, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Ca\xF1a"
+    Imagen: {fileID: -1611026051, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Ca\xF1a"
+    Imagen: {fileID: -377583695, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Ca\xF1a"
+    Imagen: {fileID: -143797041, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  AbsurdData: []
+  AbsurdPercent: 0
+  AbsurdWait: 0

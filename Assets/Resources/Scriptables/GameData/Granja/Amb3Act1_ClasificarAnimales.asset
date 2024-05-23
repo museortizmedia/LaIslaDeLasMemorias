@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e988938cc66ced49b94178b2277d59b, type: 3}
+  m_Name: Amb3Act1_ClasificarAnimales
+  m_EditorClassIdentifier: 
+  Data:
+  - Name: Papaya
+    Imagen: {fileID: 709194923, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Papaya
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Banano
+    Imagen: {fileID: -1869988807, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Banano
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Pi\xF1a"
+    Imagen: {fileID: -1800006017, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: "Pi\xF1a"
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Bebida Roja
+    Imagen: {fileID: 1218428084, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Bebida Roja
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Pan Tajado
+    Imagen: {fileID: -1339464684, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Pan Tajado
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Jam\xF3n"
+    Imagen: {fileID: -975262245, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: "Jam\xF3n"
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Queso
+    Imagen: {fileID: -897535834, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Queso
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Mantequilla
+    Imagen: {fileID: -1524035759, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Mantequilla
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Lim\xF3n"
+    Imagen: {fileID: -950879191, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: "Lim\xF3n"
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Agua
+    Imagen: {fileID: 657165855, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Agua
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Panela
+    Imagen: {fileID: 1635565071, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Panela
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: "Az\xFAcar"
+    Imagen: {fileID: -1967340627, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: "Az\xFAcar"
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Agua
+    Imagen: {fileID: 2078233551, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Agua
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Zanahoria
+    Imagen: {fileID: -1180363091, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Zanahoria
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Cebolla
+    Imagen: {fileID: -226127760, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Cebolla
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: Papa
+    Imagen: {fileID: 919637931, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Papa
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  AbsurdData:
+  - Name: Zapatos Deportivos
+    Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Zapatos Deportivos
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 1
+  - Name: Yogurt
+    Imagen: {fileID: -1271399637, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Yogurt
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 1
+  - Name: Rinoceronte
+    Imagen: {fileID: -1133295604, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Rinoceronte
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 1
+  AbsurdPercent: 100
+  AbsurdWait: 10

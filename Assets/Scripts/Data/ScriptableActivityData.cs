@@ -19,6 +19,7 @@ public class ScriptableActivitiesData : ScriptableObject
         public int BadgeInt;
         public bool IsAbsurd;
 	}
+    public string ActivityName;
     public List<ActivityData> Data;
     public List<ActivityData> AbsurdData;
     [Range(0,100)]
