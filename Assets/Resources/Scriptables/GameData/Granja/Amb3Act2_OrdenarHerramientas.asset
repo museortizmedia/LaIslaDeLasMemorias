@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e988938cc66ced49b94178b2277d59b, type: 3}
-  m_Name: Amb3Act1_ClasificarAnimales 1
+  m_Name: Amb3Act2_OrdenarHerramientas
   m_EditorClassIdentifier: 
   ActivityName: Ordenar Herramientas
   Data:
