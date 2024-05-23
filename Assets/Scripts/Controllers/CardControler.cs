@@ -14,7 +14,15 @@ public enum CardType {
     TextOnly,
     Hiden
 }
-
+/// <summary>
+/// Controla contenidos de texto, imagen, audio en una carta. Use las siguientes funciones para cambiar sus valores:
+/// SetGameData -> Info del scriptable data
+/// SetOnly... -> Solamente una info en especifico sea texto, audio, imagen o texto del badge
+/// Cambie la forma que se ve la información con el enum CardType usando el método:
+/// SetCardType y SetFlipCardType
+/// Para girar las cartas entre sus tipo el booleano Flipeable debe ser true y usar el método:
+/// FlipCard 
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class CardControler : MonoBehaviour
 {
@@ -145,6 +153,10 @@ public class CardControler : MonoBehaviour
     }
     public void SetCardType(CardType type){
         Type=type;
+        Inicializar();
+    }
+    public void SetFlipCardType(CardType type){
+        FlipType=type;
         Inicializar();
     }
     public void SetGameData(ScriptableActivitiesData.ActivityData Data){

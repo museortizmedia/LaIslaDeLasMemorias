@@ -57,7 +57,7 @@ MonoBehaviour:
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Rinoceronte
-    Imagen: {fileID: -1133295604, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Imagen: {fileID: -1233934728, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: 
     Sound: {fileID: 0}
     BadgeInt: 0
