@@ -9,7 +9,7 @@ public class Amb2Act2 : ExperienceController
     [field:SerializeField]
     public bool IsRegaderaMoving{get;set;}
     public UI_ImageOscillator RegaderaOscilator;
-    public GameObject FB_Positivo, FB_Negativo, FB_FIN;
+    public GameObject FB_Positivo, FB_Negativo, FB_FIN, FB_ABSURD;
     public Image SemillaImage;
     
     [SerializeField] float _speed = 200;
@@ -30,6 +30,7 @@ public class Amb2Act2 : ExperienceController
     [SerializeField] int estadoPlant;
 
     [SerializeField] bool _isWatering = true;
+    [SerializeField] Sprite _regaderaLlena, _regaderaVacia;
 
 
     public override void Start()
@@ -44,18 +45,16 @@ public class Amb2Act2 : ExperienceController
         DesactiveInputManager();
 
     }
-    void EscogerAleatoriamenteSemilla(){
-        /*if(_semillaEscogida == null){
-            SemillaImage.enabled=true;
-            SemillaImage.sprite = ActivityData.Data[ ActivityData.Data.IndexOf(_semillaEscogida) + estadoPlant ].Imagen;
-        }*/
-        Debug.Log(_semillaEscogida);
-
-        int indexEscogido = (ActivityData.Data.Count/4)+4;
-        _semillaEscogida = ActivityData.Data[Random.Range(0, indexEscogido-1)];
+    void EscogerAleatoriamenteSemilla()
+    {
+        int indexEscogido = Random.Range(0, (ActivityData.Data.Count/4)-1);
+        _semillaEscogida = ActivityData.Data[indexEscogido*4];
     }
     public void StartRegadera()
     {
+        SemillaImage.enabled=true;
+        SemillaImage.sprite = _semillaEscogida.Imagen;
+
         RegaderaOscilator.oscillateX = true;
         ActiveInputManager();
     }    
@@ -67,7 +66,14 @@ public class Amb2Act2 : ExperienceController
     }
     public void UsersSelection()
     {
-        
+        //verificar el abusrdo: agua
+        if(!_isWatering)
+        {
+            AbsurdFeedback();
+            return;
+        }
+
+
         if(IsRegaderaMoving)
         {
             if(_isMovingInX)
@@ -96,16 +102,19 @@ public class Amb2Act2 : ExperienceController
         RegaderaOscilator.oscillateY=false;
         IsRegaderaMoving=true;
 
-        _isWatering = Random.Range(0,100) < ActivityData.AbsurdPercent;
+        _isWatering = Random.Range(0,100) > ActivityData.AbsurdPercent;
+        RegaderaOscilator.gameObject.GetComponentInChildren<Image>().sprite = _isWatering ? _regaderaLlena : _regaderaVacia;
     }
     [SerializeField] float _selectedPosX = 0, _selectedPosY = 0;
     void VerificarPosicion(float x, float y)
     {
+        //
         Debug.Log($"Posicion Guardada {x} y {y}");
         CheckCercania();
         if(_hasInZone){
-            if(estadoPlant >= 4){
-                EsperaYRealiza(5f, ()=>{FB_FIN.SetActive(true);});
+            if(estadoPlant >= 3){
+                RegaderaOscilator.gameObject.SetActive(false);
+                EsperaYRealiza(2f, ()=>{FB_FIN.SetActive(true);});
                 DesactiveInputManager();
                 return;
             }
@@ -125,6 +134,21 @@ public class Amb2Act2 : ExperienceController
     void CheckCercania(){
         _hasInZone = !(Vector3.Distance(RegaderaOscilator.transform.position, targetPoint) > (radiusY.y-radiusY.x));
     }
+    [SerializeField] Transform abonoPos;
+    public void RellenarDeAgua(){
+        if(_isWatering){return;}
+
+        IsRegaderaMoving=_isMovingInX=RegaderaOscilator.oscillateX=RegaderaOscilator.oscillateY=false;
+        Vector3 regaderaPosition = RegaderaOscilator.transform.position;
+        RegaderaOscilator.transform.position = abonoPos.transform.position;
+        EsperaYRealiza(2, ()=>{
+            RegaderaOscilator.transform.position = regaderaPosition;
+            IsRegaderaMoving=_isMovingInX=RegaderaOscilator.oscillateX=true;
+            RegaderaOscilator.oscillateY=false;
+        });
+        _isWatering=true;
+        RegaderaOscilator.gameObject.GetComponentInChildren<Image>().sprite = _regaderaLlena;
+    }
 
     void PositiveFeedback(){
         FB_Positivo.SetActive(true);
@@ -136,9 +160,14 @@ public class Amb2Act2 : ExperienceController
         FB_Negativo.SetActive(true);
         IsRegaderaMoving=RegaderaOscilator.oscillateX=RegaderaOscilator.oscillateY=false;
     }
+    void AbsurdFeedback()
+    {
+        FB_ABSURD.SetActive(true);
+        IsRegaderaMoving=RegaderaOscilator.oscillateX=RegaderaOscilator.oscillateY=false;
+    }
 
     public void Finalizar(){
-        gameObject.AddComponent<UI_FadeTransition>().Iniciar(()=>{EndExperience();});
+        EndExperience();
     }
     
     private void OnDrawGizmos()

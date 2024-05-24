@@ -15,7 +15,10 @@ public abstract class ExperienceController : MonoBehaviour
     GameObject _canvasIntroPrefab, _canvasIntro;
 
     //Absurd Game
-    public UnityEvent OnStartAbsurdWait, OnEndAnsurdWait;
+    [Tooltip("")]
+    public UnityEvent OnStartAbsurdWait;
+    [Tooltip("")]
+    public UnityEvent OnEndAnsurdWait;
     
     
     [Header("Inspector de Experience Controller")]
@@ -43,8 +46,8 @@ public abstract class ExperienceController : MonoBehaviour
     /// <summary>
     /// Inicia la introducción del Centro usando TextBox
     /// </summary>
-    void StartIntro(){
-
+    void StartIntro()
+    {
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).Dialogs =
         _scriptableIntroMensajes.TodosLosDialogos[Manager.AmbienteActual].DialogoActividades[Manager.ActividadActual].Dialogo;
         _canvasIntro.GetComponentInChildren<TextBoxController>(true).OnFinish.AddListener( ()=>{ Destroy(_canvasIntro); OnStartExperience?.Invoke();} );

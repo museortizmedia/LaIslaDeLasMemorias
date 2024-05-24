@@ -27,9 +27,7 @@ public class Amb1Act1 : ExperienceController
     }
     void Finalizar()
     {
-        Debug.Log("Terminó la experiencia con éxito");
-        // Desactiva esta línea para evitar que se cambie la escena
-        EndExperience(); // llamada obligatoria al finalizar
+        EndExperience();
     }
     
     //Feedback Negativo (Button Events)
@@ -50,8 +48,4 @@ public class Amb1Act1 : ExperienceController
     void ResetFailList(){
         _failList.Clear();
     }
-
-
-    //
-    
 }

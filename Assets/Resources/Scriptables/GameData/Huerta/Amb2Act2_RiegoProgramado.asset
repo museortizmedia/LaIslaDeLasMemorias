@@ -111,5 +111,5 @@ MonoBehaviour:
     BadgeInt: 0
     IsAbsurd: 0
   AbsurdData: []
-  AbsurdPercent: 0
-  AbsurdWait: 0
+  AbsurdPercent: 21.1
+  AbsurdWait: 10
