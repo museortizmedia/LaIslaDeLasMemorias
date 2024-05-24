@@ -68,11 +68,13 @@ public class TextBoxController : MonoBehaviour
     }
 
     private void Update() {
+        #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
             GoNext();
         } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             GoBack();
         }
+        #endif
     }
 
     private void OnEnable() {

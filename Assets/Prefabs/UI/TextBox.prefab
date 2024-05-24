@@ -511,7 +511,6 @@ GameObject:
   - component: {fileID: 3895827990771766714}
   - component: {fileID: 5632124559538803001}
   - component: {fileID: 2352643793509590028}
-  - component: {fileID: 2166820672927833385}
   m_Layer: 5
   m_Name: Caja
   m_TagString: Untagged
@@ -581,35 +580,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 6
---- !u!114 &2166820672927833385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3862360617989344530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 336039534926389627}
-          m_TargetAssemblyTypeName: TextBoxController, Assembly-CSharp
-          m_MethodName: GoNext
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &3952862909045782233
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48343a19ae3614f418aab6e12f17a3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SecondsToShowBox: 0
   Dialogs:
   - Title: 1
     Content: a
@@ -708,7 +679,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _as: {fileID: 0}
 --- !u!82 &2368423487390393559
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1045,7 +1015,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 22.55
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1

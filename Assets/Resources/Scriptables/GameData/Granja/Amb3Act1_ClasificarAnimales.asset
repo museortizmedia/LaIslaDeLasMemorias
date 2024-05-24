@@ -16,55 +16,55 @@ MonoBehaviour:
   Data:
   - Name: Perro
     Imagen: {fileID: 1642537216, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Domestico
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: "Le\xF3n"
     Imagen: {fileID: 75218090, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Salvaje
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: "Delf\xEDn"
     Imagen: {fileID: 1311266530, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Acuatico
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Gato
     Imagen: {fileID: -1101075791, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Domestico
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Tigre
     Imagen: {fileID: -291418564, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Salvaje
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Ballena
     Imagen: {fileID: 201613455, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Acuatico
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Loro
     Imagen: {fileID: -1393042766, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Domestico
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Rinoceronte
     Imagen: {fileID: -1233934728, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Salvaje
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Medusa
     Imagen: {fileID: -153796718, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Acuatico
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
