@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using MuseCoderLibrary;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -51,8 +52,10 @@ public abstract class ExperienceController : MonoBehaviour
     }
 
     public virtual void EndExperience(){
-        ActiveInputManager();
-        Manager.EstadoGame = Managers.GameState.Configuration;
+        gameObject.AddComponent<UI_FadeTransition>().Iniciar( ()=>{
+            ActiveInputManager();
+            Manager.EstadoGame = Managers.GameState.Configuration;
+        });
     }
 
     public void IniciarCon(int jugadores){
