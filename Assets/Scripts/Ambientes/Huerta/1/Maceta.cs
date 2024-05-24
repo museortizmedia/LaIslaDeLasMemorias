@@ -14,5 +14,6 @@ public class Maceta : MonoBehaviour
     public void ChangePosition(string value)
     {
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = value;
+        transform.GetChild(0).gameObject.SetActive(value!="");
     }
 }

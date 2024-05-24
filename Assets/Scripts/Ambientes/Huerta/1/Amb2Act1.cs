@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MuseCoderLibrary;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,10 +12,18 @@ public class Amb2Act1 : ExperienceController
     public Sprite fertilizedSprite;
     public GameObject[] allPots;
     public TextMeshProUGUI roundTextMesh;
-    private GameObject[] vibratingPots = new GameObject[5];
-    private List<GameObject> unfertilizedPots = new List<GameObject>();
-    private int currentRound = 1;
-    private int currentPotIndex = 0;
+    [SerializeField] private GameObject[] vibratingPots = new GameObject[5];
+    [SerializeField] private List<GameObject> unfertilizedPots = new List<GameObject>();
+    [SerializeField] private int _currentRound = 1;
+    public int currentRound{
+        get => _currentRound;
+        set {
+            _currentRound = value;
+            roundTextMesh.text = _currentRound.ToString();
+        }
+        
+    }
+    [SerializeField] private int currentPotIndex = 0;
 
     public UnityEvent OnFailPotTutorial, OnFailFertilizantedTutorial, OnGoodTutorial, OnEndTutorial;
 
@@ -48,6 +57,16 @@ public class Amb2Act1 : ExperienceController
         StartCoroutine(VibrateAllPotsForRound());
     }
 
+    public void VibratePots()
+    {
+        StopAllCoroutines();
+        foreach (var pot in allPots)
+        {
+            pot.GetComponent<VibrateImage>().StopVibration();
+        }
+        StartCoroutine(VibrateAllPotsForRound());
+    }
+
     IEnumerator VibrateAllPotsForRound()
     {
         for (int i = 0; i < currentRound; i++)
@@ -60,7 +79,7 @@ public class Amb2Act1 : ExperienceController
                     macetaComponent.Vibrar();
                 }
             }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
@@ -136,7 +155,6 @@ public class Amb2Act1 : ExperienceController
     }
 
     public void Finalizar(){
-        Debug.Log("Terminó la experiencia con éxito");
-        EndExperience(); //llamada obligatoria al finalizar
+        EndExperience();
     }
 }

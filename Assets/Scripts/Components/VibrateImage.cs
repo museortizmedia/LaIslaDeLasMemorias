@@ -18,7 +18,7 @@ public class VibrateImage : MonoBehaviour
             target = gameObject.transform;
         }
     }
-
+    [ContextMenu("Vibrar")]
     public void Vibrar(){
         StartCoroutine(StartVibration());
     }
@@ -54,5 +54,10 @@ public class VibrateImage : MonoBehaviour
         target.rotation = startRotation;
         OnStopped?.Invoke();
         IsVibrating=false;
+    }
+    [ContextMenu("Detener")]
+    public void StopVibration(){
+        StopCoroutine(StartVibration());
+        target.rotation = Quaternion.identity;
     }
 }
