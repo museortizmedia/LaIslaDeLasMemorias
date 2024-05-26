@@ -182,6 +182,10 @@ public class CardControler : MonoBehaviour
         BadgeNumber = Data;
         Inicializar();
     }
+    
+    public string GetText(){
+        return Text;
+    }
 }
 
 #if UNITY_EDITOR

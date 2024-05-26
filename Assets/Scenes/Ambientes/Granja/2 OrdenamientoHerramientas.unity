@@ -1877,30 +1877,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 706365218}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1663179526}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Finalizar
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Amb3Act1, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Amb3Act2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3952862909045782233, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
@@ -2036,6 +2060,18 @@ MonoBehaviour:
   OnEnableGO:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 74499554}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 74499554}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive

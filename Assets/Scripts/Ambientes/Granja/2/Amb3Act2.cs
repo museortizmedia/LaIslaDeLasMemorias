@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MuseCoderLibrary;
 using UnityEngine;
 
 public class Amb3Act2 : ExperienceController
@@ -50,12 +51,35 @@ public class Amb3Act2 : ExperienceController
             CardTool.SetGameData(toolEscogida);
             CardTool.SetOnlyText(toolEscogida.Name);
             _isCorrect = Random.Range(1, 2);
-            string aleatoryText = toolsRound[Random.Range(1, toolsRound.Count-1)].Text;
-            _area1.SetOnlyText(_isCorrect==1?toolEscogida.Text:aleatoryText);
-            _area2.SetOnlyText(_isCorrect==2?toolEscogida.Text:aleatoryText);
+            string aleatoryText = "";
+            if(toolsRound.Count>1){
+                aleatoryText = toolsRound[Random.Range(1, toolsRound.Count-1)].Text;
+            }
+            if(aleatoryText!="")
+            {
+                _area1.SetOnlyText(_isCorrect==1?toolEscogida.Text:aleatoryText);
+                _area2.SetOnlyText(_isCorrect==2?toolEscogida.Text:aleatoryText);
+            }else{
+                string correctText = toolEscogida.Text; 
+                if(_isCorrect==1)
+                {
+                    if(_area1.GetText() != correctText)
+                    {
+                        _area2.SetOnlyText(_area1.GetText());
+                        _area1.SetOnlyText(correctText);
+                    }               
+                }else{
+                    if(_area2.GetText() != correctText)
+                    {
+                        _area1.SetOnlyText(_area1.GetText());
+                        _area2.SetOnlyText(correctText);
+                    }
+                }
+            }
             }
         );
         CardTool.FlipCard(); 
+        ActiveInputManager();
     }
     public void UserSelect(int area){
         if(_isCorrect==0){return;} //sale si no hay herramietnas seleccionadas seleccionados
@@ -64,6 +88,7 @@ public class Amb3Act2 : ExperienceController
         if(toolsRound.Count==1)
         {
             //TERMINA
+            FB_End.SetActive(true);
             return;
         }
 
@@ -72,6 +97,10 @@ public class Amb3Act2 : ExperienceController
             FB_Absurd.SetActive(true);
             RestartAbsurdCorutine(()=>{
                 //CORRECTO
+                _currentTool = 0;
+                toolsRound.RemoveAt(0);
+                ComeNewTool();
+                FB_Positive.SetActive(true);
             });
             return;
         }
@@ -96,6 +125,8 @@ public class Amb3Act2 : ExperienceController
     }
 
     public void Finalizar(){
-        EndExperience();
+        gameObject.AddComponent<UI_FadeTransition>().Iniciar(()=>{
+            EndExperience();
+        });
     }
 }

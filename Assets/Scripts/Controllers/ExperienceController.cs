@@ -1,3 +1,5 @@
+#define DEBUG_ABSURD
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -61,6 +63,10 @@ public abstract class ExperienceController : MonoBehaviour
         });
     }
 
+    /// <summary>
+    /// Crea usuarios virtuales que apartecerán en el interactive mbar
+    /// </summary>
+    /// <param name="jugadores">cantidad de jugadores que quieres crear virtualmente</param>
     public void IniciarCon(int jugadores){
         int i;
         for (i = 1; i <= jugadores; i++)
@@ -70,23 +76,48 @@ public abstract class ExperienceController : MonoBehaviour
         Debug.Log("Se crearon "+(i-1)+" jugadores para pruebas");
     }
 
-    IEnumerator WaitAbsurdCorrutine(Action CB)
-    {
-        yield return new WaitForSeconds(ActivityData.AbsurdWait);
-        CB?.Invoke();
-    }
+    /// <summary>
+    /// Comenzará el conteo de absurdos.
+    /// </summary>
+    /// <param name="CB">función anónima que se ejecutará al terminar el tiempo</param>
     public void StartAbsurdCorutine(Action CB){
         StartCoroutine( WaitAbsurdCorrutine(()=>{CB?.Invoke();}));
+        #if DEBUG_ABSURD
         Debug.Log("Iniciando tiempo de absurdo");
+        #endif
     }
+    /// <summary>
+    /// Reinicia y establece la corrutina del conteo de absurdos
+    /// </summary>
+    /// <param name="CB">función anónima que se ejecutará al finalizar la corrutina unueva</param>
     public void RestartAbsurdCorutine(Action CB){
         StopAllCoroutines();
         StartCoroutine( WaitAbsurdCorrutine(()=>{CB?.Invoke();}));
+        #if DEBUG_ABSURD
         Debug.Log("Reinciando tiempo de absurdo");
+        #endif
     }
+    /// <summary>
+    /// Detiene la corrutina de absurdo y no ejecuta ningun CB
+    /// </summary>
     public void StopAbsurdCorutine(){
         StopAllCoroutines();
+        #if DEBUG_ABSURD
         Debug.Log("Detenido tiempo de absurdo");
+        #endif
+    }
+    IEnumerator WaitAbsurdCorrutine(Action CB)
+    {
+        float secondsToWait = ActivityData.AbsurdWait;
+        while(secondsToWait>0){
+            yield return new WaitForSeconds(1f);
+            secondsToWait--;
+            #if DEBUG_ABSURD
+            Debug.LogWarning($"faltan {secondsToWait} de {ActivityData.AbsurdWait}");
+            #endif
+        }
+        
+        CB?.Invoke();
     }
 
     //HELPERS
