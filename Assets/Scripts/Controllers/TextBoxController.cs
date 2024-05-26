@@ -69,7 +69,7 @@ public class TextBoxController : MonoBehaviour
 
     private void Update() {
         #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetMouseButtonDown(0)) {
             GoNext();
         } else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             GoBack();
@@ -82,6 +82,8 @@ public class TextBoxController : MonoBehaviour
     }
 
     public void GoNext() {
+        StopCoroutine(EsperarAntesdeMostrarBoxCorrutine());
+        CancelInvoke();
         if (IsLastSlide) { OnFinish?.Invoke(); return; }
         CurrentI++;
     }

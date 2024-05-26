@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using MuseCoderLibrary;
 using UnityEngine;
 
 public class Amb3Act1 : ExperienceController
 {
     [SerializeField] List<ScriptableActivitiesData.ActivityData> animalesRound = new();
     int _currentAnimal = 0;
+    ScriptableActivitiesData.ActivityData animalEscogido;
     [SerializeField] UI_FollowPath animalAnimations;
     [SerializeField] CardControler AnimalCard;
     [SerializeField] GameObject FB_Positive, FB_Negative, FB_Absurd, FB_End;
@@ -22,7 +24,7 @@ public class Amb3Act1 : ExperienceController
     }
 
     //iniciar recorrido
-    ScriptableActivitiesData.ActivityData animalEscogido;
+    
     public void StartEstampida(){
         area1.gameObject.SetActive(true);
         area2.gameObject.SetActive(true);
@@ -30,20 +32,36 @@ public class Amb3Act1 : ExperienceController
 
         //seleccionamos el animal del incide de la lista
         animalEscogido = animalesRound[0];
-        //verificamos si es absurdo, de ser así verificamos que se cumpla el porcentaje aleatorio (# aleatorio es menor que el porcentaje de absurdo de los datos de actividad)
-        if(animalEscogido.IsAbsurd && Random.Range(0, 100)<ActivityData.AbsurdPercent)
+
+        //verificamos si es absurdo
+        if(animalEscogido.IsAbsurd)
         {
+            // Si un # aleatorio es mayor que el porcentaje de absurdo de los datos de actividad entonces descartar este absurdo
+            if(Random.Range(0, 100)>ActivityData.AbsurdPercent){
             animalesRound.RemoveAt(0); //pasamos al siguiente animal (no usamos el absurdo)
             StartEstampida(); //volvemos a usar este metodo (recursividad)
             return;
-        }
+            }
 
-        // Despues de verificar el animal a usar, asignamos sus valores a la carta
-        AnimalCard.SetGameData(animalEscogido);
-        AnimalCard.SetOnlyText(animalEscogido.Name);
-       
+            // Si pasa el filtro inciar tiempo de espera
+            StartAbsurdCorutine(()=>{
+                area1.gameObject.SetActive(false);
+                area2.gameObject.SetActive(false);
+                area3.gameObject.SetActive(false);
+                _currentCorrectAnimal = 0;
+                animalesRound.RemoveAt(0);
+                ComeNewAnimal();
+                FB_Positive.SetActive(true);
+            });
+        }
+        EsperaYRealiza(.5f, ()=>{
+            // Despues de verificar el animal a usar, asignamos sus valores a la carta
+            AnimalCard.SetGameData(animalEscogido);
+            AnimalCard.SetOnlyText(animalEscogido.Name);
+            }
+        );
         _currentCorrectAnimal = animalEscogido.Text == "Domestico"?1:animalEscogido.Text == "Salvaje"?2:3;
-        AnimalCard.FlipCard();
+        AnimalCard.FlipCard(); 
     }
 
     //user interactions
@@ -52,6 +70,7 @@ public class Amb3Act1 : ExperienceController
     public void UserSelect(int AnimalType){
         if(_currentCorrectAnimal==0){return;} //sale si no hay animales seleccionados
 
+        //si es el ultimo animal
         if(animalesRound.Count==1)
         {
             area1.gameObject.SetActive(false);
@@ -65,11 +84,22 @@ public class Amb3Act1 : ExperienceController
             return;
         }
 
+        //si es una situacion absurda
         if(animalEscogido.IsAbsurd){
             area1.gameObject.SetActive(false);
             area2.gameObject.SetActive(false);
             area3.gameObject.SetActive(false);
             FB_Absurd.SetActive(true);
+            RestartAbsurdCorutine(()=>{
+                area1.gameObject.SetActive(false);
+                area2.gameObject.SetActive(false);
+                area3.gameObject.SetActive(false);
+                _currentCorrectAnimal = 0;
+                animalesRound.RemoveAt(0);
+                ComeNewAnimal();
+                FB_Positive.SetActive(true);
+            });
+            AnimalCard.FlipCard();
             return;
         }
 
@@ -100,6 +130,6 @@ public class Amb3Act1 : ExperienceController
     }
 
     public void Finalizar(){
-        EndExperience();
+        gameObject.AddComponent<UI_FadeTransition>().Iniciar(()=>{EndExperience();});
     }
 }

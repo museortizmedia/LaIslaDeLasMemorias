@@ -16,50 +16,52 @@ MonoBehaviour:
   Data:
   - Name: Pala
     Imagen: {fileID: -1236933931, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Se usa para mover tierra desde el suelo a otro lado.
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Pico
     Imagen: {fileID: 547020492, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: Se usa para excavar un agujero en la tierra.
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Cubo
     Imagen: {fileID: -808197950, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: "Se usa para mover gran cantidad de algo de un lado a otro levant\xE1ndose
+      del suelo."
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Azada
     Imagen: {fileID: -2062720841, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: 'Se usa para realizar surcos en la tierra antes de plantar. '
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Carretilla
     Imagen: {fileID: -1399010197, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
-    Text: 
+    Text: "Se usa para mover gran cantidad de algo de un lado a otro arrastr\xE1ndose
+      por el suelo."
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Regadera
     Imagen: {fileID: 549015520, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
-    Text: 
+    Text: "Se usa para darles agua a las plantas del jard\xEDn."
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   AbsurdData:
   - Name: Zapatos Deportivos
     Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
-    Text: Zapatos Deportivos
+    Text: Se usan para cubrir los pies al hacer deporte
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1
-  - Name: Yogurt
+  - Name: Yogurt de Fresa
     Imagen: {fileID: -1271399637, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
-    Text: Yogurt
+    Text: Bebida espesa a base de leche sabor artificial a fresa
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1

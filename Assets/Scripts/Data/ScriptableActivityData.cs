@@ -14,6 +14,7 @@ public class ScriptableActivitiesData : ScriptableObject
     public struct ActivityData{
         public string Name;
         public Sprite Imagen;
+        [TextArea]
         public string Text;
         public AudioClip Sound;
         public int BadgeInt;
