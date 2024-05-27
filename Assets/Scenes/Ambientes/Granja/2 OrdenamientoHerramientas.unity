@@ -521,8 +521,24 @@ PrefabInstance:
       value: 23.28806
       objectReference: {fileID: 0}
     - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: m_fontSizeBase
       value: 35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279769112
       objectReference: {fileID: 0}
     - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: m_VerticalAlignment
@@ -607,6 +623,22 @@ PrefabInstance:
     - target: {fileID: 6585900029853173536, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41aef6e53acfb8b4498dbc7a6c803815, type: 3}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Color.b
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
       objectReference: {fileID: 0}
     - target: {fileID: 7660412859516171944, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: m_AnchorMax.x
@@ -913,6 +945,14 @@ PrefabInstance:
     - target: {fileID: 8683726523557390190, guid: 99956ab443d92304ab3eedfa839874f9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 6.5667877
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845779810436199334, guid: 99956ab443d92304ab3eedfa839874f9, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845779810436199334, guid: 99956ab443d92304ab3eedfa839874f9, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 3.07
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1059355345483297069, guid: 99956ab443d92304ab3eedfa839874f9, type: 3}
@@ -1310,8 +1350,24 @@ PrefabInstance:
       value: 23.28806
       objectReference: {fileID: 0}
     - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.09433961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: m_fontSizeBase
       value: 35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279769112
       objectReference: {fileID: 0}
     - target: {fileID: 4980906230641906674, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: m_VerticalAlignment
@@ -1396,6 +1452,22 @@ PrefabInstance:
     - target: {fileID: 6585900029853173536, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41aef6e53acfb8b4498dbc7a6c803815, type: 3}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Color.b
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659651293267099447, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
+      propertyPath: m_Color.r
+      value: 0.99215686
       objectReference: {fileID: 0}
     - target: {fileID: 7660412859516171944, guid: 3ecb75dfdab1c1743a0579d94670f372, type: 3}
       propertyPath: m_AnchorMax.x

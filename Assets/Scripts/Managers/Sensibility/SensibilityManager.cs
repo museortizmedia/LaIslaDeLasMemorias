@@ -25,14 +25,17 @@ public class SensibilityManager : MonoBehaviour, IManager
         if(isActive){
             if(Input.GetKeyDown(KeyCode.J)){
                 //Open Vibration Control
+                Debug.Log("vibration");
                 ModuleSetActive(!_vibrationControl.activeSelf, _vibrationControl);
                 VibrationConfig();
             }else if(Input.GetKeyDown(KeyCode.K)){
                 //Open Color Control
+                Debug.Log("color");
                 ModuleSetActive(!_colorControl.activeSelf, _colorControl);
                 ColorConfig();
             }else if(Input.GetKeyDown(KeyCode.L)){
                 //Open Volume Control
+                Debug.Log("volume");
                 ModuleSetActive(!_volumeControl.activeSelf, _volumeControl);
                 VolumeConfig();
             }

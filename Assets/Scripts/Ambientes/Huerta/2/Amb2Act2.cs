@@ -31,6 +31,7 @@ public class Amb2Act2 : ExperienceController
 
     [SerializeField] bool _isWatering = true;
     [SerializeField] Sprite _regaderaLlena, _regaderaVacia;
+    [SerializeField] GameObject repostandoAgua;
 
 
     public override void Start()
@@ -137,16 +138,15 @@ public class Amb2Act2 : ExperienceController
     [SerializeField] Transform abonoPos;
     public void RellenarDeAgua(){
         if(_isWatering){return;}
-
-        IsRegaderaMoving=_isMovingInX=RegaderaOscilator.oscillateX=RegaderaOscilator.oscillateY=false;
-        Vector3 regaderaPosition = RegaderaOscilator.transform.position;
-        RegaderaOscilator.transform.position = abonoPos.transform.position;
-        EsperaYRealiza(2, ()=>{
-            RegaderaOscilator.transform.position = regaderaPosition;
-            IsRegaderaMoving=_isMovingInX=RegaderaOscilator.oscillateX=true;
-            RegaderaOscilator.oscillateY=false;
+        IsRegaderaMoving=false;
+        RegaderaOscilator.gameObject.SetActive(false);
+        repostandoAgua.SetActive(true);
+        EsperaYRealiza(2f, ()=>{
+            repostandoAgua.SetActive(false);
+            RegaderaOscilator.gameObject.SetActive(true);
+            IsRegaderaMoving=true;
+            _isWatering=true;
         });
-        _isWatering=true;
         RegaderaOscilator.gameObject.GetComponentInChildren<Image>().sprite = _regaderaLlena;
     }
 

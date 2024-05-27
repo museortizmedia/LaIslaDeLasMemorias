@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 4096
+        y: 5120
         width: 1024
         height: 1024
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 4096
+        y: 5120
         width: 1024
         height: 1024
       alignment: 0
@@ -169,7 +169,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2048
-        y: 4096
+        y: 5120
         width: 1024
         height: 1024
       alignment: 0
@@ -190,7 +190,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3072
-        y: 4096
+        y: 5120
         width: 1024
         height: 1024
       alignment: 0
@@ -211,7 +211,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3072
+        y: 4096
         width: 1024
         height: 1024
       alignment: 0
@@ -232,7 +232,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 3072
+        y: 4096
         width: 1024
         height: 1024
       alignment: 0
@@ -253,7 +253,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2048
-        y: 3072
+        y: 4096
         width: 1024
         height: 1024
       alignment: 0
@@ -274,7 +274,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3072
-        y: 3072
+        y: 4096
         width: 1024
         height: 1024
       alignment: 0
@@ -295,7 +295,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2048
+        y: 3072
         width: 1024
         height: 1024
       alignment: 0
@@ -316,7 +316,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 2048
+        y: 3072
         width: 1024
         height: 1024
       alignment: 0
@@ -337,7 +337,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2048
-        y: 2048
+        y: 3072
         width: 1024
         height: 1024
       alignment: 0
@@ -358,7 +358,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3072
-        y: 2048
+        y: 3072
         width: 1024
         height: 1024
       alignment: 0
@@ -379,7 +379,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
+        y: 2048
         width: 1024
         height: 1024
       alignment: 0
@@ -400,7 +400,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 1024
+        y: 2048
         width: 1024
         height: 1024
       alignment: 0
@@ -421,7 +421,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2048
-        y: 1024
+        y: 2048
         width: 1024
         height: 1024
       alignment: 0
@@ -442,7 +442,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3072
-        y: 1024
+        y: 2048
         width: 1024
         height: 1024
       alignment: 0
@@ -463,7 +463,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1024
         width: 1024
         height: 1024
       alignment: 0
@@ -484,7 +484,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 0
+        y: 1024
         width: 1024
         height: 1024
       alignment: 0
@@ -505,6 +505,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84d0ff1c375b64344ac88987bd72f635
+      internalID: 545143654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huerta Elemnts_19
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec790ac39511a2d45bf90d3a59c02db7
+      internalID: -135551449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huerta Elemnts_20
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 1024
         height: 1024
@@ -515,14 +557,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3413d0ee77f67a24e90a8df401e0f745
-      internalID: 545143654
+      spriteID: 74dafd0434bdeac47964b66499a3810f
+      internalID: -1817832096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Huerta Elemnts_19
+      name: Huerta Elemnts_21
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30fbd3483116624d815bd297b347247
+      internalID: 265248694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huerta Elemnts_22
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38cc6ced3c2ae24b99dbd228cbc5541
+      internalID: -524834949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huerta Elemnts_23
       rect:
         serializedVersion: 2
         x: 3072
@@ -536,8 +620,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 742fdb9a181e8904589286aacce3fcaa
-      internalID: -135551449
+      spriteID: e2fb8ce87befe984caa904028e9853d5
+      internalID: 971206486
       vertices: []
       indices: 
       edges: []
@@ -566,6 +650,10 @@ TextureImporter:
       Huerta Elemnts_18: 545143654
       Huerta Elemnts_19: -135551449
       Huerta Elemnts_2: 284121316
+      Huerta Elemnts_20: -1817832096
+      Huerta Elemnts_21: 265248694
+      Huerta Elemnts_22: -524834949
+      Huerta Elemnts_23: 971206486
       Huerta Elemnts_3: 1084192588
       Huerta Elemnts_4: 690705015
       Huerta Elemnts_5: 414938063

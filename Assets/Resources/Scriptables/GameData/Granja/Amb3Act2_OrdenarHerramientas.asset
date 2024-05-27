@@ -47,7 +47,7 @@ MonoBehaviour:
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Regadera
-    Imagen: {fileID: 549015520, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
+    Imagen: {fileID: 265248694, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
     Text: "Se usa para darles agua a las plantas del jard\xEDn."
     Sound: {fileID: 0}
     BadgeInt: 0
