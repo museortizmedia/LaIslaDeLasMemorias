@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e988938cc66ced49b94178b2277d59b, type: 3}
+  m_Name: Amb54ct1_SeleccionarCategorias
+  m_EditorClassIdentifier: 
+  ActivityName: Clasificando Ingredientes
+  Data:
+  - Name: 
+    Imagen: {fileID: 0}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: 
+    Imagen: {fileID: 0}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: 
+    Imagen: {fileID: 0}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: 
+    Imagen: {fileID: 0}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: 
+    Imagen: {fileID: 0}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  - Name: 
+    Imagen: {fileID: 0}
+    Text: 
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 0
+  AbsurdData:
+  - Name: Zapatos Deportivos
+    Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Zapatos Deportivos
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 1
+  - Name: Yogurt
+    Imagen: {fileID: -1271399637, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Yogurt
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 1
+  - Name: Rinoceronte
+    Imagen: {fileID: -1133295604, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
+    Text: Rinoceronte
+    Sound: {fileID: 0}
+    BadgeInt: 0
+    IsAbsurd: 1
+  AbsurdPercent: 73.3
+  AbsurdWait: 10
