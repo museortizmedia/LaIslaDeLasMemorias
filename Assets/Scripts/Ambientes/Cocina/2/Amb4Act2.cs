@@ -123,7 +123,8 @@ public class Amb4Act2 : ExperienceController
         InteractablesGO.SetActive(state); 
     }
 
-    void Finalizar(){
+    void Finalizar()
+    {
         FB_Fin.SetActive(true);
     }
 }

@@ -154,7 +154,8 @@ public class Amb2Act1 : ExperienceController
         }
     }
 
-    public void Finalizar(){
+    public void Finalizar()
+    {
         EndExperience();
     }
 }

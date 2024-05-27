@@ -129,7 +129,8 @@ public class Amb3Act1 : ExperienceController
         StartEstampida();
     }
 
-    public void Finalizar(){
-        gameObject.AddComponent<UI_FadeTransition>().Iniciar(()=>{EndExperience();});
+    public void Finalizar()
+    {
+        EndExperience();
     }
 }

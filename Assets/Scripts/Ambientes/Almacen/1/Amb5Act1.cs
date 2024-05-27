@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MuseCoderLibrary;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -73,11 +74,5 @@ public class Amb5Act1 : ExperienceController
         {
             completedSprite.transform.SetParent(completedObjectsBlue.transform, false);
         }
-    }
-
-
-    void Finalizar(){
-        Debug.Log("Terminó la experiencia con éxito");
-        EndExperience(); //llamada obligatoria al finalizar
     }
 }

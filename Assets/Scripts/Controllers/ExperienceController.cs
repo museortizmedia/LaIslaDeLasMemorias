@@ -159,6 +159,24 @@ public abstract class ExperienceController : MonoBehaviour
         }
     }
     /// <summary>
+    /// Saca los Sprites de un ActivityData y los coloca en una lista. Si la lista tiene contenido será eliminado
+    /// </summary>
+    /// <param name="data">Activity Data donde se extraerá la información de sprites</param>
+    /// <param name="destino">Lista donde estarán los Sprites</param>
+    public void ExtraerSpritesDeData(ScriptableActivitiesData data,  List<Sprite> destino){
+        destino = new();
+        foreach (var item in data.Data)
+        {
+            destino.Add(item.Imagen);
+        }
+    }
+
+
+
+
+
+
+    /// <summary>
     /// Espera los segundos y ejecuta una acción
     /// </summary>
     /// <param name="segundos">Segundos a esperar</param>

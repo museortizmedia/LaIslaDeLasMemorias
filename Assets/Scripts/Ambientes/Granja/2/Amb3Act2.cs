@@ -124,9 +124,8 @@ public class Amb3Act2 : ExperienceController
         IniciarPartida();
     }
 
-    public void Finalizar(){
-        gameObject.AddComponent<UI_FadeTransition>().Iniciar(()=>{
-            EndExperience();
-        });
+    public void Finalizar()
+    {
+        EndExperience();
     }
 }
