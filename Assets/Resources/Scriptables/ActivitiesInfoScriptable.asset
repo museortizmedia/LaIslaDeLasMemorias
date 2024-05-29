@@ -28,7 +28,7 @@ MonoBehaviour:
       _desc: "Seguir un patr\xF3n de siembra secuencial de 5 rondas, donde se deber\xE1
         sembrar secuencialmente 5 materas "
       _sceneName: 1 SiembraAccionYReaccion
-      _dificultad: 1
+      _dificultad: 0
       _tiempoEstimado: 600
       _personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
       _nombrePersonaje: Juan el Jardinero
@@ -40,7 +40,8 @@ MonoBehaviour:
       _personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
       _nombrePersonaje: Juan el Jardinero
     - _name: Siembra Secuencial
-      _desc: "Ayuda a Juan a recordar c\xF3mo y cu\xE1ndo regar las plantas"
+      _desc: "Seguir un patr\xF3n de siembra secuencial de 5 rondas, donde se deber\xE1
+        sembrar secuencialmente 5 materas "
       _sceneName: 3 SiembraSecuencial
       _dificultad: 1
       _tiempoEstimado: 60
