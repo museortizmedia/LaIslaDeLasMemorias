@@ -11,9 +11,10 @@ public class SensibilityManager : MonoBehaviour, IManager
     [SerializeField] GameEvent _resizerEvent;
 
     [Header("Color")]
-    public bool foo1;
+    public int ActiveEfectIndex;
     [Header("Volume")]
     [SerializeField] AudioMixer audioMix;
+    [SerializeField] AudioMixerGroup sfxGroup, musicGroup;
 
     GameObject _vibrationControlPrefab, _colorControlPrefab, _volumeControlPrefab;
     GameObject _vibrationControl, _colorControl, _volumeControl;
@@ -43,10 +44,8 @@ public class SensibilityManager : MonoBehaviour, IManager
         }
     }
 
-    public void CrearControlHUD(){
-        //Init Resources
-        audioMix = Resources.Load<AudioMixer>("Audios/GeneralAudioMix");
-
+    public void CrearControlHUD()
+    {
         //crearHUD
         _vibrationControlPrefab = Resources.Load<GameObject>("Prefabs/VibrationControlPrefab");
         _colorControlPrefab = Resources.Load<GameObject>("Prefabs/ColorControlPrefab");
@@ -81,12 +80,16 @@ public class SensibilityManager : MonoBehaviour, IManager
         });
     }
     void ColorConfig(){
-        //
+        Button[] botones = _colorControl.GetComponentsInChildren<Button>();
+        botones[0].onClick.AddListener(()=>{SetCameraEfect(0);});
+        botones[1].onClick.AddListener(() =>{SetCameraEfect(1);});
     }
 
     void VolumeConfig(){
-         _volumeControl.transform.GetChild(0).GetChild(0).GetComponent<Slider>().onValueChanged.RemoveAllListeners();
-        _volumeControl.transform.GetChild(0).GetChild(0).GetComponent<Slider>().onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue);});
+        Slider[] _sliders = _volumeControl.GetComponentsInChildren<Slider>(true);
+        _sliders[2].onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue);});
+        _sliders[1].onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue, "MusicVolume");});
+        _sliders[0].onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue, "SfxVolume");});
     }
 
     //VibrationControl
@@ -97,13 +100,25 @@ public class SensibilityManager : MonoBehaviour, IManager
     }
 
     //ColorControl
+    void SetCameraEfect(int index)
+    {
+        if(Camera.main != null)
+        {
+            Camera camara = Camera.main;
+            ActiveEfectIndex = index;
+            for (int i = 0; i < camara.transform.childCount; i++)
+            {
+                camara.transform.GetChild(i).gameObject.SetActive(i==ActiveEfectIndex);
+            }
+        }
+    }
 
     //VolumeControl
-    public void SetAudioVolume(float value){
+    public void SetAudioVolume(float value, string ExposeValue = "Volume"){
         if(value<0 || value>500f){ Debug.LogWarning("El valor de volumen debe ser un float entre 0 y 1"); return;}
         if(audioMix!=null)
         {
-            audioMix.SetFloat("Volume", value==0?-80f:Mathf.Log10(value) * 20);
+            audioMix.SetFloat(ExposeValue, value==0?-80f:Mathf.Log10(value) * 20);
         }
     }
 }

@@ -953,8 +953,10 @@ MonoBehaviour:
   isActive: 1
   VibrationSensibility: 0
   _resizerEvent: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
-  foo1: 0
-  audioMix: {fileID: 0}
+  ActiveEfectIndex: 0
+  audioMix: {fileID: 24100000, guid: 15e48f58f1dc568468e8fff697fac9fb, type: 2}
+  sfxGroup: {fileID: 7354065869370451729, guid: 15e48f58f1dc568468e8fff697fac9fb, type: 2}
+  musicGroup: {fileID: -1111527039829982921, guid: 15e48f58f1dc568468e8fff697fac9fb, type: 2}
 --- !u!1 &2821565043543149951
 GameObject:
   m_ObjectHideFlags: 0
