@@ -38,13 +38,7 @@ public class Amb3Act2 : ExperienceController
             return;
             }
 
-            // Si pasa el filtro inciar tiempo de espera
-            StartAbsurdCorutine(()=>{
-                _currentTool = 0;
-                toolsRound.RemoveAt(0);
-                ComeNewTool();
-                FB_Positive.SetActive(true);
-            });
+
         }
         EsperaYRealiza(.5f, ()=>{
             // Despues de verificar el animal a usar, asignamos sus valores a la carta
@@ -92,22 +86,10 @@ public class Amb3Act2 : ExperienceController
             return;
         }
 
-        //si es una situacion absurda
-        if(toolEscogida.IsAbsurd){
-            FB_Absurd.SetActive(true);
-            RestartAbsurdCorutine(()=>{
-                //CORRECTO
-                _currentTool = 0;
-                toolsRound.RemoveAt(0);
-                ComeNewTool();
-                FB_Positive.SetActive(true);
-            });
-            return;
-        }
-
+        
 
         //verifica que el IsCorrect sea la zona seleccionada
-        if(_isCorrect==area)
+        if ((_isCorrect == area && !toolEscogida.IsAbsurd) || (toolEscogida.IsAbsurd && area == 3))
         {
             _isCorrect = 0;
             toolsRound.RemoveAt(0);
@@ -115,6 +97,15 @@ public class Amb3Act2 : ExperienceController
             FB_Positive.SetActive(true);
 
         }else{
+            CardTool.GetComponent<VibrateImage>().Vibrar();
+
+            //si es una situacion absurda
+            if (toolEscogida.IsAbsurd)
+            {
+                FB_Absurd.SetActive(true);
+                return;
+            }
+
             FB_Negative.SetActive(true);
         }
     }

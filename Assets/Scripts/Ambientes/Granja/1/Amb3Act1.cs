@@ -47,16 +47,7 @@ public class Amb3Act1 : ExperienceController
             return;
             }
 
-            // Si pasa el filtro inciar tiempo de espera
-            StartAbsurdCorutine(()=>{
-                area1.gameObject.SetActive(false);
-                area2.gameObject.SetActive(false);
-                area3.gameObject.SetActive(false);
-                _currentCorrectAnimal = 0;
-                animalesRound.RemoveAt(0);
-                ComeNewAnimal();
-                FB_Positive.SetActive(true);
-            });
+            
         }
         EsperaYRealiza(.5f, ()=>{
             // Despues de verificar el animal a usar, asignamos sus valores a la carta
@@ -89,28 +80,8 @@ public class Amb3Act1 : ExperienceController
             return;
         }
 
-        //si es una situacion absurda
-        if(animalEscogido.IsAbsurd){
-            area1.gameObject.SetActive(false);
-            area2.gameObject.SetActive(false);
-            area3.gameObject.SetActive(false);
-            FB_Absurd.SetActive(true);
-            RestartAbsurdCorutine(()=>{
-                area1.gameObject.SetActive(false);
-                area2.gameObject.SetActive(false);
-                area3.gameObject.SetActive(false);
-                _currentCorrectAnimal = 0;
-                animalesRound.RemoveAt(0);
-                ComeNewAnimal();
-                FB_Positive.SetActive(true);
-            });
-            AnimalCard.FlipCard();
-            return;
-        }
-
-
         //verifica que el correcto sea el tocado
-        if(_currentCorrectAnimal==AnimalType)
+        if(_currentCorrectAnimal==AnimalType  || ( AnimalType == 4 && animalEscogido.IsAbsurd))
         {
             area1.gameObject.SetActive(false);
             area2.gameObject.SetActive(false);
@@ -120,7 +91,19 @@ public class Amb3Act1 : ExperienceController
             ComeNewAnimal();
             FB_Positive.SetActive(true);
 
-        }else{
+        } else {
+
+            //si es una situacion absurda
+            if (animalEscogido.IsAbsurd)
+            {
+                area1.gameObject.SetActive(false);
+                area2.gameObject.SetActive(false);
+                area3.gameObject.SetActive(false);
+                FB_Absurd.SetActive(true);
+                AnimalCard.FlipCard();
+                return;
+            }
+
             area1.gameObject.SetActive(false);
             area2.gameObject.SetActive(false);
             area3.gameObject.SetActive(false);

@@ -17,25 +17,29 @@ MonoBehaviour:
   - Name: Pala
     Imagen: {fileID: -1236933931, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Se usa para mover tierra desde el suelo a otro lado.
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Pico
     Imagen: {fileID: 547020492, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Se usa para excavar un agujero en la tierra.
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
-  - Name: Cubo
+  - Name: Valde
     Imagen: {fileID: -808197950, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: "Se usa para mover gran cantidad de algo de un lado a otro levant\xE1ndose
       del suelo."
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Azada
     Imagen: {fileID: -2062720841, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: 'Se usa para realizar surcos en la tierra antes de plantar. '
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
@@ -43,12 +47,14 @@ MonoBehaviour:
     Imagen: {fileID: -1399010197, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: "Se usa para mover gran cantidad de algo de un lado a otro arrastr\xE1ndose
       por el suelo."
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Regadera
     Imagen: {fileID: 265248694, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
     Text: "Se usa para darles agua a las plantas del jard\xEDn."
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
@@ -56,12 +62,14 @@ MonoBehaviour:
   - Name: Zapatos Deportivos
     Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Se usan para cubrir los pies al hacer deporte
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1
   - Name: Yogurt de Fresa
     Imagen: {fileID: -1271399637, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Bebida espesa a base de leche sabor artificial a fresa
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1
