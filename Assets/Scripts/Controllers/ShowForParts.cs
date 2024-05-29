@@ -11,13 +11,11 @@ public class ShowForParts : MonoBehaviour
     [SerializeField] private int currentPartsInX = 0;
     public UnityEvent OnChange;
 
-    RectTransform _rectTransform;
+    [SerializeField] RectTransform _rectTransform;
     private float originalWidth, height;
 
     void Start()
     {
-        _rectTransform = GetComponent<RectTransform>();
-
         originalWidth = - _rectTransform.rect.width;
         height = _rectTransform.rect.height;
 
