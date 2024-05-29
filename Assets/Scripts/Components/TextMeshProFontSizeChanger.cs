@@ -1,18 +1,15 @@
+//#define DEBUGING_TEXT
 using UnityEngine;
 using TMPro;
-using System.Runtime.InteropServices;
 
 [RequireComponent(typeof(GameEventListener))]
 public class TextMeshProFontSizeChanger : MonoBehaviour
 {
     // Referencia al componente TextMeshProUGUI
     public TextMeshProUGUI textMeshProUGUI;
-    GameEventListener gameEventListener;
-    [SerializeField, TextArea] string LABEL = "↓ Asigne en el Event el FontSizer y en ResizeResponse le método dinamico SetFontSize";
-
+    float _originalSize;
     private void Start() {
-        gameEventListener = GetComponent<GameEventListener>();
-        gameEventListener.Event = (GameEvent)Resources.Load("Scriptables/GameEvents/FontSizer");
+        _originalSize = textMeshProUGUI.fontSize;
     }
 
     // Método para cambiar el tamaño de la fuente
@@ -24,13 +21,16 @@ public class TextMeshProFontSizeChanger : MonoBehaviour
             textMeshProUGUI.enableAutoSizing = false;
 
             // Establecer el nuevo tamaño de la fuente
-            textMeshProUGUI.fontSize = newSize;
-
+            textMeshProUGUI.fontSize = _originalSize * newSize;
+            #if DEBUGING_TEXT
             Debug.Log($"El tamaño de la fuente se ha cambiado a {newSize}");
+            #endif
         }
+        #if DEBUGING_TEXT
         else
         {
             Debug.LogError("TextMeshProUGUI no está asignado.");
         }
+        #endif
     }
 }

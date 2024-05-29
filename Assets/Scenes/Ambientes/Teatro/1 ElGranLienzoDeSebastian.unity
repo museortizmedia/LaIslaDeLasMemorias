@@ -563,6 +563,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &164940187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1696848410704144347, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
@@ -599,6 +602,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &171700229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1219938795786634527, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
@@ -650,6 +656,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &312360793
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +766,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &397081063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1075642726601869824, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
@@ -793,6 +805,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &407989472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1448,6 +1463,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &516058105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2039,6 +2057,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &875400204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,6 +2500,9 @@ MonoBehaviour:
   totalDuration: 3
   amplitude: 10
   nroOfVibration: 1
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -4046,6 +4070,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1541015329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,6 +4997,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1696848410704144347, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 164940191}
+    - targetCorrespondingSourceObject: {fileID: 7341124329595904400, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815867876}
+    - targetCorrespondingSourceObject: {fileID: 7341124329595904400, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1815867875}
   m_SourcePrefab: {fileID: 100100000, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
 --- !u!224 &1815867870 stripped
 RectTransform:
@@ -4987,6 +5020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b321a8692ba81db47a8f7c07227b33f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1815867872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7341124329595904400, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+  m_PrefabInstance: {fileID: 1815867869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1815867873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5032,6 +5070,64 @@ MonoBehaviour:
   AfterDestroy:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1815867874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9106750900263172217, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+  m_PrefabInstance: {fileID: 1815867869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815867872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1815867875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815867872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1815867876}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1815867876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815867872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1815867874}
 --- !u!1 &1836205096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5144,6 +5240,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1892095999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5722,6 +5821,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1940102407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6467,6 +6569,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2017649440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6645,3 +6750,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
