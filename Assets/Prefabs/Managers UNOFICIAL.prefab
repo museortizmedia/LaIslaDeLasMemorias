@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216382142e59e8d42b0c858d58cdaf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  isActive: 1
   VibrationSensibility: 0
   foo1: 0
   audioMix: {fileID: 0}
@@ -1018,7 +1018,7 @@ Transform:
   - {fileID: 6666075830798127071}
   - {fileID: 2058630775486161896}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8185027393526532683
 MonoBehaviour:

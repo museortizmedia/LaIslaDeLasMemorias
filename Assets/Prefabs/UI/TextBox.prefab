@@ -593,6 +593,8 @@ GameObject:
   - component: {fileID: 336039534926389627}
   - component: {fileID: 2368423487390393559}
   - component: {fileID: 7780040685957578010}
+  - component: {fileID: 5983782067249661072}
+  - component: {fileID: 3260899263211600380}
   m_Layer: 5
   m_Name: TextBox
   m_TagString: Untagged
@@ -805,6 +807,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5983782067249661072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952862909045782233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63a7b3a413712241b9b897727f4b04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 3193112018955473954, guid: e57e60adcc2e9ac4187c14f384af9ad4, type: 3}
+--- !u!114 &3260899263211600380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952862909045782233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5302400028792834955
 GameObject:
   m_ObjectHideFlags: 0
