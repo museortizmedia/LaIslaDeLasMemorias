@@ -16,7 +16,7 @@ MonoBehaviour:
     AudioName: HuertaMusic
     AudioClips:
     - {fileID: 8300000, guid: 51a6e9a9b32860c48aacd59886dec915, type: 3}
-    Volume: 0.2
+    Volume: 0.1
     Pitch: 1
     Loop: 1
     StartDelay: 0

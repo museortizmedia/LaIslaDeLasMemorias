@@ -157,9 +157,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1390156280}
-  - {fileID: 1370289250}
-  - {fileID: 1436849735}
   - {fileID: 191331953}
+  - {fileID: 1436849735}
+  - {fileID: 1370289250}
   - {fileID: 1166157101}
   m_Father: {fileID: 1507940929}
   m_RootOrder: -1
@@ -466,7 +466,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 30453b8cda71b834cb37ebf82b1571ee, type: 3}
+      objectReference: {fileID: 8300000, guid: 9c4b4a98e2eaa9a49b2711802895c67e, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -2139,7 +2139,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: f1fd74c4680280a40b02a4375c90e462, type: 3}
+      objectReference: {fileID: 8300000, guid: 48b46b4dbff3e2d43a7b454b4ee8f857, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -2613,7 +2613,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 89f033c636af03647bf36db59d705f4a, type: 3}
+      objectReference: {fileID: 8300000, guid: 241c9d97e597e5549bf84403bdbd250b, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -2884,7 +2884,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 9f801ec3916065a45a9a05de640f9138, type: 3}
+      objectReference: {fileID: 8300000, guid: 548699a1b7c6e694999be08f4d636490, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -2892,7 +2892,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[1].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 0c7e1085aee1cac4b8b7d98f013da2dc, type: 3}
+      objectReference: {fileID: 8300000, guid: b94ed032257987b44bde7ec4234c4a9d, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[1].Title
       value: Ana la Chef
@@ -3334,7 +3334,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 2121b8fa9eb2f0d47b75e104bd93452d, type: 3}
+      objectReference: {fileID: 8300000, guid: 74da0bb5d9f8cdd4986c80da20a96548, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -4011,6 +4011,9 @@ MonoBehaviour:
   totalDuration: 1
   amplitude: 0.15
   nroOfVibration: 1
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -4550,6 +4553,7 @@ GameObject:
   - component: {fileID: 1663179527}
   - component: {fileID: 1663179526}
   - component: {fileID: 1663179528}
+  - component: {fileID: 1663179529}
   m_Layer: 0
   m_Name: Amb4Act1
   m_TagString: Untagged
@@ -4658,6 +4662,33 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1663179529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663179525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef918525a70382741a8d404993417739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: db007937d5bb4794d8d7d806c77bff3b, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1669756547
 PrefabInstance:

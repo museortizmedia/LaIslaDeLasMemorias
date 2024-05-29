@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 5069c91922d82f54ba8adf660dbdbf8e, type: 2}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: PlayAudio
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Audio, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: OnChooseThisArea.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
@@ -844,6 +844,9 @@ MonoBehaviour:
   totalDuration: 0.5
   amplitude: 10
   nroOfVibration: 3
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -1478,9 +1481,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 835527752}
-  - {fileID: 670265993}
-  - {fileID: 1366419674}
   - {fileID: 1674158960}
+  - {fileID: 1366419674}
+  - {fileID: 670265993}
   - {fileID: 1732129500}
   m_Father: {fileID: 2116287768}
   m_RootOrder: -1
@@ -1581,7 +1584,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 53f7850146441324eb80442f1acbf05d, type: 3}
+      objectReference: {fileID: 8300000, guid: da99adcc88d766141915fa28ebd0c6c9, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Juan el jardinero
@@ -1990,7 +1993,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 53f7850146441324eb80442f1acbf05d, type: 3}
+      objectReference: {fileID: 8300000, guid: 610abc030f7b7ca42a9f0b6a8989de8c, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Juan el jardinero
@@ -2565,7 +2568,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 53f7850146441324eb80442f1acbf05d, type: 3}
+      objectReference: {fileID: 8300000, guid: 8a9dea07b25852346b6ff38c59f5dcf0, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Juan el jardinero
@@ -2861,7 +2864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: ButonIdAcepted.Array.data[0]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 653352695336162108, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
       propertyPath: ButonIdAcepted.Array.data[1]
@@ -3611,6 +3614,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a66faba71ec8d134589a9ce81c247eb2, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnChangeWaypoint:
     m_PersistentCalls:
       m_Calls: []
@@ -3709,6 +3724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663179527}
   - component: {fileID: 1663179526}
+  - component: {fileID: 1663179528}
   m_Layer: 0
   m_Name: Amb2Act2
   m_TagString: Untagged
@@ -3772,6 +3788,24 @@ MonoBehaviour:
   _regaderaLlena: {fileID: 265248694, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
   _regaderaVacia: {fileID: -1817832096, guid: fedcb8ed8ea5e7141bac21e9f59f5e04, type: 3}
   repostandoAgua: {fileID: 2135336380}
+  OnPositioveAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c5f3d2df22f971c4b8f10bdc88e5eaaa, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNegativerAction:
+    m_PersistentCalls:
+      m_Calls: []
   _selectedPosX: 0
   _selectedPosY: 0
   abonoPos: {fileID: 2086463918}
@@ -3790,6 +3824,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663179528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663179525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef918525a70382741a8d404993417739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1ed64b0cf790a4546815f38506de3c7c, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1674158959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3805,7 +3866,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 53f7850146441324eb80442f1acbf05d, type: 3}
+      objectReference: {fileID: 8300000, guid: b14ed437737cd1f48bcdc0c0414533e4, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Juan el jardinero
@@ -3824,8 +3885,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Content
-      value: "\xA1Ups! La regadera no tiene agua, usa el bot\xF3n de la izquierda
-        para llenarla."
+      value: "\xA1Ups! La regadera no tiene agua, usa el bot\xF3n de la derecha para
+        llenarla."
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[1].Content
@@ -4067,11 +4128,15 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 53f7850146441324eb80442f1acbf05d, type: 3}
+      objectReference: {fileID: 8300000, guid: 771f039dcba4526419b482d9b08af6b7, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Juan el jardinero
       objectReference: {fileID: 0}
+    - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: Dialogs.Array.data[1].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fd8a35872ebe2a4faa976eb3da9136e, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[1].Title
       value: Juan el jardinero
@@ -4735,6 +4800,9 @@ MonoBehaviour:
   totalDuration: 0.5
   amplitude: 10
   nroOfVibration: 3
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -4907,6 +4975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2135336381}
+  - component: {fileID: 2135336382}
   m_Layer: 5
   m_Name: LlenandoAgua
   m_TagString: Untagged
@@ -4937,3 +5006,45 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000030517578, y: 0.0000076293945}
   m_SizeDelta: {x: 179.5401, y: 173.619}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2135336382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135336380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1fad5a36fb03b1c49bf90c3ac7a3552e, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1fad5a36fb03b1c49bf90c3ac7a3552e, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: StopAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

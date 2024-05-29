@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 399f8997ba0b9de4688358b77f646e55, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Pedro
@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Content
-      value: "\xA1Muy bien! Has emparejado las prendas con su debido color."
+      value: "\xA1Muy bien! Has colocadoc la prenda en el lugar correcto."
       objectReference: {fileID: 0}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[1].Content
@@ -929,6 +929,9 @@ MonoBehaviour:
   totalDuration: 3
   amplitude: 10
   nroOfVibration: 1
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -1027,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 399f8997ba0b9de4688358b77f646e55, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Pedro
@@ -1974,8 +1977,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1932037217}
-  - {fileID: 804991612}
   - {fileID: 1844120081}
+  - {fileID: 804991612}
   - {fileID: 78327419}
   - {fileID: 1881443179}
   m_Father: {fileID: 2004690088}
@@ -2118,6 +2121,9 @@ MonoBehaviour:
   totalDuration: 3
   amplitude: 10
   nroOfVibration: 1
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -2289,6 +2295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663179527}
   - component: {fileID: 1663179526}
+  - component: {fileID: 1663179528}
   m_Layer: 0
   m_Name: Amb5Act1
   m_TagString: Untagged
@@ -2475,6 +2482,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663179528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663179525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef918525a70382741a8d404993417739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6cf3cfce3a754f248977bb90ef603345, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1715500571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,6 +2565,9 @@ MonoBehaviour:
   totalDuration: 3
   amplitude: 10
   nroOfVibration: 1
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnStopped:
     m_PersistentCalls:
       m_Calls: []
@@ -2741,7 +2778,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 5583f3c401697484ea9462791712ae2b, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Pedro
@@ -2985,7 +3022,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 75ed202d458c16248b5c4ed9585c7573, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Juan el Jardinero
@@ -3197,7 +3234,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: d6cdfe280d3c6c744aa3a0bb0d2461ca, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Pedro

@@ -2,6 +2,7 @@ using MuseCoderLibrary;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Amb2Act2 : ExperienceController
@@ -32,6 +33,7 @@ public class Amb2Act2 : ExperienceController
     [SerializeField] bool _isWatering = true;
     [SerializeField] Sprite _regaderaLlena, _regaderaVacia;
     [SerializeField] GameObject repostandoAgua;
+    public UnityEvent OnPositioveAction, OnNegativerAction; 
 
 
     public override void Start()
@@ -126,10 +128,13 @@ public class Amb2Act2 : ExperienceController
             estadoPlant++;
             SemillaImage.enabled=true;
             SemillaImage.sprite = ActivityData.Data[ ActivityData.Data.IndexOf(_semillaEscogida) + estadoPlant ].Imagen;
+            OnPositioveAction?.Invoke();
             
         }else{
             //feedback negativo
             NegativeFeedback();
+            OnNegativerAction?.Invoke();
+
         }
     }
     void CheckCercania(){

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using MuseCoderLibrary;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Amb3Act1 : ExperienceController
 {
     [SerializeField] List<ScriptableActivitiesData.ActivityData> animalesRound = new();
@@ -11,10 +12,13 @@ public class Amb3Act1 : ExperienceController
     [SerializeField] CardControler AnimalCard;
     [SerializeField] GameObject FB_Positive, FB_Negative, FB_Absurd, FB_End;
     [SerializeField] InteractableArea area1, area2, area3;
+    AudioSource[] _as;
     public override void Start()
     {
         base.Start(); //llamada obligatoria al comenzar
         Debug.Log(Manager.GetManager<InputManager>().name);
+
+        _as = GetComponents<AudioSource>();
 
         //iniciamos la lista de los animales del Data
         animalesRound = new(ActivityData.Data); //hacemos una copia de los datos del scriptable
@@ -58,6 +62,7 @@ public class Amb3Act1 : ExperienceController
             // Despues de verificar el animal a usar, asignamos sus valores a la carta
             AnimalCard.SetGameData(animalEscogido);
             AnimalCard.SetOnlyText(animalEscogido.Name);
+            PlaySound(animalEscogido.Sound);
             }
         );
         _currentCorrectAnimal = animalEscogido.Text == "Domestico"?1:animalEscogido.Text == "Salvaje"?2:3;
@@ -132,5 +137,26 @@ public class Amb3Act1 : ExperienceController
     public void Finalizar()
     {
         EndExperience();
+    }
+
+    void PlaySound(AudioClip _ac)
+    {
+        _as[0].clip = _ac;
+        _as[0].Play();
+        Invoke(nameof(StopSound), 1f);
+    }
+    void StopSound()
+    {
+        _as[0].Stop();
+    }
+
+    public void PlayTextSound()
+    {
+        _as[1].clip = animalEscogido.TextSound;
+        _as[1].Play();
+    }
+    public void StopTextSound()
+    {
+        _as[1].Stop();
     }
 }

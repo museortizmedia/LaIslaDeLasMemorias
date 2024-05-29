@@ -17,54 +17,63 @@ MonoBehaviour:
   - Name: Perro
     Imagen: {fileID: 1642537216, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Domestico
-    Sound: {fileID: 0}
+    TextSound: {fileID: 8300000, guid: 384cc2e19573019409e90d12a95d9c0d, type: 3}
+    Sound: {fileID: 8300000, guid: 19ab79ed9e88d504baf16927016e7ecd, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: "Le\xF3n"
     Imagen: {fileID: 75218090, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Salvaje
-    Sound: {fileID: 0}
+    TextSound: {fileID: 8300000, guid: e8b52fef18fb6c44aa16f39105c3955a, type: 3}
+    Sound: {fileID: 8300000, guid: e7eac147a6519224baf1ba439cbf3ef7, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: "Delf\xEDn"
     Imagen: {fileID: 1311266530, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Acuatico
-    Sound: {fileID: 0}
+    TextSound: {fileID: 8300000, guid: 20f4412c0b117514ab2d878df3e8540b, type: 3}
+    Sound: {fileID: 8300000, guid: 208f2288906cb3b43853f2db7c9382ac, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Gato
     Imagen: {fileID: -1101075791, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Domestico
-    Sound: {fileID: 0}
+    TextSound: {fileID: 0}
+    Sound: {fileID: 8300000, guid: bdde19dca8aea374095dd3a2bd2b6ca4, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Tigre
     Imagen: {fileID: -291418564, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Salvaje
-    Sound: {fileID: 0}
+    TextSound: {fileID: 8300000, guid: 97a755b3568dc7340ab2e154b3242b5c, type: 3}
+    Sound: {fileID: 8300000, guid: 0759f01babccff747a19cd783e912806, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Ballena
     Imagen: {fileID: 201613455, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Acuatico
-    Sound: {fileID: 0}
+    TextSound: {fileID: 8300000, guid: 963c3f7a63468a7408abb08ac6940db6, type: 3}
+    Sound: {fileID: 8300000, guid: 83f52d29b44955e47918f16e0e90ebf3, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Loro
     Imagen: {fileID: -1393042766, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Domestico
-    Sound: {fileID: 0}
+    TextSound: {fileID: 0}
+    Sound: {fileID: 8300000, guid: bb1d83b21c6c1244eb12c0391b800e87, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Rinoceronte
     Imagen: {fileID: -1233934728, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Salvaje
-    Sound: {fileID: 0}
+    TextSound: {fileID: 8300000, guid: 4594e8771c0cdfe498ea4cdc80d79fa1, type: 3}
+    Sound: {fileID: 8300000, guid: e11596e6bd2f859409f4375f4574dbf6, type: 3}
     BadgeInt: 0
     IsAbsurd: 0
   - Name: Medusa
     Imagen: {fileID: -153796718, guid: f248546ab6638204e82148dd45b0d6a1, type: 3}
     Text: Acuatico
+    TextSound: {fileID: 8300000, guid: ee37144536a4ce443809b133bd26029a, type: 3}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 0
@@ -72,12 +81,14 @@ MonoBehaviour:
   - Name: Zapatos Deportivos
     Imagen: {fileID: 1993296984, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Zapatos Deportivos
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1
   - Name: Yogurt
     Imagen: {fileID: -1271399637, guid: 67c9194cc64e4c146a24130646978abf, type: 3}
     Text: Yogurt
+    TextSound: {fileID: 0}
     Sound: {fileID: 0}
     BadgeInt: 0
     IsAbsurd: 1

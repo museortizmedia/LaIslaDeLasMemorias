@@ -889,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 02c758627a9ff0245ad9662678ecff0a, type: 3}
+      objectReference: {fileID: 8300000, guid: 950079f832de3be4abc4a22750a9f97d, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -1683,7 +1683,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: b0bca9c71702ad0489aa0628ca4d2f5a, type: 3}
+      objectReference: {fileID: 8300000, guid: c042bd584bfc07d4abcc3dfa8c94df3a, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -2905,7 +2905,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 20ce2905a989b4641890b39c40e59578, type: 3}
+      objectReference: {fileID: 8300000, guid: 82a81bc69fe1ef54db8811bf3e2bc746, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -4103,7 +4103,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 73d99c843dcf32f4a9581000b1dc7114, type: 3}
+      objectReference: {fileID: 8300000, guid: ed32454d669d05348b75148caab6537e, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -4822,7 +4822,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: 83aa01edfa3c9574cbc05606aea21090, type: 3}
+      objectReference: {fileID: 8300000, guid: 661cc41ad4bc9a14f9cbdfa4ae1d0d41, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef
@@ -5743,6 +5743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663179527}
   - component: {fileID: 1663179526}
+  - component: {fileID: 1663179528}
   m_Layer: 0
   m_Name: Amb4Act2
   m_TagString: Untagged
@@ -5844,6 +5845,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663179528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663179525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef918525a70382741a8d404993417739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: db007937d5bb4794d8d7d806c77bff3b, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1667616999
 GameObject:
   m_ObjectHideFlags: 0
@@ -7800,7 +7828,7 @@ PrefabInstance:
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Audio
       value: 
-      objectReference: {fileID: 8300000, guid: e76e8b093a6a9204da6946bfd26fc43f, type: 3}
+      objectReference: {fileID: 8300000, guid: 4dcaf6c00d94842499c6a62ce0dca747, type: 3}
     - target: {fileID: 336039534926389627, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: Dialogs.Array.data[0].Title
       value: Ana la Chef

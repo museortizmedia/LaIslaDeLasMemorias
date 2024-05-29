@@ -16,7 +16,7 @@ MonoBehaviour:
     AudioName: CocinaMusic
     AudioClips:
     - {fileID: 8300000, guid: 6056d9a1adc2d8e4890374e507f22469, type: 3}
-    Volume: 0.2
+    Volume: 0.1
     Pitch: 1
     Loop: 1
     StartDelay: 0
