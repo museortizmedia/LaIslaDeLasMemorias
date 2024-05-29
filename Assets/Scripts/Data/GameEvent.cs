@@ -59,4 +59,15 @@ public class GameEvent : ScriptableObject
 		for(int i = listeners.Count -1; i >= 0; i--)
 		listeners[i].OnButtonEventRaised(buttonData);
 	}
+
+
+	/// <summary>
+	/// Ejecuta todas las instrucciones asociadas a este evento
+	/// </summary>
+	public void ResizeRaise(float value)
+	{
+		for(int i = listeners.Count -1; i >= 0; i--)
+		listeners[i].OnResizerEventRaised(value);
+	}
+	
 }

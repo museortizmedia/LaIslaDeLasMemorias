@@ -16,6 +16,7 @@ public class ScriptableActivitiesData : ScriptableObject
         public Sprite Imagen;
         [TextArea]
         public string Text;
+        public AudioClip TextSound;
         public AudioClip Sound;
         public int BadgeInt;
         public bool IsAbsurd;

@@ -9,7 +9,7 @@ public class VibrateImage : MonoBehaviour
     [SerializeField] float totalDuration = 0.5f;
     [SerializeField] float amplitude = 10f;
     [SerializeField] int nroOfVibration = 1;
-    public UnityEvent OnStopped;
+    public UnityEvent OnStart, OnStopped;
 
     [SerializeField] Transform target;
 
@@ -19,8 +19,10 @@ public class VibrateImage : MonoBehaviour
         }
     }
     [ContextMenu("Vibrar")]
-    public void Vibrar(){
+    public void Vibrar()
+    {
         StartCoroutine(StartVibration());
+        OnStart?.Invoke();
     }
 
     IEnumerator StartVibration()

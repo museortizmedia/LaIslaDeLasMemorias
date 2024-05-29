@@ -10,6 +10,7 @@ public class GameEventListener : MonoBehaviour
     [Tooltip("qué deberia hacer cuando se consuma este evento?")]
     public UnityEvent Response;
     public UnityEvent<ButtonData> ButtonResponse;
+    public UnityEvent<float> ResizerResponse;
 
     private void OnEnable()
     { Event?.RegisterListener(this); }
@@ -22,6 +23,9 @@ public class GameEventListener : MonoBehaviour
 
     public void OnButtonEventRaised(ButtonData buttonData)
     { ButtonResponse.Invoke(buttonData); }
+
+    public void OnResizerEventRaised(float value)
+    { ResizerResponse.Invoke(value); }
 
     public void OnEventRais(){
         Event.Raise();
