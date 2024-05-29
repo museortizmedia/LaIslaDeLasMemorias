@@ -25,7 +25,7 @@ MonoBehaviour:
         SpritePosition: 0
   - _name: Huerta
     DialogoActividades:
-    - _name: Siembra Secuencial
+    - _name: Siembra AccionY Reaccion
       Dialogo:
       - Title: Juan el Jardinero
         Content: "\xA1Hola! Soy Juan, el jardinero. Todas las ma\xF1anas planto semillas
@@ -41,6 +41,15 @@ MonoBehaviour:
           cu\xE1ndo regar las plantas de la huerta. \xBFMe ayudas a estar atento
           y regarla?"
         Audio: {fileID: 8300000, guid: 9f0f35dc7ef07a64199d041214e33949, type: 3}
+        Personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+        SpritePosition: 2
+    - _name: Siembra Secuencial
+      Dialogo:
+      - Title: Juan el Jardinero
+        Content: "\xA1Hola! Soy Juan, el jardinero. Todas las ma\xF1anas planto semillas
+          en mis materas m\xE1gicas para cubrir de flores el jard\xEDn, pero hoy
+          no recuerdo c\xF3mo hacerlo. \xBFPuedes ayudarme a sembrar?"
+        Audio: {fileID: 8300000, guid: d6eea901bbced3b49b31c14b8cdb346c, type: 3}
         Personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
   - _name: Granja

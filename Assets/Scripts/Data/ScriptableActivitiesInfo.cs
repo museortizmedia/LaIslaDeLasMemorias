@@ -12,7 +12,7 @@ public class ScriptableActivitiesInfo : ScriptableObject
         [Serializable]
         public struct Actividad{
             public string _name;
-            public string _desc;
+            [TextArea] public string _desc;
             public string _sceneName;
             public enum NivelDificultad{Facil,Normal,Dificil}
             public NivelDificultad _dificultad;
