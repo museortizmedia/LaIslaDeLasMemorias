@@ -319,6 +319,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &400368111955269573
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   VibrationSensibility: 0
+  _resizerEvent: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
   foo1: 0
   audioMix: {fileID: 0}
 --- !u!1 &2821565043543149951
@@ -1014,6 +1018,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2901707588584927473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,6 +1082,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &3194461485391017021
@@ -1539,6 +1549,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4407291170219954822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1613,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &5042058667294705238
@@ -1665,6 +1681,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5127387764411380128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1745,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &5225147607904851157
@@ -2528,6 +2550,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6772873672309390932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,6 +2781,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7727685858263919409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,6 +2847,9 @@ MonoBehaviour:
   ButtonResponse:
     m_PersistentCalls:
       m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7869715633961567908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,6 +2911,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7982561868701262701
