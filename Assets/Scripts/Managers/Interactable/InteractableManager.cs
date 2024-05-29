@@ -91,6 +91,9 @@ public class InteractableManager : MonoBehaviour, IManager
                             if (IsDebug) { Debug.Log("Se ha actualizado el voto del usuario " + buttonData.DeviceId + " al InteractableArea", interactionArea.transform); }
                         }
 
+                        string deviceIDFormatted = buttonData.DeviceId > 10 ? "0" + buttonData.DeviceId : "" + buttonData.DeviceId;
+                        Managers.Instance.GetManager<SerialReader>().SendDataToArduino("ARDUINO_" + deviceIDFormatted, "EXECUTED");
+
                         if (!ReferenceEquals(interactionArea, null))
                         {
                             MoveIcon(interactionArea, buttonData.DeviceId);

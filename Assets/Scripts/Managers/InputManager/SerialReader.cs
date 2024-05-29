@@ -3,6 +3,10 @@ using System.IO.Ports;
 using System.Threading;
 using UnityEngine.Events;
 using System.Text.RegularExpressions;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Concurrent;
 
 public class SerialReader : MonoBehaviour, IManager
 {
@@ -10,98 +14,235 @@ public class SerialReader : MonoBehaviour, IManager
     public bool _isSimulation;
     [Tooltip("Si está activo mostrará en consola las acciones por el Serial")]
     public bool IsDebuging;
-    private SerialPort serialPort;
     private Thread readThread;
-    private string receivedData = "";
+    private ConcurrentQueue<string> dataQueue = new ConcurrentQueue<string>();
     [SerializeField] UnityEvent<ButtonData> OnDataRecive;
     [Tooltip("Establece el estado de la conexión de Brain")]
     [SerializeField] UnityEvent<bool> OnBrainConnectState;
     [SerializeField] UnityEvent<PopOverController.PopOverInfo> OnGetTableState;
 
+    private List<SerialPort> arduinoPorts = new List<SerialPort>();
+    private Dictionary<string, SerialPort> identifiedArduinos = new Dictionary<string, SerialPort>();
+    private string[] arduinoIdentifiers = { "ARDUINO_01", "ARDUINO_02", "ARDUINO_03", "ARDUINO_04", "ARDUINO_05", "ARDUINO_06", "ARDUINO_07", "ARDUINO_08", "ARDUINO_09", "ARDUINO_10" };
+
+    private bool isRunning = true;
+
 
     //Iniciación, Finalización
     void Start()
     {
-        Iniciar();
+        if (!_isSimulation)
+        {
+            StartCoroutine(InitializeAndIdentifyArduinos());
+        }
     }
+
     void OnApplicationQuit()
     {
         Finalizar();
     }
-    private void OnEnable() {
-        Iniciar();
+
+    private void OnEnable()
+    {
+        if (!_isSimulation)
+        {
+            StartCoroutine(InitializeAndIdentifyArduinos());
+        }
     }
-    private void OnDisable() {
+
+    private void OnDisable()
+    {
         Finalizar();
     }
-    void Iniciar(){
-        if(_isSimulation){return;}
-        string[] ports = SerialPort.GetPortNames(); // Encuentra el puerto serial disponible
-        if (ports.Length > 0)
-        {
-            serialPort = new SerialPort(ports[0], 9600);
-            serialPort.Open();
 
-            // Inicia un hilo para leer los datos entrantes
-            readThread = new Thread(ReadSerialPortData);
-            readThread.Start();
+    void Finalizar()
+    {
+        if (_isSimulation) { return; }
+        isRunning = false;
+        foreach (var port in arduinoPorts)
+        {
+            if (port.IsOpen)
+            {
+                port.Close();
+            }
+        }
+        if (readThread != null && readThread.IsAlive)
+        {
+            readThread.Join();
+        }
+    }
+
+    IEnumerator InitializeAndIdentifyArduinos()
+    {
+        string[] ports = SerialPort.GetPortNames();
+
+        foreach (string port in ports)
+        {
+            SerialPort serialPort = new SerialPort(port, 9600);
+            bool portOpened = false;
+
+            try
+            {
+                serialPort.Open();
+                serialPort.ReadTimeout = 2000;
+                portOpened = true;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Debug.LogWarning("Access to port " + port + " denied.");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("Error opening port " + port + ": " + ex.Message);
+            }
+
+            if (portOpened)
+            {
+                yield return new WaitForSeconds(2);
+
+                try
+                {
+                    serialPort.DiscardInBuffer();
+                    string message = serialPort.ReadLine();
+
+                    foreach (string identifier in arduinoIdentifiers)
+                    {
+                        if (message.Contains(identifier))
+                        {
+                            identifiedArduinos[identifier] = serialPort;
+                            arduinoPorts.Add(serialPort);
+                            SendDataToArduino(identifier, "CONNECTED");
+                            break;
+                        }
+                    }
+                }
+                catch (TimeoutException)
+                {
+                    Debug.LogWarning("Error reading from port " + port + ": The operation has timed out.");
+                    serialPort.Close();
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning("Error reading from port " + port + ": " + ex.Message);
+                    serialPort.Close();
+                }
+            }
+
+            if (!identifiedArduinos.ContainsValue(serialPort))
+            {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
+            }
+        }
+
+        if (identifiedArduinos.Count == 0)
+        {
+            Debug.LogWarning("No Arduinos identified.");
         }
         else
         {
-            Debug.LogError("No se encontró ningún puerto serial disponible.");
+            readThread = new Thread(ReadSerialPorts);
+            readThread.Start();
         }
     }
-    void Finalizar(){
-        if(_isSimulation){return;}
-        serialPort?.Close();
-        readThread?.Abort();
-    }
-    //Inalizacion, Finalizacion
 
-    void ReadSerialPortData()
+    public void SendDataToArduino(string identifier, string data)
     {
-        while (true)
+        if (identifiedArduinos.ContainsKey(identifier))
         {
-            try
+            SerialPort port = identifiedArduinos[identifier];
+            if (port.IsOpen)
             {
-                string data = serialPort.ReadLine();
-                receivedData += data;
-
-                DataActions(receivedData);
+                try
+                {
+                    port.WriteLine(data);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError("Failed to send data to " + identifier + ": " + ex.Message);
+                }
             }
-            catch (System.Exception e)
+            else
             {
-                Debug.LogError(e.Message);
+                Debug.LogWarning("Port for " + identifier + " is not open.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Arduino with identifier " + identifier + " not found.");
+        }
+    }
+
+    void ReadSerialPorts()
+    {
+        while (isRunning)
+        {
+            foreach (var kvp in identifiedArduinos)
+            {
+                SerialPort port = kvp.Value;
+                if (port.IsOpen)
+                {
+                    try
+                    {
+                        string data = port.ReadLine();
+                        if (data.Contains("ARDUINO")) SendDataToArduino(kvp.Key, "CONNECTED");
+                        if (data != "KEEP_ALIVE") dataQueue.Enqueue(kvp.Key + "/" + data);
+                    }
+                    catch (TimeoutException)
+                    {
+                        // Ignorar excepciones de tiempo de espera
+                    }
+                    catch (System.Exception e)
+                    {
+                        Debug.LogError(e.Message);
+                    }
+                }
             }
         }
     }
-    void DataActions(string receivedData){
-        // Verifica si la cadena recibida contiene la secuencia deseada
-        Match matchAPI = Regex.Match(receivedData, @"\[s:(.*?)\-r:(.*?)\]");
-        Match matchButton = Regex.Match(receivedData, @"\[\d{2}-\d{2}\]");
 
-
-
-        //recibe una solicitud API
-        if (matchAPI.Success)
+    void Update()
+    {
+        while (dataQueue.TryDequeue(out string data))
         {
-            string requestValue = matchAPI.Groups[1].Value;
-            string responseValue = matchAPI.Groups[2].Value;
-
-            if(IsDebuging){Debug.Log("Secuencia [s: " + requestValue + " - r: " + responseValue + "] detectada");}
-            CerebroRequestResponse(requestValue, responseValue);
-            receivedData = ""; return;
-        }
-
-                //recibe una orden de interacción
-        if (matchButton.Success)
-        {
-            if(IsDebuging){Debug.Log("Secuencia detectada: " + receivedData);}
-            OnDataRecive?.Invoke(new ButtonData { DeviceId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[0]), ButtonId = short.Parse(receivedData.Trim('[').Trim(']').Split("-")[1]) });
-            receivedData = "";
-            return;
+            DataActions(data);
         }
     }
+
+    void DataActions(string receivedData)
+    {
+        
+        if (IsDebuging)
+        {
+            Debug.Log("Secuencia detectada: " + receivedData);
+        }
+
+        // Extraer la parte relevante de la cadena
+        string buttonData = receivedData.Trim('[').Trim(']');
+        string[] parts = buttonData.Split('/');
+
+        if (parts.Length == 2)
+        {
+            string devicePart = parts[0];
+            string buttonPart = parts[1];
+
+            string[] deviceParts = devicePart.Split('_');
+            if (deviceParts.Length == 2)
+            {
+                short deviceId = short.Parse(deviceParts[1]);
+                short buttonId = short.Parse(buttonPart);
+
+                OnDataRecive?.Invoke(new ButtonData { DeviceId = deviceId, ButtonId = buttonId });
+            }
+        }
+
+        receivedData = "";
+        return;
+    }
+
+
     public void SimuleSerialData(string simuledData){
         DataActions(simuledData);
     }
@@ -152,9 +293,19 @@ public class SerialReader : MonoBehaviour, IManager
     /// <param name="data">Char que desea enviar</param>
     public void SendSerialPortData(char data)
     {
-        if (serialPort != null && serialPort.IsOpen)
+        foreach (var port in identifiedArduinos.Values)
         {
-            serialPort.Write(data.ToString());
+            if (port.IsOpen)
+            {
+                try
+                {
+                    port.Write(data.ToString());
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError("Failed to send data: " + ex.Message);
+                }
+            }
         }
     }
 
@@ -175,12 +326,18 @@ public class SerialReader : MonoBehaviour, IManager
     public void SendSerialPortData(string data)
     {
         data = $"[{data}]";
-        if (serialPort != null && serialPort.IsOpen)
+        foreach (var port in identifiedArduinos.Values)
         {
-            string[] letters = data.Split();
-            for (int i = 0; i < letters.Length; i++)
+            if (port.IsOpen)
             {
-                SendSerialPortData(char.Parse(letters[i]));
+                try
+                {
+                    port.WriteLine(data);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError("Failed to send data: " + ex.Message);
+                }
             }
         }
     }
