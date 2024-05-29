@@ -481,6 +481,8 @@ GameObject:
   - component: {fileID: 5594164159690726441}
   - component: {fileID: 8150085423565251427}
   - component: {fileID: 1504996989015420422}
+  - component: {fileID: 5260230451140010928}
+  - component: {fileID: 3145024121729336627}
   m_Layer: 5
   m_Name: CardText
   m_TagString: Untagged
@@ -607,6 +609,53 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5260230451140010928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502273863015336582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1504996989015420422}
+--- !u!114 &3145024121729336627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502273863015336582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5260230451140010928}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7645415659197669832
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +667,8 @@ GameObject:
   - component: {fileID: 3168655415637477154}
   - component: {fileID: 6792731320964808788}
   - component: {fileID: 6677866622419367055}
+  - component: {fileID: 2654967247427316941}
+  - component: {fileID: 3406509719080899804}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -742,6 +793,53 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2654967247427316941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645415659197669832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 6677866622419367055}
+--- !u!114 &3406509719080899804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7645415659197669832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2654967247427316941}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8741649072785141654
 GameObject:
   m_ObjectHideFlags: 0
