@@ -29,9 +29,9 @@ MonoBehaviour:
       Dialogo:
       - Title: Juan el Jardinero
         Content: "\xA1Hola! Soy Juan, el jardinero. Todas las ma\xF1anas planto semillas
-          en mis macetas m\xE1gicas para cubrir de flores el jard\xEDn, pero hoy
+          en mis materas m\xE1gicas para cubrir de flores el jard\xEDn, pero hoy
           no recuerdo c\xF3mo hacerlo. \xBFPuedes ayudarme a sembrar?"
-        Audio: {fileID: 0}
+        Audio: {fileID: 8300000, guid: d6eea901bbced3b49b31c14b8cdb346c, type: 3}
         Personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
     - _name: Riego Programado
@@ -40,7 +40,7 @@ MonoBehaviour:
         Content: "\xA1Hola! Soy Juan, el jardinero. Tengo problemas para recordar
           cu\xE1ndo regar las plantas de la huerta. \xBFMe ayudas a estar atento
           y regarla?"
-        Audio: {fileID: 0}
+        Audio: {fileID: 8300000, guid: 9f0f35dc7ef07a64199d041214e33949, type: 3}
         Personaje: {fileID: -1553838257, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
   - _name: Granja
@@ -50,7 +50,7 @@ MonoBehaviour:
       - Title: Liliana la Granjera
         Content: "\xA1Hola! Soy Liliana la granjera. Varios animales vienen del bosque
           m\xE1gico y he olvidado a d\xF3nde enviarlos \xBFMe ayudas a separarlos?"
-        Audio: {fileID: 0}
+        Audio: {fileID: 8300000, guid: 31bc61cf680941142a7c6c66b3c54a4e, type: 3}
         Personaje: {fileID: 1351081170, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
     - _name: "Ordenaci\xF3n de Herramientas"
@@ -59,7 +59,7 @@ MonoBehaviour:
         Content: "\xA1Hola! Soy Liliana la granjera. Hay un caos en el almac\xE9n
           de herramientas porque he olvidado cu\xE1les son las herramientas que debo
           acomodar. \xA1Ay\xFAdame a recordarlas!"
-        Audio: {fileID: 0}
+        Audio: {fileID: 8300000, guid: 7ac1ea03cfbef3f488d55634818de0d4, type: 3}
         Personaje: {fileID: 1351081170, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
   - _name: Cocina
@@ -71,7 +71,7 @@ MonoBehaviour:
           Antes de cocinar, hay algo importante que olvid\xE9 hacer. \xA1Necesito
           lavarme las manos! \xBFPuedes ayudarme a recordar la secuencia adecuada
           para garantizar la higiene en la cocina?"
-        Audio: {fileID: 8300000, guid: 69e43e874851254428f880c52b84bb4c, type: 3}
+        Audio: {fileID: 8300000, guid: dcc79a6e53929484f92749036e893fc8, type: 3}
         Personaje: {fileID: 63081371, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
     - _name: "Clasificaci\xF3n de ingrediente"
@@ -80,7 +80,7 @@ MonoBehaviour:
         Content: "Soy Ana. \xA1Parece que olvid\xE9 los ingredientes para cocinar
           algo delicioso! \xBFPuedes ayudarme a encontrar las parejas de ingredientes
           para que podamos preparar una deliciosa comida juntos?"
-        Audio: {fileID: 8300000, guid: b364c055caac95149bcf15a53d8c1cec, type: 3}
+        Audio: {fileID: 8300000, guid: dc875a7666031ff4e8f87a407887b308, type: 3}
         Personaje: {fileID: 63081371, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
   - _name: Almacen
@@ -90,7 +90,7 @@ MonoBehaviour:
       - Title: Pedro el Comerciante
         Content: "Hola, soy Pedro. Necesito llenar la estanter\xEDa de ropa y no
           recuerdo donde van ubicadas \xBFMe colaboras a acomodar estas prendas?"
-        Audio: {fileID: 0}
+        Audio: {fileID: 8300000, guid: f2cbde122bf95684eb8c05b224e92454, type: 3}
         Personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2
     - _name: "Simulaci\xF3n de Ventas"
@@ -98,6 +98,6 @@ MonoBehaviour:
       - Title: Pedro el Comerciante
         Content: "Aqu\xED Pedro, estoy realizando mis ventas matutinas y no recuerdo
           dar el cambio correcto \xBFPodr\xEDas ayudarme a vender estas prendas?"
-        Audio: {fileID: 0}
+        Audio: {fileID: 8300000, guid: e985d19b8ab5a854ba17f0f72dddd8e2, type: 3}
         Personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
         SpritePosition: 2

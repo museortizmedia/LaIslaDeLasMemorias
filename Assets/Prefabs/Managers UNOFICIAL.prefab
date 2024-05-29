@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 4320653180912717770}
   - component: {fileID: 4250912173059226282}
   - component: {fileID: 4790886973446833254}
+  - component: {fileID: 734436964804341931}
   m_Layer: 0
   m_Name: Image (2)
   m_TagString: Untagged
@@ -225,6 +226,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &734436964804341931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342032499673204779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &378189791254651485
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +331,7 @@ GameObject:
   - component: {fileID: 4026433450589126824}
   - component: {fileID: 4673902916671366283}
   - component: {fileID: 587905813708133164}
+  - component: {fileID: 4259619346723218657}
   m_Layer: 0
   m_Name: Image (9)
   m_TagString: Untagged
@@ -422,6 +454,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4259619346723218657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400368111955269573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &635927788511254299
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +641,7 @@ GameObject:
   - component: {fileID: 5474173032594382988}
   - component: {fileID: 902299068211309833}
   - component: {fileID: 7984858996275988705}
+  - component: {fileID: 1231636710617587965}
   m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
@@ -701,6 +764,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1231636710617587965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932512493283726552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1952781489915093143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1323,7 @@ GameObject:
   - component: {fileID: 2273413221400445176}
   - component: {fileID: 7233012829009426179}
   - component: {fileID: 4582288871589783390}
+  - component: {fileID: 1068025057823243401}
   m_Layer: 0
   m_Name: Image (6)
   m_TagString: Untagged
@@ -1352,6 +1446,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1068025057823243401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3849906311857829951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4202179152997796856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1740,7 @@ GameObject:
   - component: {fileID: 966206189743537836}
   - component: {fileID: 5307402693622952519}
   - component: {fileID: 8400853934607283957}
+  - component: {fileID: 1401999739668739344}
   m_Layer: 0
   m_Name: Image (10)
   m_TagString: Untagged
@@ -1738,6 +1863,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1401999739668739344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225147607904851157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5271910263500747191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1982,7 @@ GameObject:
   - component: {fileID: 7682600904723280450}
   - component: {fileID: 356038618755103185}
   - component: {fileID: 3533595968463422460}
+  - component: {fileID: 1115363491251185923}
   m_Layer: 0
   m_Name: Image (4)
   m_TagString: Untagged
@@ -1949,6 +2105,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1115363491251185923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335707554134953285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5481119368868417801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +2147,7 @@ GameObject:
   - component: {fileID: 672745683500517417}
   - component: {fileID: 4416420390146644651}
   - component: {fileID: 5830050416848582764}
+  - component: {fileID: 1267551355862274873}
   m_Layer: 0
   m_Name: Image (3)
   m_TagString: Untagged
@@ -2083,6 +2270,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1267551355862274873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481119368868417801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5905612890793925176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2312,7 @@ GameObject:
   - component: {fileID: 4409525326072006612}
   - component: {fileID: 3364471679791579389}
   - component: {fileID: 8543364735032297005}
+  - component: {fileID: 587038649142198387}
   m_Layer: 0
   m_Name: Image (8)
   m_TagString: Untagged
@@ -2217,6 +2435,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &587038649142198387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905612890793925176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6223199329474423045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2540,7 @@ GameObject:
   - component: {fileID: 2065546750715395255}
   - component: {fileID: 270299277550759902}
   - component: {fileID: 785625058147026237}
+  - component: {fileID: 1375277901828798078}
   m_Layer: 0
   m_Name: Image (7)
   m_TagString: Untagged
@@ -2414,6 +2663,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1375277901828798078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6772873672309390932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6920379483112427102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,6 +2894,7 @@ GameObject:
   - component: {fileID: 965985886840116970}
   - component: {fileID: 1269384078419509323}
   - component: {fileID: 6018792398890990088}
+  - component: {fileID: 4265430687088800600}
   m_Layer: 0
   m_Name: Image (5)
   m_TagString: Untagged
@@ -2737,6 +3017,36 @@ MonoBehaviour:
             m_StringArgument: Salio
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4265430687088800600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982561868701262701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171e37f7d2754e94e9e30114f34561dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnableGO:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 83a7d49854b9abc45bcf06c6b2304bb6, type: 2}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableGO:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8642124072348316216
 GameObject:
   m_ObjectHideFlags: 0

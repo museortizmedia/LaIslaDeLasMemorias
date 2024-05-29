@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d0c0fb4bcb2c54b9b00cceb7432bae, type: 3}
+  m_Name: lienzoSelect
+  m_EditorClassIdentifier: 
+  AudioParameters:
+    AudioName: teatroSelect
+    AudioClips:
+    - {fileID: 8300000, guid: 1fc394f17684c1f41a05f183beb6fdde, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    StartDelay: 0
+    Canal: {fileID: 7354065869370451729, guid: 15e48f58f1dc568468e8fff697fac9fb, type: 2}
