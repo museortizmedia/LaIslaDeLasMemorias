@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class SensibilityManager : MonoBehaviour, IManager
 {
     public bool isActive;
-    [Header("Vibration")]
+    [Header("Vibration and Resizer")]
     [Range(0.0f, 10.0f)] public float VibrationSensibility;
+    [SerializeField] GameEvent _resizerEvent;
 
     [Header("Color")]
     public bool foo1;
@@ -67,8 +68,17 @@ public class SensibilityManager : MonoBehaviour, IManager
         module.SetActive(show);
     }
     void VibrationConfig(){
-        _vibrationControl.transform.GetChild(0).GetChild(0).GetComponent<Slider>().onValueChanged.RemoveAllListeners();
-        _vibrationControl.transform.GetChild(0).GetChild(0).GetComponent<Slider>().onValueChanged.AddListener((float sliderValue)=>{SetVibrationPower(sliderValue);});
+        Slider[] _sliders = _vibrationControl.GetComponentsInChildren<Slider>();
+        //slider vibration
+        _sliders[0].onValueChanged.RemoveAllListeners();
+        _sliders[0].onValueChanged.AddListener((float sliderValue)=>{
+            SetVibrationPower(sliderValue);
+        });
+        //slider resizer
+        _sliders[1].onValueChanged.RemoveAllListeners();
+        _sliders[1].onValueChanged.AddListener((float sliderValue)=>{
+            _resizerEvent.ResizeRaise(sliderValue);
+        });
     }
     void ColorConfig(){
         //
