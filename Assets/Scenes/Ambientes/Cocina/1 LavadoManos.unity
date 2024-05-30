@@ -1676,6 +1676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1241278291319367363, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1956155521093355707, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1723,6 +1727,42 @@ PrefabInstance:
     - target: {fileID: 2416228764947206263, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416228764947206263, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911496355200993404, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678935376283554291, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: antialiasingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678935376283554291, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: volumeLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868172822823412779, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674958284281550123, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945871884243890932, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945073877323980669, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945073877323980669, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
