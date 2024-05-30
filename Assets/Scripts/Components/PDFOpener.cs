@@ -38,4 +38,25 @@ public class PDFOpener : MonoBehaviour
 
         UnityEngine.Debug.Log($"PDF abierto desde {tempPath}");
     }
+
+    public string url = "https://www.ejemplo.com"; // URL que se abrirá en el navegador
+
+    public void OpenBrowser()
+    {
+        // Abre el navegador web con la URL especificada
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
+        else if (Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor)
+        {
+            Process.Start("open", url);
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Plataforma no soportada");
+        }
+
+        UnityEngine.Debug.Log($"Navegador web abierto con la URL: {url}");
+    }
 }

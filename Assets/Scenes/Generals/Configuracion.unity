@@ -391,6 +391,8 @@ GameObject:
   - component: {fileID: 73692756}
   - component: {fileID: 73692758}
   - component: {fileID: 73692757}
+  - component: {fileID: 73692760}
+  - component: {fileID: 73692759}
   m_Layer: 5
   m_Name: GoalActivity
   m_TagString: Untagged
@@ -515,6 +517,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73692755}
   m_CullTransparentMesh: 1
+--- !u!114 &73692759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73692755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 73692757}
+--- !u!114 &73692760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73692755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 73692759}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &98086907
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +575,8 @@ GameObject:
   - component: {fileID: 98086908}
   - component: {fileID: 98086910}
   - component: {fileID: 98086909}
+  - component: {fileID: 98086912}
+  - component: {fileID: 98086911}
   m_Layer: 5
   m_Name: TitleCharacter
   m_TagString: Untagged
@@ -650,6 +701,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98086907}
   m_CullTransparentMesh: 1
+--- !u!114 &98086911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98086907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 98086909}
+--- !u!114 &98086912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98086907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 98086911}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &158538055
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +759,8 @@ GameObject:
   - component: {fileID: 158538056}
   - component: {fileID: 158538058}
   - component: {fileID: 158538057}
+  - component: {fileID: 158538060}
+  - component: {fileID: 158538059}
   m_Layer: 5
   m_Name: Item Label
   m_TagString: Untagged
@@ -785,6 +885,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158538055}
   m_CullTransparentMesh: 1
+--- !u!114 &158538059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158538055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 158538057}
+--- !u!114 &158538060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158538055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 158538059}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &173068087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1327,8 @@ GameObject:
   - component: {fileID: 309552537}
   - component: {fileID: 309552539}
   - component: {fileID: 309552538}
+  - component: {fileID: 309552541}
+  - component: {fileID: 309552540}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1204,8 +1353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -96.714}
-  m_SizeDelta: {x: 0, y: 48.8076}
+  m_AnchoredPosition: {x: 0, y: -116.53174}
+  m_SizeDelta: {x: 0, y: 88.4431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309552538
 MonoBehaviour:
@@ -1254,10 +1403,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.05
-  m_fontSizeBase: 36
+  m_fontSize: 32.1
+  m_fontSizeBase: 32.1
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
@@ -1290,7 +1439,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 91.430664, y: 11.874023, z: 78.36926, w: 0}
+  m_margin: {x: 80.850586, y: 11.874023, z: 99.83844, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1304,6 +1453,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309552536}
   m_CullTransparentMesh: 1
+--- !u!114 &309552540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309552536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 309552538}
+--- !u!114 &309552541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309552536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 309552540}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &320092557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1511,8 @@ GameObject:
   - component: {fileID: 320092558}
   - component: {fileID: 320092560}
   - component: {fileID: 320092559}
+  - component: {fileID: 320092562}
+  - component: {fileID: 320092561}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -1439,6 +1637,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320092557}
   m_CullTransparentMesh: 1
+--- !u!114 &320092561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320092557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 320092559}
+--- !u!114 &320092562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320092557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 320092561}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &330646665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2520,8 @@ GameObject:
   - component: {fileID: 449659008}
   - component: {fileID: 449659010}
   - component: {fileID: 449659009}
+  - component: {fileID: 449659012}
+  - component: {fileID: 449659011}
   m_Layer: 5
   m_Name: Dificulty
   m_TagString: Untagged
@@ -2399,6 +2646,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449659007}
   m_CullTransparentMesh: 1
+--- !u!114 &449659011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449659007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 449659009}
+--- !u!114 &449659012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449659007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 449659011}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &479774141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,6 +3128,8 @@ GameObject:
   - component: {fileID: 513104019}
   - component: {fileID: 513104021}
   - component: {fileID: 513104020}
+  - component: {fileID: 513104023}
+  - component: {fileID: 513104022}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2958,6 +3254,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513104018}
   m_CullTransparentMesh: 1
+--- !u!114 &513104022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513104018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 513104020}
+--- !u!114 &513104023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513104018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 513104022}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &521908301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,6 +3457,8 @@ GameObject:
   - component: {fileID: 549152084}
   - component: {fileID: 549152086}
   - component: {fileID: 549152085}
+  - component: {fileID: 549152088}
+  - component: {fileID: 549152087}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -3239,6 +3584,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549152083}
   m_CullTransparentMesh: 1
+--- !u!114 &549152087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549152083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 549152085}
+--- !u!114 &549152088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549152083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 549152087}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &557146715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,6 +3801,8 @@ GameObject:
   - component: {fileID: 566232803}
   - component: {fileID: 566232805}
   - component: {fileID: 566232804}
+  - component: {fileID: 566232807}
+  - component: {fileID: 566232806}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3533,6 +3927,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566232802}
   m_CullTransparentMesh: 1
+--- !u!114 &566232806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566232802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 566232804}
+--- !u!114 &566232807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566232802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 566232806}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &568857674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,6 +3985,8 @@ GameObject:
   - component: {fileID: 568857675}
   - component: {fileID: 568857677}
   - component: {fileID: 568857676}
+  - component: {fileID: 568857679}
+  - component: {fileID: 568857678}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -3669,6 +4112,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568857674}
   m_CullTransparentMesh: 1
+--- !u!114 &568857678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568857674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 568857676}
+--- !u!114 &568857679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568857674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 568857678}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &570446025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,6 +4416,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 574591986}
         m_TargetAssemblyTypeName: PDFOpener, Assembly-CSharp
+        m_MethodName: OpenBrowser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 574591986}
+        m_TargetAssemblyTypeName: PDFOpener, Assembly-CSharp
         m_MethodName: OpenPDF
         m_Mode: 1
         m_Arguments:
@@ -3986,7 +4488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5be6d1fa1f21f47b965e41cb97b2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pdfFileName: mi_archivo
+  pdfFileName: instructivoLocal.pdf
+  url: https://drive.google.com/drive/folders/1-yRwZ-d9bX8YwtkEfaiboQc2TJQlXiG1?usp=drive_link
 --- !u!1 &575133680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,6 +4501,8 @@ GameObject:
   - component: {fileID: 575133681}
   - component: {fileID: 575133683}
   - component: {fileID: 575133682}
+  - component: {fileID: 575133685}
+  - component: {fileID: 575133684}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -4124,6 +4629,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575133680}
   m_CullTransparentMesh: 1
+--- !u!114 &575133684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575133680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 575133682}
+--- !u!114 &575133685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575133680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 575133684}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &593849322
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,6 +4921,8 @@ GameObject:
   - component: {fileID: 606866349}
   - component: {fileID: 606866351}
   - component: {fileID: 606866350}
+  - component: {fileID: 606866353}
+  - component: {fileID: 606866352}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -4493,6 +5047,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606866348}
   m_CullTransparentMesh: 1
+--- !u!114 &606866352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606866348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 606866350}
+--- !u!114 &606866353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606866348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 606866352}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &619052623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,6 +5181,8 @@ GameObject:
   - component: {fileID: 624452727}
   - component: {fileID: 624452729}
   - component: {fileID: 624452728}
+  - component: {fileID: 624452731}
+  - component: {fileID: 624452730}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4704,6 +5307,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624452726}
   m_CullTransparentMesh: 1
+--- !u!114 &624452730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624452726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 624452728}
+--- !u!114 &624452731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624452726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 624452730}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &635209537
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,6 +5441,8 @@ GameObject:
   - component: {fileID: 647806873}
   - component: {fileID: 647806872}
   - component: {fileID: 647806871}
+  - component: {fileID: 647806875}
+  - component: {fileID: 647806874}
   m_Layer: 5
   m_Name: NameCharacter
   m_TagString: Untagged
@@ -4915,6 +5567,53 @@ RectTransform:
   m_AnchoredPosition: {x: 1.9067, y: 258.69446}
   m_SizeDelta: {x: 246.7735, y: 43.1086}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &647806874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647806870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 647806871}
+--- !u!114 &647806875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647806870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 647806874}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &699747081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5067,6 +5766,8 @@ GameObject:
   - component: {fileID: 758461553}
   - component: {fileID: 758461555}
   - component: {fileID: 758461554}
+  - component: {fileID: 758461557}
+  - component: {fileID: 758461556}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -5191,6 +5892,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758461552}
   m_CullTransparentMesh: 1
+--- !u!114 &758461556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758461552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 758461554}
+--- !u!114 &758461557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758461552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758461556}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &761220660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5278,6 +6026,8 @@ GameObject:
   - component: {fileID: 763757705}
   - component: {fileID: 763757707}
   - component: {fileID: 763757706}
+  - component: {fileID: 763757709}
+  - component: {fileID: 763757708}
   m_Layer: 5
   m_Name: TitleNameActivity
   m_TagString: Untagged
@@ -5402,6 +6152,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763757704}
   m_CullTransparentMesh: 1
+--- !u!114 &763757708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763757704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 763757706}
+--- !u!114 &763757709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763757704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 763757708}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &770226612
 GameObject:
   m_ObjectHideFlags: 0
@@ -5667,6 +6464,8 @@ GameObject:
   - component: {fileID: 800958623}
   - component: {fileID: 800958625}
   - component: {fileID: 800958624}
+  - component: {fileID: 800958627}
+  - component: {fileID: 800958626}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5791,6 +6590,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800958622}
   m_CullTransparentMesh: 1
+--- !u!114 &800958626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800958622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 800958624}
+--- !u!114 &800958627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800958622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 800958626}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &818766245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,6 +6726,8 @@ GameObject:
   - component: {fileID: 824999843}
   - component: {fileID: 824999845}
   - component: {fileID: 824999844}
+  - component: {fileID: 824999847}
+  - component: {fileID: 824999846}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6004,6 +6852,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824999842}
   m_CullTransparentMesh: 1
+--- !u!114 &824999846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824999842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 824999844}
+--- !u!114 &824999847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824999842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 824999846}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &845565868
 GameObject:
   m_ObjectHideFlags: 0
@@ -6015,6 +6910,8 @@ GameObject:
   - component: {fileID: 845565869}
   - component: {fileID: 845565871}
   - component: {fileID: 845565870}
+  - component: {fileID: 845565873}
+  - component: {fileID: 845565872}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -6139,6 +7036,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845565868}
   m_CullTransparentMesh: 1
+--- !u!114 &845565872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845565868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 845565870}
+--- !u!114 &845565873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845565868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 845565872}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &867345824
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,6 +7208,8 @@ GameObject:
   - component: {fileID: 889041952}
   - component: {fileID: 889041954}
   - component: {fileID: 889041953}
+  - component: {fileID: 889041956}
+  - component: {fileID: 889041955}
   m_Layer: 5
   m_Name: Item Label
   m_TagString: Untagged
@@ -6388,6 +7334,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889041951}
   m_CullTransparentMesh: 1
+--- !u!114 &889041955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889041951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 889041953}
+--- !u!114 &889041956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889041951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 889041955}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &892652643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6740,6 +7733,8 @@ GameObject:
   - component: {fileID: 973754583}
   - component: {fileID: 973754585}
   - component: {fileID: 973754584}
+  - component: {fileID: 973754587}
+  - component: {fileID: 973754586}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -6864,6 +7859,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973754582}
   m_CullTransparentMesh: 1
+--- !u!114 &973754586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973754582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 158538057}
+--- !u!114 &973754587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973754582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 973754586}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &974286890
 GameObject:
   m_ObjectHideFlags: 0
@@ -7111,6 +8153,8 @@ GameObject:
   - component: {fileID: 1015440876}
   - component: {fileID: 1015440878}
   - component: {fileID: 1015440877}
+  - component: {fileID: 1015440880}
+  - component: {fileID: 1015440879}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7135,8 +8179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.2450867, y: -32.857788}
-  m_SizeDelta: {x: -38.1664, y: 34.2844}
+  m_AnchoredPosition: {x: 2.2450867, y: -54.30847}
+  m_SizeDelta: {x: -38.1664, y: 77.1858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015440877
 MonoBehaviour:
@@ -7158,7 +8202,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2. Conecta las mesas al cerebro
+  m_text: 2. Conecta los tableros interactivos al computador y presiona algun boton
+    de control
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7185,12 +8230,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 36
+  m_fontSize: 20.5
+  m_fontSizeBase: 20.5
   m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 20
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 20
+  m_fontSizeMax: 20.9
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -7221,7 +8266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 22.253632, y: 0, z: 23.935913, w: 1.7076416}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7235,6 +8280,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015440875}
   m_CullTransparentMesh: 1
+--- !u!114 &1015440879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015440875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1015440877}
+--- !u!114 &1015440880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015440875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1015440879}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1026918209
 GameObject:
   m_ObjectHideFlags: 0
@@ -7246,6 +8338,8 @@ GameObject:
   - component: {fileID: 1026918210}
   - component: {fileID: 1026918212}
   - component: {fileID: 1026918211}
+  - component: {fileID: 1026918214}
+  - component: {fileID: 1026918213}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -7371,6 +8465,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026918209}
   m_CullTransparentMesh: 1
+--- !u!114 &1026918213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026918209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1026918211}
+--- !u!114 &1026918214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026918209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1026918213}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1033921474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,6 +8733,8 @@ GameObject:
   - component: {fileID: 1063529064}
   - component: {fileID: 1063529066}
   - component: {fileID: 1063529065}
+  - component: {fileID: 1063529068}
+  - component: {fileID: 1063529067}
   m_Layer: 5
   m_Name: TitleTimeframe
   m_TagString: Untagged
@@ -7716,6 +8859,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063529063}
   m_CullTransparentMesh: 1
+--- !u!114 &1063529067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063529063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1063529065}
+--- !u!114 &1063529068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063529063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1063529067}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1069445142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4736184201958375319, guid: 0dc2d3c5d04ee3b44acc35f6b6a6d4f0, type: 3}
@@ -7951,6 +9141,8 @@ GameObject:
   - component: {fileID: 1096628289}
   - component: {fileID: 1096628291}
   - component: {fileID: 1096628290}
+  - component: {fileID: 1096628293}
+  - component: {fileID: 1096628292}
   m_Layer: 5
   m_Name: TextDificulty
   m_TagString: Untagged
@@ -8075,6 +9267,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096628288}
   m_CullTransparentMesh: 1
+--- !u!114 &1096628292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1096628290}
+--- !u!114 &1096628293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096628288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1096628292}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1101413645
 GameObject:
   m_ObjectHideFlags: 0
@@ -9032,6 +10271,8 @@ GameObject:
   - component: {fileID: 1321780754}
   - component: {fileID: 1321780756}
   - component: {fileID: 1321780755}
+  - component: {fileID: 1321780758}
+  - component: {fileID: 1321780757}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -9156,6 +10397,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321780753}
   m_CullTransparentMesh: 1
+--- !u!114 &1321780757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321780753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1321780755}
+--- !u!114 &1321780758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321780753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1321780757}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1371120593
 GameObject:
   m_ObjectHideFlags: 0
@@ -9168,6 +10456,8 @@ GameObject:
   - component: {fileID: 1371120596}
   - component: {fileID: 1371120595}
   - component: {fileID: 1371120597}
+  - component: {fileID: 1371120599}
+  - component: {fileID: 1371120598}
   m_Layer: 5
   m_Name: mesasConectadas
   m_TagString: Untagged
@@ -9326,6 +10616,53 @@ MonoBehaviour:
   ResizerResponse:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1371120598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371120593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1371120595}
+--- !u!114 &1371120599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371120593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1371120598}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1377797289
 GameObject:
   m_ObjectHideFlags: 0
@@ -9582,6 +10919,8 @@ GameObject:
   - component: {fileID: 1444730166}
   - component: {fileID: 1444730168}
   - component: {fileID: 1444730167}
+  - component: {fileID: 1444730170}
+  - component: {fileID: 1444730169}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -9706,6 +11045,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444730165}
   m_CullTransparentMesh: 1
+--- !u!114 &1444730169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444730165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1444730167}
+--- !u!114 &1444730170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444730165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1444730169}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1446192803
 GameObject:
   m_ObjectHideFlags: 0
@@ -9717,6 +11103,8 @@ GameObject:
   - component: {fileID: 1446192804}
   - component: {fileID: 1446192806}
   - component: {fileID: 1446192805}
+  - component: {fileID: 1446192808}
+  - component: {fileID: 1446192807}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9841,6 +11229,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446192803}
   m_CullTransparentMesh: 1
+--- !u!114 &1446192807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446192803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1446192805}
+--- !u!114 &1446192808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446192803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1446192807}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1447411782
 GameObject:
   m_ObjectHideFlags: 0
@@ -10051,6 +11486,8 @@ GameObject:
   - component: {fileID: 1491777637}
   - component: {fileID: 1491777639}
   - component: {fileID: 1491777638}
+  - component: {fileID: 1491777641}
+  - component: {fileID: 1491777640}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10175,6 +11612,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491777636}
   m_CullTransparentMesh: 1
+--- !u!114 &1491777640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491777636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1491777638}
+--- !u!114 &1491777641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491777636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1491777640}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1517831602
 GameObject:
   m_ObjectHideFlags: 0
@@ -10810,6 +12294,8 @@ GameObject:
   - component: {fileID: 1572370937}
   - component: {fileID: 1572370939}
   - component: {fileID: 1572370938}
+  - component: {fileID: 1572370941}
+  - component: {fileID: 1572370940}
   m_Layer: 5
   m_Name: NameActivity
   m_TagString: Untagged
@@ -10934,6 +12420,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572370936}
   m_CullTransparentMesh: 1
+--- !u!114 &1572370940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572370936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1572370938}
+--- !u!114 &1572370941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572370936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1572370940}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1618155765
 GameObject:
   m_ObjectHideFlags: 0
@@ -12147,6 +13680,8 @@ GameObject:
   - component: {fileID: 1767265216}
   - component: {fileID: 1767265218}
   - component: {fileID: 1767265217}
+  - component: {fileID: 1767265220}
+  - component: {fileID: 1767265219}
   m_Layer: 5
   m_Name: Minutes
   m_TagString: Untagged
@@ -12271,6 +13806,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767265215}
   m_CullTransparentMesh: 1
+--- !u!114 &1767265219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767265215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1572370938}
+--- !u!114 &1767265220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767265215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1767265219}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1817391290
 GameObject:
   m_ObjectHideFlags: 0
@@ -12409,6 +13991,8 @@ GameObject:
   - component: {fileID: 1825107376}
   - component: {fileID: 1825107378}
   - component: {fileID: 1825107377}
+  - component: {fileID: 1825107380}
+  - component: {fileID: 1825107379}
   m_Layer: 5
   m_Name: Descripcion
   m_TagString: Untagged
@@ -12533,6 +14117,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825107375}
   m_CullTransparentMesh: 1
+--- !u!114 &1825107379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825107375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1825107377}
+--- !u!114 &1825107380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825107375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1825107379}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1857154088
 GameObject:
   m_ObjectHideFlags: 0
@@ -12696,6 +14327,8 @@ GameObject:
   - component: {fileID: 1877946479}
   - component: {fileID: 1877946481}
   - component: {fileID: 1877946480}
+  - component: {fileID: 1877946483}
+  - component: {fileID: 1877946482}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -12820,6 +14453,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877946478}
   m_CullTransparentMesh: 1
+--- !u!114 &1877946482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877946478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1877946480}
+--- !u!114 &1877946483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877946478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1877946482}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1883949801
 GameObject:
   m_ObjectHideFlags: 0
@@ -12899,6 +14579,8 @@ GameObject:
   - component: {fileID: 1888960430}
   - component: {fileID: 1888960432}
   - component: {fileID: 1888960431}
+  - component: {fileID: 1888960434}
+  - component: {fileID: 1888960433}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13023,6 +14705,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888960429}
   m_CullTransparentMesh: 1
+--- !u!114 &1888960433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888960429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1888960431}
+--- !u!114 &1888960434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888960429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1888960433}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1894799682
 GameObject:
   m_ObjectHideFlags: 0
@@ -13034,6 +14763,8 @@ GameObject:
   - component: {fileID: 1894799683}
   - component: {fileID: 1894799685}
   - component: {fileID: 1894799684}
+  - component: {fileID: 1894799687}
+  - component: {fileID: 1894799686}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13158,6 +14889,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894799682}
   m_CullTransparentMesh: 1
+--- !u!114 &1894799686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894799682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1894799684}
+--- !u!114 &1894799687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894799682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1894799686}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1911508318
 GameObject:
   m_ObjectHideFlags: 0
@@ -13437,6 +15215,8 @@ GameObject:
   - component: {fileID: 1963970594}
   - component: {fileID: 1963970596}
   - component: {fileID: 1963970595}
+  - component: {fileID: 1963970598}
+  - component: {fileID: 1963970597}
   m_Layer: 5
   m_Name: Goal
   m_TagString: Untagged
@@ -13561,6 +15341,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963970593}
   m_CullTransparentMesh: 1
+--- !u!114 &1963970597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963970593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 1963970595}
+--- !u!114 &1963970598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963970593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1963970597}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2018134423
 GameObject:
   m_ObjectHideFlags: 0
@@ -13648,6 +15475,8 @@ GameObject:
   - component: {fileID: 2021796138}
   - component: {fileID: 2021796140}
   - component: {fileID: 2021796139}
+  - component: {fileID: 2021796142}
+  - component: {fileID: 2021796141}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13772,6 +15601,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021796137}
   m_CullTransparentMesh: 1
+--- !u!114 &2021796141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021796137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 2021796139}
+--- !u!114 &2021796142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021796137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2021796141}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2047863033
 GameObject:
   m_ObjectHideFlags: 0
@@ -13989,6 +15865,8 @@ GameObject:
   - component: {fileID: 2049641061}
   - component: {fileID: 2049641063}
   - component: {fileID: 2049641062}
+  - component: {fileID: 2049641065}
+  - component: {fileID: 2049641064}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -14114,6 +15992,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049641060}
   m_CullTransparentMesh: 1
+--- !u!114 &2049641064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049641060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 2049641062}
+--- !u!114 &2049641065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049641060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2049641064}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2057326101
 GameObject:
   m_ObjectHideFlags: 0
@@ -14125,6 +16050,8 @@ GameObject:
   - component: {fileID: 2057326102}
   - component: {fileID: 2057326104}
   - component: {fileID: 2057326103}
+  - component: {fileID: 2057326106}
+  - component: {fileID: 2057326105}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -14149,7 +16076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -191.57152}
+  m_AnchoredPosition: {x: -6.4353943, y: -228.24}
   m_SizeDelta: {x: 0, y: 140.907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057326103
@@ -14200,10 +16127,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 36
+  m_fontSize: 26.2
+  m_fontSizeBase: 26.2
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 25
   m_fontStyle: 0
@@ -14236,7 +16163,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 93.35394, y: 10.686707, z: 104.87909, w: 0}
+  m_margin: {x: 117.536835, y: 10.686707, z: 104.87909, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -14250,6 +16177,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057326101}
   m_CullTransparentMesh: 1
+--- !u!114 &2057326105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057326101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 2057326103}
+--- !u!114 &2057326106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057326101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2057326105}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2075457922
 GameObject:
   m_ObjectHideFlags: 0
@@ -14261,6 +16235,8 @@ GameObject:
   - component: {fileID: 2075457923}
   - component: {fileID: 2075457925}
   - component: {fileID: 2075457924}
+  - component: {fileID: 2075457927}
+  - component: {fileID: 2075457926}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -14385,6 +16361,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075457922}
   m_CullTransparentMesh: 1
+--- !u!114 &2075457926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075457922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 2075457924}
+--- !u!114 &2075457927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075457922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2075457926}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2106717974
 GameObject:
   m_ObjectHideFlags: 0
@@ -14396,6 +16419,8 @@ GameObject:
   - component: {fileID: 2106717975}
   - component: {fileID: 2106717977}
   - component: {fileID: 2106717976}
+  - component: {fileID: 2106717979}
+  - component: {fileID: 2106717978}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -14521,6 +16546,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106717974}
   m_CullTransparentMesh: 1
+--- !u!114 &2106717978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106717974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f411552ba761b44f9b7cb108ac899f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 2106717976}
+--- !u!114 &2106717979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106717974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1195ae4d98bb4a74ab6f8614a304b73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5a53137daea232d4cb29f40aedd3ef71, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  ButtonResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  ResizerResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2106717978}
+        m_TargetAssemblyTypeName: TextMeshProFontSizeChanger, Assembly-CSharp
+        m_MethodName: SetFontSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2110737993
 GameObject:
   m_ObjectHideFlags: 0

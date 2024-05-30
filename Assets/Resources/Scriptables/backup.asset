@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1407a05835eaa0479242828e7f64629, type: 3}
-  m_Name: ActivitiesInfoScriptable
+  m_Name: backup
   m_EditorClassIdentifier: 
   Ambientes:
   - _name: Teatro
@@ -94,6 +94,14 @@ MonoBehaviour:
         seg\xFAn su tipo (camiseta, pantal\xF3n y zapatos) y su respectivo color
         (azul y rojo)."
       _sceneName: 1 SeleccionarCategorias
+      _dificultad: 0
+      _tiempoEstimado: 0
+      _personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}
+      _nombrePersonaje: Pedro el Comerciante
+    - _name: "Simulaci\xF3n de Ventas"
+      _desc: "El objetivo es realizar una simulaci\xF3n de venta simple de una prenda
+        y devolver el cambio correctamente."
+      _sceneName: 2 SimuladorVentas
       _dificultad: 0
       _tiempoEstimado: 0
       _personaje: {fileID: -1383600974, guid: 0b9b326006767f54eb470ce9a3953d0b, type: 3}

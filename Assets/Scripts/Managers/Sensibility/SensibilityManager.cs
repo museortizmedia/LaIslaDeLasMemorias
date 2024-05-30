@@ -77,16 +77,23 @@ public class SensibilityManager : MonoBehaviour, IManager
         _sliders[1].onValueChanged.RemoveAllListeners();
         _sliders[1].onValueChanged.AddListener((float sliderValue)=>{
             _resizerEvent.ResizeRaise(sliderValue);
+            //Debug.Log($"cambiando en factor de {sliderValue}");
         });
+        _resizerEvent.ResizeRaise(_sliders[1].value);
     }
     void ColorConfig(){
         Button[] botones = _colorControl.GetComponentsInChildren<Button>();
+        botones[0].onClick.RemoveAllListeners();
+        botones[1].onClick.RemoveAllListeners();
         botones[0].onClick.AddListener(()=>{SetCameraEfect(0);});
         botones[1].onClick.AddListener(() =>{SetCameraEfect(1);});
     }
 
     void VolumeConfig(){
         Slider[] _sliders = _volumeControl.GetComponentsInChildren<Slider>(true);
+        _sliders[0].onValueChanged.RemoveAllListeners();
+        _sliders[1].onValueChanged.RemoveAllListeners();
+        _sliders[2].onValueChanged.RemoveAllListeners();
         _sliders[2].onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue);});
         _sliders[1].onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue, "MusicVolume");});
         _sliders[0].onValueChanged.AddListener((float sliderValue)=>{SetAudioVolume(sliderValue, "SfxVolume");});
