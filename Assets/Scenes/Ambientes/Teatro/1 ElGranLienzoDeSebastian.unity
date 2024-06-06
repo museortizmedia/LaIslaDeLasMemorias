@@ -426,6 +426,10 @@ PrefabInstance:
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 547044205232190358, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.883423
+      objectReference: {fileID: 0}
     - target: {fileID: 3952862909045782233, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_Name
       value: Explicacion Pintura Seleccionada
@@ -521,6 +525,10 @@ PrefabInstance:
     - target: {fileID: 8210368715269714429, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_fontSize
       value: 22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582845297244844863, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.299988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -961,6 +969,10 @@ PrefabInstance:
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 547044205232190358, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.883423
+      objectReference: {fileID: 0}
     - target: {fileID: 3260899263211600380, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnEnableGO.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1084,6 +1096,10 @@ PrefabInstance:
     - target: {fileID: 8210368715269714429, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_fontSize
       value: 22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582845297244844863, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.299988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1955,8 +1971,8 @@ Canvas:
   m_GameObject: {fileID: 859359218}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2090726803}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2579,6 +2595,10 @@ PrefabInstance:
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 547044205232190358, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.883423
+      objectReference: {fileID: 0}
     - target: {fileID: 3952862909045782233, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_Name
       value: Instrucciones
@@ -2670,6 +2690,10 @@ PrefabInstance:
     - target: {fileID: 8210368715269714429, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_fontSize
       value: 22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582845297244844863, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.299988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2934,6 +2958,10 @@ PrefabInstance:
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 547044205232190358, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.883423
+      objectReference: {fileID: 0}
     - target: {fileID: 3952862909045782233, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_Name
       value: Fin
@@ -3029,6 +3057,10 @@ PrefabInstance:
     - target: {fileID: 8210368715269714429, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_fontSize
       value: 22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582845297244844863, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.299988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4589,6 +4621,10 @@ PrefabInstance:
     - target: {fileID: 184889086216641164, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057785473961711864, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.64914
       objectReference: {fileID: 0}
     - target: {fileID: 1219938795786634527, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}
       propertyPath: m_Name
@@ -6359,6 +6395,10 @@ PrefabInstance:
       propertyPath: OnFinish.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 547044205232190358, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.883423
+      objectReference: {fileID: 0}
     - target: {fileID: 3260899263211600380, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: OnEnableGO.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -6506,6 +6546,10 @@ PrefabInstance:
     - target: {fileID: 8210368715269714429, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
       propertyPath: m_fontSize
       value: 22.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582845297244844863, guid: dc067c9c8574dba46aabefb9ea2df4d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.299988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6714,6 +6758,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+--- !u!20 &2090726803 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7441885537589002138, guid: 334b70aef88c67246971c76e0cfb3e86, type: 3}
+  m_PrefabInstance: {fileID: 2090726802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2108873957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5849898973662586107, guid: f14da5f08330f0541bd0fb65d4e1dc36, type: 3}

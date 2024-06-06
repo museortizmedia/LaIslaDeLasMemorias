@@ -31,6 +31,9 @@ public class SerialReader : MonoBehaviour, IManager
     //Iniciación, Finalización
     void Start()
     {
+        #if UNITY_STANDALONE && !UNITY_EDITOR
+        _isSimulation = false;
+        #endif
         if (!_isSimulation)
         {
             StartCoroutine(InitializeAndIdentifyArduinos());
@@ -42,13 +45,13 @@ public class SerialReader : MonoBehaviour, IManager
         Finalizar();
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         if (!_isSimulation)
         {
             StartCoroutine(InitializeAndIdentifyArduinos());
         }
-    }
+    }*/
 
     private void OnDisable()
     {
@@ -112,6 +115,7 @@ public class SerialReader : MonoBehaviour, IManager
                             identifiedArduinos[identifier] = serialPort;
                             arduinoPorts.Add(serialPort);
                             SendDataToArduino(identifier, "CONNECTED");
+                            OnBrainConnectState?.Invoke(true);
                             break;
                         }
                     }

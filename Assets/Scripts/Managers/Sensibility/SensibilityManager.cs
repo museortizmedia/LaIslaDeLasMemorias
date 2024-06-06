@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
@@ -82,11 +83,15 @@ public class SensibilityManager : MonoBehaviour, IManager
         _resizerEvent.ResizeRaise(_sliders[1].value);
     }
     void ColorConfig(){
-        Button[] botones = _colorControl.GetComponentsInChildren<Button>();
+        /*Button[] botones = _colorControl.GetComponentsInChildren<Button>();
         botones[0].onClick.RemoveAllListeners();
         botones[1].onClick.RemoveAllListeners();
-        botones[0].onClick.AddListener(()=>{SetCameraEfect(0);});
-        botones[1].onClick.AddListener(() =>{SetCameraEfect(1);});
+        botones[0].onClick.AddListener(()=>{SetCameraEfect();});
+        botones[1].onClick.AddListener(() =>{SetCameraEfect();});*/
+        TMP_Dropdown _tmpDropdown = _colorControl.GetComponentInChildren<TMP_Dropdown>(true);
+        _tmpDropdown.onValueChanged.RemoveAllListeners();
+        _tmpDropdown.onValueChanged.AddListener((int value)=>{SetCameraEfect(value);});
+
     }
 
     void VolumeConfig(){
@@ -109,13 +114,21 @@ public class SensibilityManager : MonoBehaviour, IManager
     //ColorControl
     void SetCameraEfect(int index)
     {
-        if(Camera.main != null)
+        /*if(Camera.main != null)
         {
             Camera camara = Camera.main;
             ActiveEfectIndex = index;
             for (int i = 0; i < camara.transform.childCount; i++)
             {
                 camara.transform.GetChild(i).gameObject.SetActive(i==ActiveEfectIndex);
+            }
+        }*/
+        if(Camera.main != null)
+        {
+            Camera camara = Camera.main;
+            if(camara.TryGetComponent(out ColorBlindFilter colorBlindFilter))
+            {
+                colorBlindFilter.mode = (ColorBlindMode)index;
             }
         }
     }
