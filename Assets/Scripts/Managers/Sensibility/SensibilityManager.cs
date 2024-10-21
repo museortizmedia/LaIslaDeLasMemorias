@@ -108,7 +108,7 @@ public class SensibilityManager : MonoBehaviour, IManager
     public void SetVibrationPower(float value){
         Managers manager = GetComponentInParent<Managers>();
         SerialReader serialReader = (SerialReader)manager._managers[1];
-        serialReader.SendSerialPortData(SerialReader.CerebroComds.ConfigVibration+"["+value+"]");
+        //serialReader.SendSerialPortData(CerebroComds.ConfigVibration+"["+value+"]");
     }
 
     //ColorControl

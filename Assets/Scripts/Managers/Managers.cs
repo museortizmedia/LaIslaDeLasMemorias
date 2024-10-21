@@ -33,7 +33,7 @@ public class Managers : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this);
 
-        Component[] children = GetComponentsInChildren<Component>();
+        Component[] children = GetComponentsInChildren<Component>(true);
         foreach (Component child in children)
         {
             if (child is IManager manager)
@@ -65,9 +65,10 @@ public class Managers : MonoBehaviour
         Debug.Log("GAME: Se cambió el estado de juego a: "+EstadoGame);
         switch(EstadoGame){
             case GameState.Configuration:
-            Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
+            //Debug.Log("GAME: Se carga la escena de configuración, se activan los managers");
             SceneManager.LoadScene("Configuracion");
             _ambienteActual = 0; _actividadActual=0;
+            GetManager<InputManager>().gameObject.SetActive(true);
             break;
             case GameState.Inicio:
             SceneManager.LoadScene(scriptableActivitiesInfo.Ambientes[_ambienteActual]._activitiesNames[_actividadActual]._sceneName);

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Amb3Act1 : ExperienceController
 {
     [SerializeField] List<ScriptableActivitiesData.ActivityData> animalesRound = new();
-    int _currentAnimal = 0;
+    //int _currentAnimal = 0;
     ScriptableActivitiesData.ActivityData animalEscogido;
     [SerializeField] UI_FollowPath animalAnimations;
     [SerializeField] CardControler AnimalCard;

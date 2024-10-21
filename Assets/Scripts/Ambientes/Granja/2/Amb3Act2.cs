@@ -6,7 +6,7 @@ using UnityEngine;
 public class Amb3Act2 : ExperienceController
 {
     [SerializeField] List<ScriptableActivitiesData.ActivityData> toolsRound = new();
-    [SerializeField] int _currentTool = 0;
+    //[SerializeField] int _currentTool = 0;
     [SerializeField] int _isCorrect = 0;
     ScriptableActivitiesData.ActivityData toolEscogida;
     [SerializeField] CardControler CardTool;

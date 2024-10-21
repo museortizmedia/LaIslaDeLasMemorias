@@ -10,57 +10,30 @@ public struct ButtonData
 }
 public class InputManager : MonoBehaviour, IManager
 {
-    [SerializeField] bool _isBrainConect;
-    public bool IsBrainConect{
-        get=>_isBrainConect;
-        set
-        {
-            _isBrainConect=value;
-            if(value)
-            {
-                OnCerebroDetected.Raise();
-                OnBrainConnect?.Invoke();
-                CancelInvoke();
-                _frecuenciaDeBusqueda=10;
-                InvokeRepeating(nameof(SearchForBrain), 1, _frecuenciaDeBusqueda);
+    [HideInInspector] public SerialReader _serialReader;
 
-            }else{
-                OnCerebroUndetect.Raise();
-                OnBrainDisconnect?.Invoke();
-                CancelInvoke();
-                _frecuenciaDeBusqueda=3;
-                InvokeRepeating(nameof(SearchForBrain), 1, _frecuenciaDeBusqueda);
-            }
-        }
-    }
-    int _frecuenciaDeBusqueda = 1;
-    [SerializeField] SerialReader _serialReader;
-    public GameEvent OnCerebroDetected, OnCerebroUndetect;
-
-
-    [Header("Eventos")]
-    [SerializeField] UnityEvent OnBrainConnect;
-    [SerializeField] UnityEvent  OnBrainDisconnect;
-
-  
     [Header("Eventos Input")]
     public UnityEvent <ButtonData> OnAnyButtonPress;
-    [SerializeField] GameEvent[] _gameEvents;
+    [SerializeField] GameEvent[] _gameButtonEvents;
 
-    private void Start() {
-        if(_serialReader==null){_serialReader = GetComponentInChildren<SerialReader>();}     
-        IsBrainConect=false; 
-    }
-    void SearchForBrain(){
-        _serialReader.SendSerialPortData(SerialReader.CerebroComds.Connect);
+    private void Start()
+    {
+        if(_serialReader==null)
+        {
+            _serialReader = GetComponentInChildren<SerialReader>();
+        }
     }
 
-    /// <summary>
-    /// Recibe información de una desicion de interacción tomada (enviada por el cerebro). Se puede leer usando el SerialReader.
-    /// </summary>
-    /// <param name="ButData">Estrucutra ButtonData con la info de la interacción</param>
-    public void ReciveButtonInteraction(ButtonData ButData){    
+    // El Serial Reader se comunica con este método
+    public void ReciveButtonInteraction(ButtonData ButData)
+    {
+        // Se ejecuta evento cuando cualquier boton es presionado 
         OnAnyButtonPress?.Invoke(ButData);
-        _gameEvents[ButData.ButtonId-1]?.ButtonRaise(ButData); //-1 porque los botones data son del 1 al 12. Y el arreglo es de 0 a 11
+
+        // Llama al evento del botón en específico
+        _gameButtonEvents[ButData.ButtonId-1]?.Raise();
+
+        // Se ejecuta el de zona de interacción. Los botones vienen del serial del 1 al 12, y en el arreglo del 0 al 11
+        _gameButtonEvents[ButData.ButtonId-1]?.ButtonRaise(ButData);
     }
 }

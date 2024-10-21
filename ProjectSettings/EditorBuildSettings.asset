@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ambientes/Almacen/2 SimuladorVentas.unity
     guid: 5ba4298423d52014ba5fdd921dc77823
+  - enabled: 0
+    path: Assets/colorblind/colorblind.unity
+    guid: 17c0e4efd40d81842a101a759264487e
+  - enabled: 1
+    path: Assets/Scenes/Generals/HardwareTest.unity
+    guid: 978bdb8c9779037419ea95f0ad72fc19
   m_configObjects: {}

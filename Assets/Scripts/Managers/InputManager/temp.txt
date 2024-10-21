@@ -1,0 +1,150 @@
+//[Header("Eventos")]
+    //[SerializeField] UnityEvent<ButtonData> OnDataRecive;
+    //[Tooltip("Establece el estado de la conexión de Brain")]
+    //[SerializeField] UnityEvent<bool> OnBrainConnectState;
+    //[SerializeField] UnityEvent<PopOverController.PopOverInfo> OnGetTableState;
+/*
+    void DataActions(string receivedData)
+    {
+
+        #if DEBUG
+        Debug.Log("Secuencia detectada: " + receivedData);
+        #endif
+
+        // Extraer la parte relevante de la cadena
+        string buttonData = receivedData.Trim('[').Trim(']');
+        string[] parts = buttonData.Split('/');
+
+        if (parts.Length == 2)
+        {
+            string devicePart = parts[0];
+            string buttonPart = parts[1];
+
+            string[] deviceParts = devicePart.Split('_');
+            if (deviceParts.Length == 2)
+            {
+                short deviceId = short.Parse(deviceParts[1]);
+                short buttonId = short.Parse(buttonPart);
+
+                OnDataRecive?.Invoke(new ButtonData { DeviceId = deviceId, ButtonId = buttonId });
+            }
+        }
+
+        receivedData = "";
+        return;
+    }
+
+
+    #region Simulaciones
+    public void SimuleSerialData(string simuledData)
+    {
+        DataActions(simuledData);
+    }
+    #endregion
+
+
+    //Cerebro API
+    void CerebroRequestResponse(string request, string response)
+    {
+        switch (request.ToString())
+        {
+            case "Connect":
+                OnBrainConnectState?.Invoke(response.ToString() == "true");
+                break;
+            case "TableState":
+                PopOverController.PopOverInfo _PopOverInfo = new()
+                {
+                    Title = response.ToString().Split(",")[0],
+                    Content = response.ToString().Split(",")[1]
+                };
+                OnGetTableState?.Invoke(_PopOverInfo);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Envia un dato char al cerebro, considere usar comandos predefinidos para acciones epecíficas.
+    /// </summary>
+    /// <param name="data">Char que desea enviar</param>
+    public void SendSerialPortData(char data)
+    {
+        foreach (var port in identifiedArduinos.Values)
+        {
+            if (port.IsOpen)
+            {
+                try
+                {
+                    port.Write(data.ToString());
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError("Failed to send data: " + ex.Message);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Envia comandos predefinidos en el enum CerebroComds de esta clase al cerebro.
+    /// </summary>
+    /// <param name="command">comando escogido del CerebroComds</param>
+    public void SendSerialPortData(CerebroComds command)
+    {
+        #if DEBUG
+        Debug.Log("Enviando comando: "+command);
+        #endif
+
+        string data = $"[{command}]";
+        SendSerialPortData(data);
+    }
+    /// <summary>
+    /// Envia un dato string al cerebro, considere usar comandos predefinidos para acciones epecíficas.
+    /// </summary>
+    /// <param name="data">string que desea enviar</param>
+    public void SendSerialPortData(string data)
+    {
+        data = $"[{data}]";
+        foreach (var port in identifiedArduinos.Values)
+        {
+            if (port.IsOpen)
+            {
+                try
+                {
+                    port.WriteLine(data);
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError("Failed to send data: " + ex.Message);
+                }
+            }
+        }
+    }
+    private void OnDisable()
+    {
+        Finalizar();
+    }
+
+    void OnApplicationQuit()
+    {
+        Finalizar();
+    }
+
+    void Finalizar()
+    {
+        if (_isSimulation) { return; }
+        isRunning = false;
+        foreach (var port in arduinoPorts)
+        {
+            if (port.IsOpen)
+            {
+                port.Close();
+            }
+        }
+        if (readThread != null && readThread.IsAlive)
+        {
+            readThread.Join();
+        }
+    }*/

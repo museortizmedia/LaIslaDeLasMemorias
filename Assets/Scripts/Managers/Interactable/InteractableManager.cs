@@ -92,7 +92,7 @@ public class InteractableManager : MonoBehaviour, IManager
                         }
 
                         string deviceIDFormatted = buttonData.DeviceId > 10 ? "0" + buttonData.DeviceId : "" + buttonData.DeviceId;
-                        Managers.Instance.GetManager<SerialReader>().SendDataToArduino("ARDUINO_" + deviceIDFormatted, "EXECUTED");
+                        //Managers.Instance.GetManager<SerialReader>().SendDataToArduino("ARDUINO_" + deviceIDFormatted, "EXECUTED");
 
                         if (!ReferenceEquals(interactionArea, null))
                         {

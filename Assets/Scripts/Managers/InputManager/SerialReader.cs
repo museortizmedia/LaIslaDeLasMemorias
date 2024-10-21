@@ -1,348 +1,333 @@
+#define DEBUG
+
 using UnityEngine;
 using System.IO.Ports;
 using System.Threading;
-using UnityEngine.Events;
-using System.Text.RegularExpressions;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Concurrent;
+using System;
+using UnityEngine.Events;
+using System.Linq;
 
-public class SerialReader : MonoBehaviour, IManager
+public class SerialReader : MonoBehaviour
 {
-    [Tooltip("Ignora la apertura del puerto serial")]
-    public bool _isSimulation;
-    [Tooltip("Si está activo mostrará en consola las acciones por el Serial")]
-    public bool IsDebuging;
-    private Thread readThread;
-    private ConcurrentQueue<string> dataQueue = new ConcurrentQueue<string>();
-    [SerializeField] UnityEvent<ButtonData> OnDataRecive;
-    [Tooltip("Establece el estado de la conexión de Brain")]
-    [SerializeField] UnityEvent<bool> OnBrainConnectState;
-    [SerializeField] UnityEvent<PopOverController.PopOverInfo> OnGetTableState;
+    public List<string> MesasConectadas;
+    [Header("Configuración del Puerto Serial")]
+    [Tooltip("Intervalo para la lectura de dispositivos conectados por USB")]
+    public int secondsToRefind = 2;
+    [Tooltip("Intervalo para la lectura de botones en dispositivos")]
+    public float buttonCodeReadInterval = 0.5f;
+    [Tooltip("Codigos de indentificación de los dispositivos USB")]
+    public string[] keywords = { "MESA_01", "MESA_02", "MESA_03", "MESA_04", "MESA_05", "MESA_06", "MESA_07", "MESA_08", "MESA_09", "MESA_10" };
+    [Tooltip("Codigos de identificación de los botones de los dispositivos siendo el primer numero el id del dispositivo y el segundo el id del botón")]
+    public string[] butoncodes =
+    {
+        "[01-01]", "[01-02]", "[01-03]", "[01-04]", "[01-05]", "[01-06]", "[01-07]", "[01-08]", "[01-09]", "[01-10]", "[01-11]", "[01-12]",
+        "[02-01]", "[02-02]", "[02-03]", "[02-04]", "[02-05]", "[02-06]", "[02-07]", "[02-08]", "[02-09]", "[02-10]", "[02-11]", "[02-12]",
+        "[03-01]", "[03-02]", "[03-03]", "[03-04]", "[03-05]", "[03-06]", "[03-07]", "[03-08]", "[03-09]", "[03-10]", "[03-11]", "[03-12]",
+        "[04-01]", "[04-02]", "[04-03]", "[04-04]", "[04-05]", "[04-06]", "[04-07]", "[04-08]", "[04-09]", "[04-10]", "[04-11]", "[04-12]",
+        "[05-01]", "[05-02]", "[05-03]", "[05-04]", "[05-05]", "[05-06]", "[05-07]", "[05-08]", "[05-09]", "[05-10]", "[05-11]", "[05-12]",
+        "[06-01]", "[06-02]", "[06-03]", "[06-04]", "[06-05]", "[06-06]", "[06-07]", "[06-08]", "[06-09]", "[06-10]", "[06-11]", "[06-12]",
+        "[07-01]", "[07-02]", "[07-03]", "[07-04]", "[07-05]", "[07-06]", "[07-07]", "[07-08]", "[07-09]", "[07-10]", "[07-11]", "[07-12]",
+        "[08-01]", "[08-02]", "[08-03]", "[08-04]", "[08-05]", "[08-06]", "[08-07]", "[08-08]", "[08-09]", "[08-10]", "[08-11]", "[08-12]",
+        "[09-01]", "[09-02]", "[09-03]", "[09-04]", "[09-05]", "[09-06]", "[09-07]", "[09-08]", "[09-09]", "[09-10]", "[09-11]", "[09-12]",
+        "[10-01]", "[10-02]", "[10-03]", "[10-04]", "[10-05]", "[10-06]", "[10-07]", "[10-08]", "[10-09]", "[10-10]", "[10-11]", "[10-12]"
+    };
 
-    private List<SerialPort> arduinoPorts = new List<SerialPort>();
-    private Dictionary<string, SerialPort> identifiedArduinos = new Dictionary<string, SerialPort>();
-    private string[] arduinoIdentifiers = { "ARDUINO_01", "ARDUINO_02", "ARDUINO_03", "ARDUINO_04", "ARDUINO_05", "ARDUINO_06", "ARDUINO_07", "ARDUINO_08", "ARDUINO_09", "ARDUINO_10" };
+    [Header("Only Read")]
+    [SerializeField] private bool keepReading;
+    [SerializeField] private bool keepReadingButtonCodes;
+    private Dictionary<string, string> connectedPorts = new Dictionary<string, string>();
+    private Thread serialThread;
+    private Thread buttonCodeThread;
 
-    private bool isRunning = true;
+    [Header("Events")]
+    public UnityEvent<int> OnHardwareJoin;
+    public UnityEvent<int> OnHardwareLeave;
+    public UnityEvent<ButtonData> OnButtonTouched;
+    //[SerializeField] UnityEvent<PopOverController.PopOverInfo> OnGetTableState;
 
 
-    //Iniciación, Finalización
+    #region DEBUG
+    void DebugSerialAlert(string mensaje)
+    {
+#if DEBUG
+        Debug.Log($"<color=red>[SERIAL ALERT]</color> {mensaje}");
+#endif
+    }
+    void DebugSerialInfo(string mensaje)
+    {
+#if DEBUG
+        Debug.Log($"<color=blue>[SERIAL INFO]</color> {mensaje}");
+#endif
+    }
+    void DebugSerialWarning(string mensaje)
+    {
+#if DEBUG
+        Debug.Log($"<color=yellow>[SERIAL WARNING]</color> {mensaje}");
+#endif
+    }
+    #endregion
+
+
+
     void Start()
     {
-        #if UNITY_STANDALONE && !UNITY_EDITOR
-        _isSimulation = false;
-        #endif
-        if (!_isSimulation)
+        OnHardwareJoin.AddListener((int mesaId) => DebugSerialAlert("SR: conectada mesa: " + mesaId));
+        OnHardwareLeave.AddListener((int mesaId) => DebugSerialAlert("SR: desconectada mesa: " + mesaId));
+        StartButtonCodeReading();
+    }
+
+    void OnDisable()
+    {
+        StopReading();
+        StopButtonCodeReading();
+    }
+
+    void OnEnable()
+    {
+        StartReading();
+    }
+
+    #region Serial Logic
+    [ContextMenu("Start Find Ports")]
+    private void StartReading()
+    {
+        keepReading = true;
+        serialThread = new Thread(new ThreadStart(FindSerialPorts));
+        serialThread.Start();
+    }
+
+    [ContextMenu("Stop Find Ports")]
+    private void StopReading()
+    {
+        keepReading = false;
+        if (serialThread != null && serialThread.IsAlive)
         {
-            StartCoroutine(InitializeAndIdentifyArduinos());
+            serialThread.Join();
         }
     }
 
-    void OnApplicationQuit()
+    [ContextMenu("Start Read Button Codes")]
+    private void StartButtonCodeReading()
     {
-        Finalizar();
+        keepReadingButtonCodes = true;
+        buttonCodeThread = new Thread(new ThreadStart(ReadButtonCodesPeriodically));
+        buttonCodeThread.Start();
     }
 
-    /*private void OnEnable()
+    [ContextMenu("Stop Read Button Codes")]
+    private void StopButtonCodeReading()
     {
-        if (!_isSimulation)
+        keepReadingButtonCodes = false;
+        if (buttonCodeThread != null && buttonCodeThread.IsAlive)
         {
-            StartCoroutine(InitializeAndIdentifyArduinos());
-        }
-    }*/
-
-    private void OnDisable()
-    {
-        Finalizar();
-    }
-
-    void Finalizar()
-    {
-        if (_isSimulation) { return; }
-        isRunning = false;
-        foreach (var port in arduinoPorts)
-        {
-            if (port.IsOpen)
-            {
-                port.Close();
-            }
-        }
-        if (readThread != null && readThread.IsAlive)
-        {
-            readThread.Join();
+            buttonCodeThread.Join();
         }
     }
 
-    IEnumerator InitializeAndIdentifyArduinos()
+    void FindSerialPorts()
     {
-        string[] ports = SerialPort.GetPortNames();
-
-        foreach (string port in ports)
+        while (keepReading)
         {
-            SerialPort serialPort = new SerialPort(port, 9600);
-            bool portOpened = false;
+            string[] ports = SerialPort.GetPortNames();
+            HashSet<string> newPorts = new(ports);
 
-            try
+            // Detectar desconexiones
+            List<string> portsToRemove = connectedPorts.Keys.Where(port => !newPorts.Contains(port)).ToList();
+            foreach (string port in portsToRemove)
             {
-                serialPort.Open();
-                serialPort.ReadTimeout = 2000;
-                portOpened = true;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Debug.LogWarning("Access to port " + port + " denied.");
-            }
-            catch (Exception ex)
-            {
-                Debug.LogWarning("Error opening port " + port + ": " + ex.Message);
+                int mesaIndex = Array.IndexOf(keywords, connectedPorts[port]);
+                if (mesaIndex >= 0)
+                {
+                    MesasConectadas.Remove(keywords[mesaIndex]);
+                    OnHardwareLeave?.Invoke(mesaIndex);
+                }
+                connectedPorts.Remove(port);
             }
 
-            if (portOpened)
+            // Revisar todos los puertos
+            foreach (string portName in ports)
             {
-                yield return new WaitForSeconds(2);
+                if (connectedPorts.ContainsKey(portName)) continue;
 
+                SerialPort port = null;
                 try
                 {
-                    serialPort.DiscardInBuffer();
-                    string message = serialPort.ReadLine();
+                    port = new SerialPort(portName, 9600);
+                    port.Open();
+                    port.ReadTimeout = secondsToRefind * 1000;
 
-                    foreach (string identifier in arduinoIdentifiers)
+                    string response = null;
+                    try
                     {
-                        if (message.Contains(identifier))
+                        response = port.ReadLine().Trim();
+                    }
+                    catch (TimeoutException) { }
+
+                    if (response != null)
+                    {
+                        // Detectar y manejar keycodes
+                        for (int i = 0; i < keywords.Length; i++)
                         {
-                            identifiedArduinos[identifier] = serialPort;
-                            arduinoPorts.Add(serialPort);
-                            SendDataToArduino(identifier, "CONNECTED");
-                            OnBrainConnectState?.Invoke(true);
-                            break;
+                            if (response.Contains(keywords[i]))
+                            {
+                                // Conectar nueva mesa
+                                int mesaIndex = i;
+                                connectedPorts[portName] = keywords[i];
+                                MesasConectadas.Add(keywords[i]);
+                                OnHardwareJoin?.Invoke(mesaIndex);
+
+                                // Enviar mensaje de conexión al puerto
+                                SendCommandToPort("[CONECTED]", mesaIndex);
+                                break;
+                            }
                         }
                     }
                 }
-                catch (TimeoutException)
-                {
-                    Debug.LogWarning("Error reading from port " + port + ": The operation has timed out.");
-                    serialPort.Close();
-                }
                 catch (Exception ex)
                 {
-                    Debug.LogWarning("Error reading from port " + port + ": " + ex.Message);
-                    serialPort.Close();
+                    DebugSerialWarning($"Error accessing port {portName}: {ex.Message}");
                 }
-            }
-
-            if (!identifiedArduinos.ContainsValue(serialPort))
-            {
-                if (serialPort.IsOpen)
+                finally
                 {
-                    serialPort.Close();
+                    if (port != null && port.IsOpen)
+                    {
+                        port.Close();
+                    }
                 }
             }
-        }
 
-        if (identifiedArduinos.Count == 0)
-        {
-            Debug.LogWarning("No Arduinos identified.");
-        }
-        else
-        {
-            readThread = new Thread(ReadSerialPorts);
-            readThread.Start();
+            // Actualizar la lista de puertos actuales
+            Thread.Sleep(secondsToRefind * 1000);
         }
     }
 
-    public void SendDataToArduino(string identifier, string data)
+    public void SendCommandToPort(string command, int index)
     {
-        if (identifiedArduinos.ContainsKey(identifier))
+        if (index >= 0 && index < keywords.Length)
         {
-            SerialPort port = identifiedArduinos[identifier];
-            if (port.IsOpen)
+            string portName = connectedPorts.Keys.ElementAt(index);
+
+            if (!string.IsNullOrEmpty(portName))
             {
+                SerialPort port = null;
                 try
                 {
-                    port.WriteLine(data);
+                    port = new SerialPort(portName, 9600);
+                    port.Open();
+                    port.WriteLine(command);
+                    DebugSerialWarning($"Comando '{command}' enviado al puerto {portName} para {keywords[index]}");
                 }
                 catch (Exception ex)
                 {
-                    Debug.LogError("Failed to send data to " + identifier + ": " + ex.Message);
+                    DebugSerialWarning($"Error enviando comando al puerto {portName}: {ex.Message}");
+                }
+                finally
+                {
+                    if (port != null && port.IsOpen)
+                    {
+                        port.Close();
+                    }
                 }
             }
             else
             {
-                Debug.LogWarning("Port for " + identifier + " is not open.");
+                DebugSerialWarning($"Puerto no encontrado para el índice {index}");
             }
         }
         else
         {
-            Debug.LogWarning("Arduino with identifier " + identifier + " not found.");
+            DebugSerialWarning($"Índice {index} fuera de rango");
         }
     }
 
-    void ReadSerialPorts()
-    {
-        while (isRunning)
-        {
-            foreach (var kvp in identifiedArduinos)
-            {
-                SerialPort port = kvp.Value;
-                if (port.IsOpen)
-                {
-                    try
-                    {
-                        string data = port.ReadLine();
-                        if (data.Contains("ARDUINO")) SendDataToArduino(kvp.Key, "CONNECTED");
-                        if (data != "KEEP_ALIVE") dataQueue.Enqueue(kvp.Key + "/" + data);
-                    }
-                    catch (TimeoutException)
-                    {
-                        // Ignorar excepciones de tiempo de espera
-                    }
-                    catch (System.Exception e)
-                    {
-                        Debug.LogError(e.Message);
-                    }
-                }
-            }
-        }
-    }
+    // Se adminsitra el DataAction por medio de u Queue porque no se puede ejecutar funciones en hilos que no sean el principal
+    #region QUEUE Actions
+    private Queue<System.Action> actionQueue = new Queue<System.Action>();
 
     void Update()
     {
-        while (dataQueue.TryDequeue(out string data))
+        lock (actionQueue)
         {
-            DataActions(data);
+            while (actionQueue.Count > 0)
+            {
+                var action = actionQueue.Dequeue();
+                action();
+            }
         }
     }
 
+    void EnqueueAction(System.Action action)
+    {
+        lock (actionQueue)
+        {
+            actionQueue.Enqueue(action);
+        }
+    }
+    #endregion
+
+    void ReadButtonCodesPeriodically()
+    {
+        while (keepReadingButtonCodes)
+        {
+            foreach (string portName in connectedPorts.Keys.ToList())
+            {
+                SerialPort port = null;
+                try
+                {
+                    port = new SerialPort(portName, 9600);
+                    port.Open();
+                    port.ReadTimeout = 1000;
+
+                    string response = null;
+                    try
+                    {
+                        response = port.ReadLine().Trim();
+                    }
+                    catch (TimeoutException) { }
+
+                    if (response != null && Array.Exists(butoncodes, code => response.Contains(code)))
+                    {
+                        EnqueueAction(() => 
+                        {
+                            DebugSerialInfo($"Código de botón detectado: {response}");
+                            DataActions(response);
+                        });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DebugSerialWarning($"Error accediendo al puerto {portName} para códigos de botón: {ex.Message}");
+                }
+                finally
+                {
+                    if (port != null && port.IsOpen)
+                    {
+                        port.Close();
+                    }
+                }
+            }
+
+            Thread.Sleep((int)(buttonCodeReadInterval * 1000));
+        }
+    }
+    #endregion
+
+
+    #region DATA ACTIONS
     void DataActions(string receivedData)
     {
-        
-        if (IsDebuging)
-        {
-            Debug.Log("Secuencia detectada: " + receivedData);
-        }
-
         // Extraer la parte relevante de la cadena
         string buttonData = receivedData.Trim('[').Trim(']');
-        string[] parts = buttonData.Split('/');
-
+        string[] parts = buttonData.Split('-');
         if (parts.Length == 2)
         {
-            string devicePart = parts[0];
-            string buttonPart = parts[1];
+            short deviceId = short.Parse(parts[0]);
+            short buttonId = short.Parse(parts[1]);
 
-            string[] deviceParts = devicePart.Split('_');
-            if (deviceParts.Length == 2)
-            {
-                short deviceId = short.Parse(deviceParts[1]);
-                short buttonId = short.Parse(buttonPart);
-
-                OnDataRecive?.Invoke(new ButtonData { DeviceId = deviceId, ButtonId = buttonId });
-            }
+            OnButtonTouched?.Invoke(new ButtonData { DeviceId = deviceId, ButtonId = buttonId });
         }
-
-        receivedData = "";
         return;
     }
-
-
-    public void SimuleSerialData(string simuledData){
-        DataActions(simuledData);
-    }
-
-
-    //Cerebro API
-    void CerebroRequestResponse(string request, string response){
-        switch (request.ToString())
-        {
-            case "Connect":
-                OnBrainConnectState?.Invoke(response.ToString()=="true");
-            break;
-            case "TableState":
-                PopOverController.PopOverInfo _PopOverInfo = new()
-                {
-                    Title = response.ToString().Split(",")[0],
-                    Content =response.ToString().Split(",")[1]
-                };
-                OnGetTableState?.Invoke(_PopOverInfo);
-            break;
-            
-            default:
-            break;
-        }
-    }
-    /// <summary>
-    /// Recopilación de funciones predefinidas en el cerebro que realizan acciones epecíficas
-    /// </summary>
-    public enum CerebroComds
-    {
-        /// <summary>
-        /// Envia una solicitud Connect, en el caso de ser positiva el
-        /// </summary>
-        Connect,
-        /// <summary>
-        /// Envia una configuracion al Vibrador, agregue [value] para definir el poder. (0-255)
-        /// </summary>
-        ConfigVibration,
-        /// <summary>
-        /// Solicita el estado de una mesa específica, agregue [value] para definir la mesa a conectar.
-        /// </summary>
-        TableState,
-    }
-
-    /// <summary>
-    /// Envia un dato char al cerebro, considere usar comandos predefinidos para acciones epecíficas.
-    /// </summary>
-    /// <param name="data">Char que desea enviar</param>
-    public void SendSerialPortData(char data)
-    {
-        foreach (var port in identifiedArduinos.Values)
-        {
-            if (port.IsOpen)
-            {
-                try
-                {
-                    port.Write(data.ToString());
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError("Failed to send data: " + ex.Message);
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// Envia comandos predefinidos en el enum CerebroComds de esta clase al cerebro.
-    /// </summary>
-    /// <param name="command">comando escogido del CerebroComds</param>
-    public void SendSerialPortData(CerebroComds command)
-    {
-        if(IsDebuging){Debug.Log("Enviando comando: "+command);}
-        string data = $"[{command}]";
-        SendSerialPortData(data);
-    }
-    /// <summary>
-    /// Envia un dato string al cerebro, considere usar comandos predefinidos para acciones epecíficas.
-    /// </summary>
-    /// <param name="data">string que desea enviar</param>
-    public void SendSerialPortData(string data)
-    {
-        data = $"[{data}]";
-        foreach (var port in identifiedArduinos.Values)
-        {
-            if (port.IsOpen)
-            {
-                try
-                {
-                    port.WriteLine(data);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError("Failed to send data: " + ex.Message);
-                }
-            }
-        }
-    }
+    #endregion
 }

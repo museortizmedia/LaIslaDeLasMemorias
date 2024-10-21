@@ -44,9 +44,150 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f2a13ba1ef812409e212f36c8c92b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isSimulation: 1
-  IsDebuging: 0
-  OnDataRecive:
+  MesasConectadas: []
+  secondsToRefind: 2
+  buttonCodeReadInterval: 0.5
+  keywords:
+  - MESA_01
+  - MESA_02
+  - MESA_03
+  - MESA_04
+  - MESA_05
+  - MESA_06
+  - MESA_07
+  - MESA_08
+  - MESA_09
+  - MESA_10
+  butoncodes:
+  - '[01-01]'
+  - '[01-02]'
+  - '[01-03]'
+  - '[01-04]'
+  - '[01-05]'
+  - '[01-06]'
+  - '[01-07]'
+  - '[01-08]'
+  - '[01-09]'
+  - '[01-10]'
+  - '[01-11]'
+  - '[01-12]'
+  - '[02-01]'
+  - '[02-02]'
+  - '[02-03]'
+  - '[02-04]'
+  - '[02-05]'
+  - '[02-06]'
+  - '[02-07]'
+  - '[02-08]'
+  - '[02-09]'
+  - '[02-10]'
+  - '[02-11]'
+  - '[02-12]'
+  - '[03-01]'
+  - '[03-02]'
+  - '[03-03]'
+  - '[03-04]'
+  - '[03-05]'
+  - '[03-06]'
+  - '[03-07]'
+  - '[03-08]'
+  - '[03-09]'
+  - '[03-10]'
+  - '[03-11]'
+  - '[03-12]'
+  - '[04-01]'
+  - '[04-02]'
+  - '[04-03]'
+  - '[04-04]'
+  - '[04-05]'
+  - '[04-06]'
+  - '[04-07]'
+  - '[04-08]'
+  - '[04-09]'
+  - '[04-10]'
+  - '[04-11]'
+  - '[04-12]'
+  - '[05-01]'
+  - '[05-02]'
+  - '[05-03]'
+  - '[05-04]'
+  - '[05-05]'
+  - '[05-06]'
+  - '[05-07]'
+  - '[05-08]'
+  - '[05-09]'
+  - '[05-10]'
+  - '[05-11]'
+  - '[05-12]'
+  - '[06-01]'
+  - '[06-02]'
+  - '[06-03]'
+  - '[06-04]'
+  - '[06-05]'
+  - '[06-06]'
+  - '[06-07]'
+  - '[06-08]'
+  - '[06-09]'
+  - '[06-10]'
+  - '[06-11]'
+  - '[06-12]'
+  - '[07-01]'
+  - '[07-02]'
+  - '[07-03]'
+  - '[07-04]'
+  - '[07-05]'
+  - '[07-06]'
+  - '[07-07]'
+  - '[07-08]'
+  - '[07-09]'
+  - '[07-10]'
+  - '[07-11]'
+  - '[07-12]'
+  - '[08-01]'
+  - '[08-02]'
+  - '[08-03]'
+  - '[08-04]'
+  - '[08-05]'
+  - '[08-06]'
+  - '[08-07]'
+  - '[08-08]'
+  - '[08-09]'
+  - '[08-10]'
+  - '[08-11]'
+  - '[08-12]'
+  - '[09-01]'
+  - '[09-02]'
+  - '[09-03]'
+  - '[09-04]'
+  - '[09-05]'
+  - '[09-06]'
+  - '[09-07]'
+  - '[09-08]'
+  - '[09-09]'
+  - '[09-10]'
+  - '[09-11]'
+  - '[09-12]'
+  - '[10-01]'
+  - '[10-02]'
+  - '[10-03]'
+  - '[10-04]'
+  - '[10-05]'
+  - '[10-06]'
+  - '[10-07]'
+  - '[10-08]'
+  - '[10-09]'
+  - '[10-10]'
+  - '[10-11]'
+  - '[10-12]'
+  keepReading: 0
+  keepReadingButtonCodes: 0
+  OnHardwareJoin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHardwareLeave:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonTouched:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8468559365454009831}
@@ -58,39 +199,11 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: preubaaaaa
           m_BoolArgument: 0
         m_CallState: 2
-  OnBrainConnectState:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8468559365454009831}
-        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: set_IsBrainConect
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnGetTableState:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4711675086985111396}
-        m_TargetAssemblyTypeName: PopOverController, Assembly-CSharp
-        m_MethodName: OnGetTableInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  OnDeviceJoinGameEvent: {fileID: 11400000, guid: da306e9b5b7f4f34c88ac3346acbbbdf, type: 2}
+  OnDeviceLeaveGameEvent: {fileID: 11400000, guid: 6ec4e4847f196e145989ef17cda5007f, type: 2}
 --- !u!1 &342032499673204779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8907624443804945082
 Transform:
   m_ObjectHideFlags: 0
@@ -1273,16 +1386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba42b94ca84325f45bacb8f48e1264ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isBrainConect: 0
   _serialReader: {fileID: 0}
-  OnCerebroDetected: {fileID: 11400000, guid: 445edcdbb822de54089afd448ab7562a, type: 2}
-  OnCerebroUndetect: {fileID: 11400000, guid: 82fbd6bba5960e446a840a3a057862de, type: 2}
-  OnBrainConnect:
-    m_PersistentCalls:
-      m_Calls: []
-  OnBrainDisconnect:
-    m_PersistentCalls:
-      m_Calls: []
   OnAnyButtonPress:
     m_PersistentCalls:
       m_Calls:
@@ -1310,7 +1414,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _gameEvents:
+  _gameButtonEvents:
   - {fileID: 11400000, guid: 256d1f141708d00439cbeb8c6678bf5c, type: 2}
   - {fileID: 11400000, guid: de312f07428790a489e21f6ce11a67e5, type: 2}
   - {fileID: 11400000, guid: 34823a07360290e4d864a4788424f2cf, type: 2}

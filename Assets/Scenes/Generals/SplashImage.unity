@@ -699,10 +699,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    - target: {fileID: 4953524404467332357, guid: afd60680008fce846a3a15c417627837, type: 3}
-      propertyPath: _isSimulation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
